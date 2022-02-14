@@ -9,7 +9,7 @@ class App extends Component {
     super(props)
 
     this.state = {
-      genInfo: {
+      newGenInfo: {
         name:     '',
         address:  '',
         city:     '',
@@ -18,6 +18,7 @@ class App extends Component {
         phone:    '',
         email:    '',
       },
+      genInfo: '',
       newEduInfo: {
         schoolName:     '',
         schoolLocation: '',
@@ -39,29 +40,51 @@ class App extends Component {
     };
   }
 
-  handleChange = (evt) => {
+  handleChange = (e) => {
     this.setState({
-      [evt.target.name]: evt.target.value,
+      newGenInfo: {
+        ...this.state.newGenInfo,
+        [e.target.name]: e.target.value,
+      }
     })
   }
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault();
     this.setState({
       display: 'locked',
+      genInfo: this.state.newGenInfo,
+      newGenInfo: {
+        name:     '',
+        address:  '',
+        city:     '',
+        state:    '',
+        zip:      '',
+        phone:    '',
+        email:    '',
+      }
     })
   }
   render() {
+    const { genInfo } = this.state;
+
     const renderPage = () => {
       if(this.state.display === 'initial') {
-        return <GenInfoForm formID="display" changeFunc={this.handleChange} submitFunc={this.handleSubmit} />;
+        return <GenInfoForm 
+                  changeFunc={this.handleChange} 
+                  submitFunc={this.handleSubmit}
+                />;
       }
       else if(this.state.display === 'locked') {
-        return  <GenInfoDisplay displayID="display" details={this.state.genInfo} editFunc='' />
+        return  <GenInfoDisplay 
+                  details={genInfo} 
+                  editFunc={this.handleSubmit}
+                />
       }
     }
     return (
       <div>
         <h1>CV Builder</h1>
-        {renderPage}
+        {renderPage()}
       </div>
     )
   }

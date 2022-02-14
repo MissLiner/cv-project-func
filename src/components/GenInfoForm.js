@@ -31,4 +31,4 @@ class GenInfoForm extends Component {
     )
   }
 }
-export default GenInfo;
+export default GenInfoForm;
