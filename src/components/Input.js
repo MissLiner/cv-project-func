@@ -10,8 +10,10 @@ class Input extends Component {
     return (
       <label>{this.props.inputLabel}:&nbsp;
         <input
-          value={this.props.inputVal}
+          //value={this.props.inputVal}
           name={this.props.keyName}
+          type={this.props.inputType}
+          onChange={this.props.changeFunc}
         />
       </label>
     )
