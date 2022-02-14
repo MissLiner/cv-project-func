@@ -37,9 +37,9 @@ class App extends Component {
       },
       expInfo: [],
       display: 'initial',
-      genInfoLocked: true,
-      eduInfoLocked: true,
-      expInfoLocked: true,
+      genInfoOpen: false,
+      eduInfoOpen: false,
+      expInfoOpen: false,
     };
   }
   handleChange = (e) => {
@@ -68,14 +68,14 @@ class App extends Component {
     })
   }
   handleEdit = (e) => {
-    const lockKey = e.target.section;
-    
-    if(this.state.lockKey === true) {
+    const lockKey = e.target.dataset.section;
+
+    if(this.state[lockKey] === true) {
       this.setState({
         [lockKey]: false 
       })
     }
-    else if(this.state.lockKey === false) {
+    else if(this.state[lockKey] === false) {
       this.setState({
         [lockKey]: true 
       })
@@ -95,7 +95,9 @@ class App extends Component {
       else if(this.state.display === 'locked') {
         return  <GenInfoDisplay 
                   details={genInfo} 
-                  editFunc={this.handleSubmit}
+                  editFunc={this.handleEdit}
+                  isOpen={this.state.genInfoOpen}
+            
                 />
       }
     }
