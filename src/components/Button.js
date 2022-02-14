@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import App from "App";
+//import App from "App";
 
 class Button extends Component {
   constructor(props) {
@@ -8,11 +8,11 @@ class Button extends Component {
   }
   render() {
     return (
-      <button 
+      <button
         type={this.props.type}
         value={this.props.value}
         onClick={this.props.clickFunc}
-      />
+      >{this.props.btnText}</button>
     )
   }
 }

@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import App from "App";
+//import App from "App";
 
 class Input extends Component {
   constructor(props) {
