@@ -11,6 +11,7 @@ class Button extends Component {
       <button
         type={this.props.type}
         value={this.props.value}
+        dataset-section={this.props.section}
         onClick={this.props.clickFunc}
       >{this.props.btnText}</button>
     )

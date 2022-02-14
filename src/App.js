@@ -37,6 +37,9 @@ class App extends Component {
       },
       expInfo: [],
       display: 'initial',
+      genInfoLocked: true,
+      eduInfoLocked: true,
+      expInfoLocked: true,
     };
   }
   handleChange = (e) => {
@@ -64,6 +67,21 @@ class App extends Component {
       }
     })
   }
+  handleEdit = (e) => {
+    const lockKey = e.target.section;
+    
+    if(this.state.lockKey === true) {
+      this.setState({
+        [lockKey]: false 
+      })
+    }
+    else if(this.state.lockKey === false) {
+      this.setState({
+        [lockKey]: true 
+      })
+    }
+  }
+
   render() {
     const { genInfo } = this.state;
 

@@ -25,7 +25,7 @@ class GenInfoDisplay extends Component {
             <div>{details.email}</div>
           </div>
         </div>
-        <Button btnText="Edit" clickFunc={editFunc}></Button>
+        <Button btnText="Edit" section="genInfoLocked" clickFunc={editFunc}></Button>
       </div>
     )
   }
