@@ -1,7 +1,8 @@
 /* eslint-disable no-useless-constructor */
 import './App.css';
 import React, { Component } from 'react';
-import GenInfo from './components/GenInfoForm';
+import GenInfoForm from './components/GenInfoForm';
+import GenInfoDisplay from './components/GenInfoDisplay';
 
 class App extends Component {
   constructor(props) {
@@ -34,21 +35,33 @@ class App extends Component {
         summary:    '',
       },
       expInfo: [],
+      display: 'initial',
     };
   }
+
   handleChange = (evt) => {
     this.setState({
       [evt.target.name]: evt.target.value,
     })
   }
-  handleSubmit = (evt) => {
-    
+  handleSubmit = () => {
+    this.setState({
+      display: 'locked',
+    })
   }
   render() {
+    const renderPage = () => {
+      if(this.state.display === 'initial') {
+        return <GenInfoForm formID="display" changeFunc={this.handleChange} submitFunc={this.handleSubmit} />;
+      }
+      else if(this.state.display === 'locked') {
+        return  <GenInfoDisplay displayID="display" details={this.state.genInfo} editFunc='' />
+      }
+    }
     return (
       <div>
         <h1>CV Builder</h1>
-        <GenInfo details={this.state.genInfo} changeFunc={this.handleChange} submitFunc={this.handleSubmit}/>
+        {renderPage}
       </div>
     )
   }

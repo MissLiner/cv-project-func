@@ -4,16 +4,16 @@ import Input from "./Input";
 import Button from './Button';
 import '../styles/formStyles.css';
 
-class GenInfo extends Component {
+class GenInfoForm extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    const { details, changeFunc, submitFunc } = this.props;
+    const { changeFunc, submitFunc, formID, formKey } = this.props;
 
     return (
-      <form id="genInfoForm" onSubmit={submitFunc}>
+      <form id={formID} onSubmit={submitFunc} name={formKey}>
         <h2>General Info</h2>
         <Input inputLabel="Name" keyName='name' changeFunc={changeFunc} />
         <Input inputLabel="Address" keyName='address' changeFunc={changeFunc} />

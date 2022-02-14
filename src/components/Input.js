@@ -14,6 +14,7 @@ class Input extends Component {
           name={this.props.keyName}
           type={this.props.inputType}
           onChange={this.props.changeFunc}
+          onClick={this.props.clickFunc}
         />
       </label>
     )
