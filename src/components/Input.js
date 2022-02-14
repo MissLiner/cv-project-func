@@ -12,6 +12,7 @@ class Input extends Component {
         <input
           name={this.props.keyName}
           type={this.props.inputType}
+          data-section={this.props.section}
           onChange={this.props.changeFunc}
           onClick={this.props.clickFunc}
         />

@@ -39,10 +39,21 @@ class App extends Component {
       display: 'initial',
     };
   }
+  updateInfo = (objName, keyName, newVal) {
+    switch(objName) {
+      this.setState({
+        newGenInfo: {
+          ...this.state.newGenInfo,
+          [e.target.name]: e.target.value,
+        }
+      })
+    }
+
+  }
 
   handleChange = (e) => {
     this.setState({
-      newGenInfo: {
+      [e.target.dataset.section]: {
         ...this.state.newGenInfo,
         [e.target.name]: e.target.value,
       }
