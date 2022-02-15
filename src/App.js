@@ -3,8 +3,7 @@ import './App.css';
 import React, { Component } from 'react';
 import GenInfoForm from './components/GenInfoForm';
 import GenInfoDisplay from './components/GenInfoDisplay';
-import ExpInfoForm from './components/ExpInfoForm';
-import ExpInfoDisplay from './components/ExpInfoDisplay';
+import DisplayExpInfo from './components/DisplayExpInfo';
 import './styles/formStyles.css';
 
 class App extends Component {
@@ -30,15 +29,7 @@ class App extends Component {
         degreeDate:     '',
       },
       eduInfo: [],
-      newExpInfo: {
-        company:    '',
-        location:   '',
-        title:      '',
-        startDate:  '',
-        endDate:    '',
-        highlights:    '',
-      },
-      expInfo: [],
+
       display: 'initial',
       genInfoOpen: false,
       eduInfoOpen: false,
@@ -70,21 +61,21 @@ class App extends Component {
       }
     })
   }
-  handleSubmitExpInfo = (e) => {
-    e.preventDefault();
-    this.setState({
-      display: 'locked',
-      expInfo: this.state.newExpInfo,
-      newExpInfo: {
-        company:    '',
-        location:   '',
-        title:      '',
-        startDate:  '',
-        endDate:    '',
-        highlights: '',
-      }
-    })
-  }
+  // handleSubmitExpInfo = (e) => {
+  //   e.preventDefault();
+  //   this.setState({
+  //     display: 'locked',
+  //     expInfo: this.state.newExpInfo,
+  //     newExpInfo: {
+  //       company:    '',
+  //       location:   '',
+  //       title:      '',
+  //       startDate:  '',
+  //       endDate:    '',
+  //       highlights: '',
+  //     }
+  //   })
+  // }
   handleEdit = (e) => {
     const lockKey = e.target.dataset.section;
 
@@ -101,7 +92,7 @@ class App extends Component {
   }
 
   render() {
-    const { genInfo, expInfo, eduInfo } = this.state;
+    const { genInfo, eduInfo } = this.state;
 
     const renderPage = () => {
       if(this.state.display === 'initial') {
@@ -111,10 +102,10 @@ class App extends Component {
               changeFunc={this.handleChange} 
               submitFunc={this.handleSubmitGenInfo}
             />
-            <ExpInfoForm
+            {/* <ExpInfoForm
               changeFunc={this.handleChange} 
               submitFunc={this.handleSubmitExpInfo}
-            />
+            /> */}
           </div>
         )     
       }
@@ -126,11 +117,11 @@ class App extends Component {
               editFunc={this.handleEdit}
               isOpen={this.state.genInfoOpen}
             />
-            <ExpInfoDisplay
+            {/* <ExpInfoDisplay
               details={expInfo} 
               editFunc={this.handleEdit}
               isOpen={this.state.expInfoOpen}
-            />
+            /> */}
           </div>
         )
       }
@@ -139,6 +130,7 @@ class App extends Component {
       <div>
         <h1>CV Builder</h1>
         {renderPage()}
+        {DisplayExpInfo}
       </div>
     )
   }
