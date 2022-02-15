@@ -79,6 +79,11 @@ class DisplayExpInfo extends Component {
       })
     }
   }
+  handleAdd = () => {
+    this.setState({
+      display: 'form'
+    })
+  }
   render() {
     const { expInfo } = this.state;
 
@@ -98,6 +103,7 @@ class DisplayExpInfo extends Component {
               details={expInfo[0]} 
               editFunc={this.handleEdit}
               isOpen={this.state.isEditable}
+              addFunc={this.handleAdd}
             />
         )
       }

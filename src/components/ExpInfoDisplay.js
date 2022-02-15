@@ -8,7 +8,7 @@ class ExpInfoDisplay extends Component {
     super(props);
   }
   render() {
-    const { details, editFunc, isOpen } = this.props;
+    const { details, editFunc, isOpen, addFunc } = this.props;
 
     return (
       <div>
@@ -20,7 +20,8 @@ class ExpInfoDisplay extends Component {
         <div contentEditable={isOpen}>{details.startDate}-{details.endDate}</div>
         <div contentEditable={isOpen}>{details.highlights}</div>
 
-        <Button btnText="Edit" section="expInfoOpen" clickFunc={editFunc}></Button>
+        <Button btnText="Edit" clickFunc={editFunc}></Button>
+        <Button btnText="Add Position" clickFunc={addFunc}></Button>
       </div>
     )
   }
