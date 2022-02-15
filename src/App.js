@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import GenInfoForm from './components/GenInfoForm';
 import GenInfoDisplay from './components/GenInfoDisplay';
 import ExpInfoForm from './components/ExpInfoForm';
+import ExpInfoDisplay from './components/ExpInfoDisplay';
 
 class App extends Component {
   constructor(props) {
@@ -84,10 +85,7 @@ class App extends Component {
   }
 
   render() {
-    const { genInfo } = this.state;
-    const renderForm = () => {
-
-    }
+    const { genInfo, expInfo, eduInfo } = this.state;
 
     const render = () => {
       if(this.state.display === 'initial') {
@@ -111,6 +109,11 @@ class App extends Component {
               details={genInfo} 
               editFunc={this.handleEdit}
               isOpen={this.state.genInfoOpen}
+            />
+            <ExpInfoDisplay
+              details={expInfo} 
+              editFunc={this.handleEdit}
+              isOpen={this.state.expInfoOpen}
             />
           </div>
         )
