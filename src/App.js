@@ -3,6 +3,7 @@ import './App.css';
 import React, { Component } from 'react';
 import GenInfoForm from './components/GenInfoForm';
 import GenInfoDisplay from './components/GenInfoDisplay';
+import ExpInfoForm from './components/ExpInfoForm';
 
 class App extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class App extends Component {
         title:      '',
         startDate:  '',
         endDate:    '',
-        summary:    '',
+        highlights:    '',
       },
       expInfo: [],
       display: 'initial',
@@ -84,21 +85,35 @@ class App extends Component {
 
   render() {
     const { genInfo } = this.state;
+    const renderForm = () => {
 
-    const renderPage = () => {
+    }
+
+    const render = () => {
       if(this.state.display === 'initial') {
-        return <GenInfoForm 
-                  changeFunc={this.handleChange} 
-                  submitFunc={this.handleSubmit}
-                />;
+        return (
+          <div>
+            <GenInfoForm 
+              changeFunc={this.handleChange} 
+              submitFunc={this.handleSubmit}
+            />
+            <ExpInfoForm
+              changeFunc={this.handleChange} 
+              submitFunc={this.handleSubmit}
+            />
+          </div>
+        )     
       }
       else if(this.state.display === 'locked') {
-        return  <GenInfoDisplay 
-                  details={genInfo} 
-                  editFunc={this.handleEdit}
-                  isOpen={this.state.genInfoOpen}
-            
-                />
+        return(
+          <div>
+            <GenInfoDisplay 
+              details={genInfo} 
+              editFunc={this.handleEdit}
+              isOpen={this.state.genInfoOpen}
+            />
+          </div>
+        )
       }
     }
     return (
