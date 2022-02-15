@@ -26,7 +26,7 @@ class DisplayExpInfo extends Component {
     const editObj = e.target.dataset.section;
     const editKey = e.target.name;
     const newValue = e.target.value;
-
+  
     this.setState({
       [editObj]: {
         ...this.state[editObj],
@@ -45,7 +45,8 @@ class DisplayExpInfo extends Component {
     const arrayKey = e.target.name;
     const objKey = e.target.dataset.section;
     let resetObj = this.state[objKey];
-    const newArray = this.state[arrayKey].concat(resetObj);
+    let newArray = this.state[arrayKey];
+    newArray = newArray.concat(resetObj);
     
     this.setState({
       [arrayKey]: newArray,
@@ -90,30 +91,22 @@ class DisplayExpInfo extends Component {
     const renderPage = () => {
       if(this.state.display === 'form') {
         return (
-            <ExpInfoForm
-              changeFunc={this.handleChange} 
-              submitFunc={this.handleSubmit}
-              formKey="expInfo"
-            />
+          <ExpInfoForm
+            changeFunc={this.handleChange} 
+            submitFunc={this.handleSubmit}
+            formKey="expInfo"
+          />
         )     
       }
       else if(this.state.display === 'text') {
-        let allDivs;
-        const generateDivs = () => {
-          for(let i = 0; i < expInfo.length; i++) {
-            allDivs = allDivs + 
-              (
-              <ExpInfoDisplay
-              details={expInfo[i]} 
-              editFunc={this.handleEdit}
-              isOpen={this.state.isEditable}
-              addFunc={this.handleAdd}
-              />
-              )
-          }
-        }
-        generateDivs();
-        return allDivs;
+        return (
+          <ExpInfoDisplay
+            details={expInfo} 
+            editFunc={this.handleEdit}
+            isOpen={this.state.isEditable}
+            addFunc={this.handleAdd}
+          />
+        )
       }
     }
     return (

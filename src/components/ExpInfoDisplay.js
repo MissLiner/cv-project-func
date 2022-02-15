@@ -10,16 +10,36 @@ class ExpInfoDisplay extends Component {
   render() {
     const { details, editFunc, isOpen, addFunc } = this.props;
 
+    const renderAllDivs = () => {
+      return (
+      details.map(detail => {
+        return (
+          <div>
+            <div className="companyInfoBox">
+              <div contentEditable={isOpen}>
+                {detail.company}
+              </div>
+              <div contentEditable={isOpen}>
+                {detail.location}
+              </div>
+            </div>
+            <div contentEditable={isOpen}>
+              {detail.startDate}-{detail.endDate}
+            </div>
+            <div contentEditable={isOpen}>
+              {detail.highlights}
+            </div>
+          </div>
+        )
+      })
+      )
+    }
+
     return (
       <div>
-        <h2>Work History</h2>
-        <div id="companyInfoBox">
-          <div contentEditable={isOpen}>{details.company}</div>
-          <div contentEditable={isOpen}>{details.location}</div>
+        <div>
+          {renderAllDivs()}
         </div>
-        <div contentEditable={isOpen}>{details.startDate}-{details.endDate}</div>
-        <div contentEditable={isOpen}>{details.highlights}</div>
-
         <Button btnText="Edit" clickFunc={editFunc}></Button>
         <Button btnText="Add Position" clickFunc={addFunc}></Button>
       </div>
