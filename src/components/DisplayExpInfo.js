@@ -1,8 +1,9 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import ExpInfoForm from './ExpInfoForm';
+// import ExpInfoForm from './ExpInfoForm';
 import ExpInfoDisplay from './ExpInfoDisplay';
 import '../styles/formStyles.css';
+import InputForm from './InputForm';
 
 class DisplayExpInfo extends Component {
   constructor(props) {
@@ -91,7 +92,7 @@ class DisplayExpInfo extends Component {
     const renderPage = () => {
       if(this.state.display === 'form') {
         return (
-          <ExpInfoForm
+          <InputForm
             changeFunc={this.handleChange} 
             submitFunc={this.handleSubmit}
             formKey="expInfo"

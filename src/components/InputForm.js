@@ -17,7 +17,7 @@ class InputForm extends Component {
     const { inputList, submitFunc, formKey, sectionKey, heading, changeFunc } = this.props;
 
     const renderInputs = () => {
-      const inputLabels = inputList.keys();
+      const inputLabels = Object.keys(inputList);
       return(
         inputLabels.map(key => {
           const label = this.capitalizeFirst(key);
