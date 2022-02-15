@@ -98,14 +98,22 @@ class DisplayExpInfo extends Component {
         )     
       }
       else if(this.state.display === 'text') {
-        return(
-            <ExpInfoDisplay
-              details={expInfo[0]} 
+        let allDivs;
+        const generateDivs = () => {
+          for(let i = 0; i < expInfo.length; i++) {
+            allDivs = allDivs + 
+              (
+              <ExpInfoDisplay
+              details={expInfo[i]} 
               editFunc={this.handleEdit}
               isOpen={this.state.isEditable}
               addFunc={this.handleAdd}
-            />
-        )
+              />
+              )
+          }
+        }
+        generateDivs();
+        return allDivs;
       }
     }
     return (
