@@ -44,7 +44,7 @@ class DisplayExpInfo extends Component {
     const objKey = e.target.dataset.section;
     let resetObj = this.state[objKey];
     const newArray = this.state[arrayKey].concat(resetObj);
-    this.emptyFields(resetObj);
+    // this.emptyFields(resetObj);
 
     this.setState({
       display: 'text',

@@ -61,21 +61,7 @@ class App extends Component {
       }
     })
   }
-  // handleSubmitExpInfo = (e) => {
-  //   e.preventDefault();
-  //   this.setState({
-  //     display: 'locked',
-  //     expInfo: this.state.newExpInfo,
-  //     newExpInfo: {
-  //       company:    '',
-  //       location:   '',
-  //       title:      '',
-  //       startDate:  '',
-  //       endDate:    '',
-  //       highlights: '',
-  //     }
-  //   })
-  // }
+
   handleEdit = (e) => {
     const lockKey = e.target.dataset.section;
 
@@ -92,7 +78,7 @@ class App extends Component {
   }
 
   render() {
-    const { genInfo, eduInfo } = this.state;
+    const { genInfo } = this.state;
 
     const renderPage = () => {
       if(this.state.display === 'initial') {
@@ -102,10 +88,6 @@ class App extends Component {
               changeFunc={this.handleChange} 
               submitFunc={this.handleSubmitGenInfo}
             />
-            {/* <ExpInfoForm
-              changeFunc={this.handleChange} 
-              submitFunc={this.handleSubmitExpInfo}
-            /> */}
           </div>
         )     
       }
@@ -117,11 +99,6 @@ class App extends Component {
               editFunc={this.handleEdit}
               isOpen={this.state.genInfoOpen}
             />
-            {/* <ExpInfoDisplay
-              details={expInfo} 
-              editFunc={this.handleEdit}
-              isOpen={this.state.expInfoOpen}
-            /> */}
           </div>
         )
       }
