@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
+import uniqid from 'uniqid';
 import Button from './Button';
 import '../styles/formStyles.css';
 
@@ -15,7 +16,7 @@ class ExpInfoDisplay extends Component {
       details.map(detail => {
         return (
           <div>
-            <div className="companyInfoBox">
+            <div className="companyInfoBox" key={uniqid()}>
               <div contentEditable={isOpen}>
                 {detail.company}
               </div>
