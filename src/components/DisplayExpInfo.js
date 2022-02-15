@@ -39,18 +39,23 @@ class DisplayExpInfo extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-
+    this.setState({
+      display: "text",
+    })
     const arrayKey = e.target.name;
     const objKey = e.target.dataset.section;
     let resetObj = this.state[objKey];
     const newArray = this.state[arrayKey].concat(resetObj);
-    // this.emptyFields(resetObj);
-
+    
     this.setState({
-      display: 'text',
       [arrayKey]: newArray,
-      [objKey]: resetObj,
     })
+
+    // this.emptyFields(resetObj);
+    // this.setState({
+    //   [objKey]: resetObj,
+    // })
+
     // this.setState({
     //   newExpInfo: {
     //     company:    '',
@@ -90,7 +95,7 @@ class DisplayExpInfo extends Component {
       else if(this.state.display === 'text') {
         return(
             <ExpInfoDisplay
-              details={expInfo} 
+              details={expInfo[0]} 
               editFunc={this.handleEdit}
               isOpen={this.state.isEditable}
             />
