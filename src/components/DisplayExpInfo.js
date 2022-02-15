@@ -1,6 +1,5 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-// import ExpInfoForm from './ExpInfoForm';
 import ExpInfoDisplay from './ExpInfoDisplay';
 import '../styles/formStyles.css';
 import InputForm from './InputForm';
@@ -56,17 +55,6 @@ class DisplayExpInfo extends Component {
     // this.emptyFields(resetObj);
     // this.setState({
     //   [objKey]: resetObj,
-    // })
-
-    // this.setState({
-    //   newExpInfo: {
-    //     company:    '',
-    //     location:   '',
-    //     title:      '',
-    //     startDate:  '',
-    //     endDate:    '',
-    //     highlights: '',
-    //   }
     // })
   }
   handleEdit = () => {
