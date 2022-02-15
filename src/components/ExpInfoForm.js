@@ -11,7 +11,7 @@ class ExpInfoForm extends Component {
   render() {
     const { submitFunc, formKey, changeFunc } = this.props;
     return (
-      <form id="expInfoForm" onSubmit={submitFunc} name={formKey}>
+      <form id="expInfoForm" onSubmit={submitFunc} name={formKey} data-section="newExpInfo">
         <div>
           <h2>Work History</h2>
           <Input 
@@ -47,7 +47,7 @@ class ExpInfoForm extends Component {
           section="newExpInfo"
           changeFunc={changeFunc}
         />
-        <Button type="submit" btnText="Save" />       
+        <Button type="submit" btnText="Save" section="newExpInfo" />       
       </form>
     )
   }

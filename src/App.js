@@ -130,7 +130,7 @@ class App extends Component {
       <div>
         <h1>CV Builder</h1>
         {renderPage()}
-        {DisplayExpInfo}
+        <DisplayExpInfo />
       </div>
     )
   }

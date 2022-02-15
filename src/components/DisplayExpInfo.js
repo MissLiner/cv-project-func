@@ -41,15 +41,15 @@ class DisplayExpInfo extends Component {
     e.preventDefault();
 
     const arrayKey = e.target.name;
-    const newObjKey = e.target.dataset.section;
-    let resetObj = this.state[newObj];
+    const objKey = e.target.dataset.section;
+    let resetObj = this.state[objKey];
     const newArray = this.state[arrayKey].concat(resetObj);
-    resetFields(resetObj);
+    this.emptyFields(resetObj);
 
     this.setState({
       display: 'text',
       [arrayKey]: newArray,
-      [newObjKey]: resetObj,
+      [objKey]: resetObj,
     })
     // this.setState({
     //   newExpInfo: {
@@ -63,12 +63,12 @@ class DisplayExpInfo extends Component {
     // })
   }
   handleEdit = () => {
-    if(this.state.editable === true) {
+    if(this.state.isEditable === true) {
       this.setState({
         editable: false 
       })
     }
-    else if(this.state.editable === false) {
+    else if(this.state.isEditable === false) {
       this.setState({
         editable: true 
       })
@@ -83,23 +83,24 @@ class DisplayExpInfo extends Component {
             <ExpInfoForm
               changeFunc={this.handleChange} 
               submitFunc={this.handleSubmit}
+              formKey="expInfo"
             />
         )     
       }
       else if(this.state.display === 'text') {
         return(
-          <div>
             <ExpInfoDisplay
               details={expInfo} 
               editFunc={this.handleEdit}
               isOpen={this.state.isEditable}
             />
-          </div>
         )
       }
     }
     return (
-        {renderPage}
+      <div>
+        {renderPage()}
+      </div>
     )
   }
 }
