@@ -15,6 +15,7 @@ class Input extends Component {
           data-section={this.props.section}
           onChange={this.props.changeFunc}
           onClick={this.props.clickFunc}
+          key={this.props.inputKey}
         />
       </label>
     )

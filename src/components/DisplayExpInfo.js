@@ -86,7 +86,7 @@ class DisplayExpInfo extends Component {
     })
   }
   render() {
-    const { expInfo } = this.state;
+    const { expInfo, newExpInfo } = this.state;
 
     const renderPage = () => {
       if(this.state.display === 'form') {
@@ -95,6 +95,9 @@ class DisplayExpInfo extends Component {
             changeFunc={this.handleChange} 
             submitFunc={this.handleSubmit}
             formKey="expInfo"
+            sectionKey="newExpInfo"
+            heading="Experience"
+            inputList={newExpInfo}
           />
         )     
       }
