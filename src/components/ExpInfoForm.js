@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import Input from "./Input";
 import Button from "./Button";
+import '../styles/formStyles.css';
 
 class ExpInfoForm extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class ExpInfoForm extends Component {
     return (
       <form id="expInfoForm" onSubmit={submitFunc} name={formKey}>
         <div>
+          <h2>Work History</h2>
           <Input 
             inputLabel="Company"
             keyName="company"
@@ -45,7 +47,7 @@ class ExpInfoForm extends Component {
           section="newExpInfo"
           changeFunc={changeFunc}
         />
-        <Button type="submit" text="Save" />       
+        <Button type="submit" btnText="Save" />       
       </form>
     )
   }

@@ -5,6 +5,7 @@ import GenInfoForm from './components/GenInfoForm';
 import GenInfoDisplay from './components/GenInfoDisplay';
 import ExpInfoForm from './components/ExpInfoForm';
 import ExpInfoDisplay from './components/ExpInfoDisplay';
+import './styles/formStyles.css';
 
 class App extends Component {
   constructor(props) {
@@ -53,7 +54,7 @@ class App extends Component {
       }
     })
   }
-  handleSubmit = (e) => {
+  handleSubmitGenInfo = (e) => {
     e.preventDefault();
     this.setState({
       display: 'locked',
@@ -66,6 +67,21 @@ class App extends Component {
         zip:      '',
         phone:    '',
         email:    '',
+      }
+    })
+  }
+  handleSubmitExpInfo = (e) => {
+    e.preventDefault();
+    this.setState({
+      display: 'locked',
+      expInfo: this.state.newExpInfo,
+      newExpInfo: {
+        company:    '',
+        location:   '',
+        title:      '',
+        startDate:  '',
+        endDate:    '',
+        highlights: '',
       }
     })
   }
@@ -87,17 +103,17 @@ class App extends Component {
   render() {
     const { genInfo, expInfo, eduInfo } = this.state;
 
-    const render = () => {
+    const renderPage = () => {
       if(this.state.display === 'initial') {
         return (
           <div>
             <GenInfoForm 
               changeFunc={this.handleChange} 
-              submitFunc={this.handleSubmit}
+              submitFunc={this.handleSubmitGenInfo}
             />
             <ExpInfoForm
               changeFunc={this.handleChange} 
-              submitFunc={this.handleSubmit}
+              submitFunc={this.handleSubmitExpInfo}
             />
           </div>
         )     

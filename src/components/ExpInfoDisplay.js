@@ -12,8 +12,9 @@ class ExpInfoDisplay extends Component {
 
     return (
       <div>
+        <h2>Work History</h2>
         <div id="companyInfoBox">
-          <h2 contentEditable={isOpen}>{details.company}</h2>
+          <div contentEditable={isOpen}>{details.company}</div>
           <div contentEditable={isOpen}>{details.location}</div>
         </div>
         <div contentEditable={isOpen}>{details.startDate}-{details.endDate}</div>
