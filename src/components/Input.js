@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
+import uniqid from 'uniqid';
 //import App from "App";
 
 class Input extends Component {
@@ -8,14 +9,14 @@ class Input extends Component {
   }
   render() {
     return (
-      <label>{this.props.inputLabel}:&nbsp;
+      <label key={uniqid()}>{this.props.inputLabel}:&nbsp;
         <input
           name={this.props.keyName}
           type={this.props.inputType}
           data-section={this.props.section}
           onChange={this.props.changeFunc}
           onClick={this.props.clickFunc}
-          key={this.props.inputKey}
+          key={uniqid}
         />
       </label>
     )

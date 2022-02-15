@@ -26,50 +26,17 @@ class InputForm extends Component {
               inputLabel={label}
               keyName={formKey}
               section={sectionKey}
-              changeFunc={changeFunc}  
-              inputKey={uniqid()}
+              changeFunc={changeFunc}
             />
           )
         })
       )
     }
+
     return (
       <form onSubmit={submitFunc} name={formKey} data-section={sectionKey}>
-          <h2>{heading}</h2>
-          {renderInputs()}
-          {/* <Input 
-            inputLabel="Company"
-            keyName="company"
-            section="newExpInfo"
-            changeFunc={changeFunc}
-          />
-          <Input 
-            inputLabel="Location"
-            keyName="location"
-            section="newExpInfo"
-            changeFunc={changeFunc}
-          />
-        </div>
-        <div>
-          <Input
-            inputLabel="Start Date"
-            keyName="startDate"
-            section="newExpInfo"
-            changeFunc={changeFunc}
-          />
-          <Input
-            inputLabel="End Date"
-            keyName="endDate"
-            section="newExpInfo"
-            changeFunc={changeFunc}
-          />
-        </div>
-        <Input
-          inputLabel="Highlights"
-          keyName="highlights"
-          section="newExpInfo"
-          changeFunc={changeFunc}
-        /> */}
+        <h2>{heading}</h2>
+        {renderInputs()}
         <Button type="submit" btnText="Save" section={sectionKey} />       
       </form>
     )

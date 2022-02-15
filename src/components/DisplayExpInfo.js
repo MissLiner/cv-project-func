@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import ExpInfoDisplay from './ExpInfoDisplay';
+import InputDisplay from './InputDisplay';
 import '../styles/formStyles.css';
 import InputForm from './InputForm';
 
@@ -92,7 +92,7 @@ class DisplayExpInfo extends Component {
       }
       else if(this.state.display === 'text') {
         return (
-          <ExpInfoDisplay
+          <InputDisplay
             details={expInfo} 
             editFunc={this.handleEdit}
             isOpen={this.state.isEditable}
