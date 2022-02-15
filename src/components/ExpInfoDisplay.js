@@ -16,20 +16,10 @@ class ExpInfoDisplay extends Component {
           <h2 contentEditable={isOpen}>{details.company}</h2>
           <div contentEditable={isOpen}>{details.location}</div>
         </div>
-        <div>{details.startDate}-{details.endDate}</div>
-        <div id="addressBox">
-          <div contentEditable={isOpen}>{details.address}</div>
-          <div>
-            <div contentEditable={isOpen}>{details.city}</div>
-            <div contentEditable={isOpen}>{details.state}</div>
-            <div contentEditable={isOpen}>{details.zip}</div>
-          </div>
-          <div>
-            <div contentEditable={isOpen}>{details.phone}</div>
-            <div contentEditable={isOpen}>{details.email}</div>
-          </div>
-        </div>
-        <Button btnText="Edit" section="genInfoOpen" clickFunc={editFunc}></Button>
+        <div contentEditable={isOpen}>{details.startDate}-{details.endDate}</div>
+        <div contentEditable={isOpen}>{details.highlights}</div>
+
+        <Button btnText="Edit" section="expInfoOpen" clickFunc={editFunc}></Button>
       </div>
     )
   }
