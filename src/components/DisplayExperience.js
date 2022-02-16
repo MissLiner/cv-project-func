@@ -35,12 +35,17 @@ class DisplayExpInfo extends Component {
     let resetObj = _.cloneDeep(this.state[objKey]);
     let newArray = _.cloneDeep(this.state[arrayKey]);
     newArray = newArray.concat(resetObj);
-    resetObj = this.emptyFields(resetObj);
+    //resetObj = this.emptyFields(resetObj);
     
     this.setState({
       [arrayKey]: newArray,
-      [objKey]: resetObj,
+      //[objKey]: resetObj,
       display: "text"
+    }, () => { 
+      resetObj = this.emptyFields(resetObj);
+      this.setState({
+        [objKey]: resetObj
+      })
     })
   }
   handleEdit = () => {
