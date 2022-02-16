@@ -7,7 +7,8 @@ class Input extends Component {
   }
   render() {
     const { 
-      infoType, 
+      stateProperty, 
+      stateValue,
       inputType, 
       section, 
       changeFunc, 
@@ -16,11 +17,12 @@ class Input extends Component {
     return (
       <label>{this.props.inputLabel}:&nbsp;
         <input
-          name={infoType}
+          name={stateProperty}
           type={inputType}
           data-section={section}
           onChange={changeFunc}
           onClick={clickFunc}
+          value={stateValue}
         />
       </label>
     )

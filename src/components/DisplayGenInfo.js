@@ -76,7 +76,8 @@ class DisplayGenInfo extends Component {
     })
   }
   render() {
-    const { expInfo, newExpInfo } = this.state;
+    const { expInfo } = this.state;
+    const { newExpInfo } = this.props;  
 
     const renderPage = () => {
       if(this.state.display === 'form') {

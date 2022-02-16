@@ -23,7 +23,10 @@ class DisplayExpInfo extends Component {
       display: 'form',
     }
     this.handleChange = handleChange.bind(this);
+    
   }
+ 
+  //changeExpInfo = (e) => { this.handleChange(e) };
   // handleChange = (e) => {
   //   const editObj = e.target.dataset.section;
   //   const editKey = e.target.name;
@@ -77,10 +80,26 @@ class DisplayExpInfo extends Component {
       display: 'form'
     })
   }
+  // handleChange = (e) => {
+  //   // e.preventDefault();
+  //   React.memo(this.DisplayExperience);
+  //   const editObj = e.target.dataset.section;
+  //   const editKey = e.target.name;
+  //   const newValue = e.target.value;
+  
+  //   this.setState({
+  //     [editObj]: {
+  //       ...this.state[editObj],
+  //       [editKey]: newValue,
+  //     }
+  //   })
+    
+  // }
   render() {
-    const { expInfo, newExpInfo } = this.state;
-
     const renderPage = () => {
+      const { expInfo, newExpInfo } = this.state;
+      const expInfoLabels = ['company', 'location', 'title', 'startDate', 'endDate', 'highlights'];
+     
       if(this.state.display === 'form') {
         return (
           <InputForm
@@ -89,7 +108,8 @@ class DisplayExpInfo extends Component {
             infoType="expInfo"
             sectionKey="newExpInfo"
             heading="Experience"
-            inputList={newExpInfo}
+            inputList={expInfoLabels}
+            details={newExpInfo}
           />
         )     
       }

@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import uniqid from "uniqid";
+// import uniqid from "uniqid";
 import Input from "./ElemInput";
 import Button from "./ElemButton";
 import '../styles/formStyles.css';
@@ -14,18 +14,20 @@ class InputForm extends Component {
     return capitalized;
   }
   render() {
-    const { inputList, submitFunc, infoType, sectionKey, heading, changeFunc } = this.props;
+    const { submitFunc, details, infoType, sectionKey, heading, changeFunc } = this.props;
 
     const renderInputs = () => {
-      const inputLabels = Object.keys(inputList);
+      const inputLabels = Object.keys(details)
+      let newKeyID = 0;
       return(
         inputLabels.map(inputLabel => {
-          const newKeyID = uniqid();
+          newKeyID += 1;
           const label = this.capitalizeFirst(inputLabel);
           return(
             <Input
               inputLabel={label}
-              infoType={infoType}
+              stateProperty={inputLabel}
+              stateValue={details[inputLabel]}
               section={sectionKey}
               changeFunc={changeFunc}
               key={newKeyID}
