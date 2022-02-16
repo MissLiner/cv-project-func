@@ -10,7 +10,7 @@ class InputDisplay extends Component {
     super(props);
   }
   render() {
-    const { details, editFunc, isOpen, addFunc } = this.props;
+    const { details, editFunc, isOpen, addFunc, section } = this.props;
 
     const renderAllDivs = () => {
       return (
@@ -35,7 +35,7 @@ class InputDisplay extends Component {
           {renderAllDivs()}
         </div>
         <Button btnText="Edit" clickFunc={editFunc}></Button>
-        <Button btnText="Add Position" clickFunc={addFunc}></Button>
+        <Button btnText="Add Position" clickFunc={addFunc} section={section}></Button>
       </div>
     )
   }

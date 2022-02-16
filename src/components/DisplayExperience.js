@@ -25,8 +25,9 @@ class DisplayExpInfo extends Component {
     this.handleChange = handleChange.bind(this);
   }
   
-  emptyFields = (obj) => {
-    Object.keys(obj).forEach(key => obj[key]='');
+  emptyFields = (stateObj) => {
+    const clearedObj = Object.keys(stateObj).forEach(key => stateObj[key]='');
+    return clearedObj;
   }
   handleSubmit = (e) => {
     e.preventDefault();
@@ -60,9 +61,12 @@ class DisplayExpInfo extends Component {
       })
     }
   }
-  handleAdd = () => {
+  handleAdd = (e) => {
+    const newInfo = e.target.dataset.section;
+    const emptyState = this.emptyFields(newInfo);
     this.setState({
-      display: 'form'
+      display: 'form',
+      [newInfo]: emptyState
     })
   }
  
@@ -92,6 +96,7 @@ class DisplayExpInfo extends Component {
             isOpen={this.state.isEditable}
             addFunc={this.handleAdd}
             infoType="expInfo"
+            section="newExpInfo"
           />
         )
       }
