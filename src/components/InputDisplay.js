@@ -16,12 +16,12 @@ class InputDisplay extends Component {
       return (
         details.map(detail => {
           return (
-            detail.entries.map(entry => {
+            Object.entries(detail).map(entry => {
               return(
                 <Div 
                 isOpen={isOpen}
                 divKey={uniqid()}
-                divText={entry} />
+                divText={entry[1]} />
               )
             })
           )

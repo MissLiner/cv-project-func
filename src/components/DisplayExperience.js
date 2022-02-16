@@ -91,6 +91,7 @@ class DisplayExpInfo extends Component {
             editFunc={this.handleEdit}
             isOpen={this.state.isEditable}
             addFunc={this.handleAdd}
+            infoType="expInfo"
           />
         )
       }
