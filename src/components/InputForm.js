@@ -20,6 +20,7 @@ class InputForm extends Component {
       const inputLabels = Object.keys(inputList);
       return(
         inputLabels.map(inputLabel => {
+          const newKeyID = uniqid();
           const label = this.capitalizeFirst(inputLabel);
           return(
             <Input
@@ -27,6 +28,7 @@ class InputForm extends Component {
               infoType={infoType}
               section={sectionKey}
               changeFunc={changeFunc}
+              key={newKeyID}
             />
           )
         })
