@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import InputDisplay from './InputDisplay';
 import '../styles/formStyles.css';
 import InputForm from './InputForm';
+import _ from 'lodash';
 import { handleChange } from './HelperFuncs';
 
 class DisplayExpInfo extends Component {
@@ -25,29 +26,22 @@ class DisplayExpInfo extends Component {
     this.handleChange = handleChange.bind(this);
   }
   
-  emptyFields = (stateObj) => {
-    const clearedObj = Object.keys(stateObj).forEach(key => stateObj[key]='');
-    return clearedObj;
-  }
+
   handleSubmit = (e) => {
     e.preventDefault();
-    this.setState({
-      display: "text",
-    })
+
     const arrayKey = e.target.name;
     const objKey = e.target.dataset.section;
-    let resetObj = this.state[objKey];
-    let newArray = this.state[arrayKey];
+    let resetObj = _.deepClone(this.state[objKey]);
+    let newArray = _.deepClone(this.state[arrayKey]);
     newArray = newArray.concat(resetObj);
+    resetObj = this.emptyFields(resetObj);
     
     this.setState({
       [arrayKey]: newArray,
+      [objKey]: resetObj,
+      display: "text"
     })
-
-    // this.emptyFields(resetObj);
-    // this.setState({
-    //   [objKey]: resetObj,
-    // })
   }
   handleEdit = () => {
     if(this.state.isEditable === true) {
@@ -61,12 +55,22 @@ class DisplayExpInfo extends Component {
       })
     }
   }
-  handleAdd = (e) => {
-    const newInfo = e.target.dataset.section;
-    const emptyState = this.emptyFields(newInfo);
+  emptyFields = (stateObj) => {
+    const objKeys = Object.keys(stateObj);
+    //let clearedObj = _.cloneDeep(stateObj);
+
+    for(let objKey of objKeys) {
+      stateObj[objKey] = '';
+    }
+    return stateObj;
+    // this.setState({
+    //   [stateObj]: clearedObj
+    // })
+  }
+
+  handleAdd = () => {
     this.setState({
       display: 'form',
-      [newInfo]: emptyState
     })
   }
  
@@ -96,7 +100,7 @@ class DisplayExpInfo extends Component {
             isOpen={this.state.isEditable}
             addFunc={this.handleAdd}
             infoType="expInfo"
-            section="newExpInfo"
+            sectionKey="newExpInfo"
           />
         )
       }
