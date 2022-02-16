@@ -11,7 +11,7 @@ class Input extends Component {
     return (
       <label key={uniqid()}>{this.props.inputLabel}:&nbsp;
         <input
-          name={this.props.keyName}
+          name={this.props.infoType}
           type={this.props.inputType}
           data-section={this.props.section}
           onChange={this.props.changeFunc}

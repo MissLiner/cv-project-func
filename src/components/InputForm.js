@@ -14,17 +14,17 @@ class InputForm extends Component {
     return capitalized;
   }
   render() {
-    const { inputList, submitFunc, formKey, sectionKey, heading, changeFunc } = this.props;
+    const { inputList, submitFunc, infoType, sectionKey, heading, changeFunc } = this.props;
 
     const renderInputs = () => {
       const inputLabels = Object.keys(inputList);
       return(
-        inputLabels.map(key => {
-          const label = this.capitalizeFirst(key);
+        inputLabels.map(inputLabel => {
+          const label = this.capitalizeFirst(inputLabel);
           return(
             <Input
               inputLabel={label}
-              keyName={formKey}
+              infoType={infoType}
               section={sectionKey}
               changeFunc={changeFunc}
             />
@@ -34,7 +34,7 @@ class InputForm extends Component {
     }
 
     return (
-      <form onSubmit={submitFunc} name={formKey} data-section={sectionKey}>
+      <form onSubmit={submitFunc} name={infoType} data-section={sectionKey}>
         <h2>{heading}</h2>
         {renderInputs()}
         <Button type="submit" btnText="Save" section={sectionKey} />       

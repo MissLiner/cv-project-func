@@ -10,10 +10,10 @@ class GenInfoForm extends Component {
   }
 
   render() {
-    const { changeFunc, submitFunc, formKey } = this.props;
+    const { changeFunc, submitFunc, infoType } = this.props;
 
     return (
-      <form id="genInfoForm" onSubmit={submitFunc} name={formKey}>
+      <form id="genInfoForm" onSubmit={submitFunc} name={infoType}>
         <h2>General Info</h2>
         <Input 
           inputLabel="Name" 

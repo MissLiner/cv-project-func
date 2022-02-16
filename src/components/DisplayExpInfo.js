@@ -83,7 +83,7 @@ class DisplayExpInfo extends Component {
           <InputForm
             changeFunc={this.handleChange} 
             submitFunc={this.handleSubmit}
-            formKey="expInfo"
+            infoType="expInfo"
             sectionKey="newExpInfo"
             heading="Experience"
             inputList={newExpInfo}
