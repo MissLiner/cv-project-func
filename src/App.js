@@ -3,7 +3,7 @@ import './App.css';
 import React, { Component } from 'react';
 import GenInfoForm from './components/GenInfoForm';
 import GenInfoDisplay from './components/GenInfoDisplay';
-import DisplayExpInfo from './components/DisplayExpInfo';
+import DisplayExpInfo from './components/DisplayExperience';
 import './styles/formStyles.css';
 
 class App extends Component {
@@ -21,14 +21,7 @@ class App extends Component {
         email:    '',
       },
       genInfo: '',
-      newEduInfo: {
-        schoolName:     '',
-        schoolLocation: '',
-        focus:          '',
-        degree:         '',
-        degreeDate:     '',
-      },
-      eduInfo: [],
+
 
       display: 'initial',
       genInfoOpen: false,
