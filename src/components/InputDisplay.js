@@ -1,9 +1,9 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
 import uniqid from 'uniqid';
-import Button from './Button';
+import Button from './ElemButton';
 import '../styles/formStyles.css';
-import Div from './Div';
+import Div from './ElemDiv';
 
 class InputDisplay extends Component {
   constructor(props) {

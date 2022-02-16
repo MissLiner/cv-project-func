@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import Button from './Button';
+import Button from './ElemButton';
 import '../styles/formStyles.css';
 
 class GenInfoDisplay extends Component {

@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import Input from "./Input";
-import Button from "./Button";
+import Input from "../components/ElemInput";
+import Button from "../components/ElemButton";
 import '../styles/formStyles.css';
 
 class ExpInfoForm extends Component {

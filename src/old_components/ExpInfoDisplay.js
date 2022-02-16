@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
 import uniqid from 'uniqid';
-import Button from './Button';
+import Button from '../components/ElemButton';
 import '../styles/formStyles.css';
 
 class ExpInfoDisplay extends Component {

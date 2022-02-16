@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import Input from "./Input";
-import Button from './Button';
+import Input from "./ElemInput";
+import Button from './ElemButton';
 import '../styles/formStyles.css';
 
 class GenInfoForm extends Component {
