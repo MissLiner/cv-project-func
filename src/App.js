@@ -11,6 +11,7 @@ class App extends Component {
     super(props)
 
     this.state = {
+      genInfo: '',
       newGenInfo: {
         name:     '',
         address:  '',
@@ -20,13 +21,9 @@ class App extends Component {
         phone:    '',
         email:    '',
       },
-      genInfo: '',
-
-
+      
       display: 'initial',
-      genInfoOpen: false,
-      eduInfoOpen: false,
-      expInfoOpen: false,
+      isEditable: false,
     };
   }
   handleChange = (e) => {
@@ -90,7 +87,7 @@ class App extends Component {
             <GenInfoDisplay 
               details={genInfo} 
               editFunc={this.handleEdit}
-              isOpen={this.state.genInfoOpen}
+              isOpen={this.state.isEditable}
             />
           </div>
         )

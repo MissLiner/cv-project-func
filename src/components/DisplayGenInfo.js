@@ -1,42 +1,40 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
 import InputDisplay from './InputDisplay';
-import '../styles/formStyles.css';
 import InputForm from './InputForm';
-import { handleChange } from './HelperFuncs';
+import '../styles/formStyles.css';
 
-class DisplayExpInfo extends Component {
+class DisplayGenInfo extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      expInfo: [],
-      newExpInfo: {
-        company:    '',
-        location:   '',
-        title:      '',
-        startDate:  '',
-        endDate:    '',
-        highlights:    '',
+      genInfo: [],
+      newGenInfo: {
+        name:     '',
+        address:  '',
+        city:     '',
+        state:    '',
+        zip:      '',
+        phone:    '',
+        email:    '',
       },
       isEditable: false,
       display: 'form',
     }
-    this.handleChange = handleChange.bind(this);
   }
-  // handleChange = (e) => {
-  //   const editObj = e.target.dataset.section;
-  //   const editKey = e.target.name;
-  //   const newValue = e.target.value;
+  handleChange = (e) => {
+    const editObj = e.target.dataset.section;
+    const editKey = e.target.name;
+    const newValue = e.target.value;
   
-  //   this.setState({
-  //     [editObj]: {
-  //       ...this.state[editObj],
-  //       [editKey]: newValue,
-  //     }
-  //   })
-  // }
-  
+    this.setState({
+      [editObj]: {
+        ...this.state[editObj],
+        [editKey]: newValue,
+      }
+    })
+  }
   emptyFields = (obj) => {
     Object.keys(obj).forEach(key => obj[key]='');
   }
@@ -112,4 +110,4 @@ class DisplayExpInfo extends Component {
   }
 }
 
-export default DisplayExpInfo;
+export default DisplayGenInfo;
