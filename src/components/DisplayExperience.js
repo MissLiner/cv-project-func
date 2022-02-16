@@ -32,8 +32,8 @@ class DisplayExpInfo extends Component {
 
     const arrayKey = e.target.name;
     const objKey = e.target.dataset.section;
-    let resetObj = _.deepClone(this.state[objKey]);
-    let newArray = _.deepClone(this.state[arrayKey]);
+    let resetObj = _.cloneDeep(this.state[objKey]);
+    let newArray = _.cloneDeep(this.state[arrayKey]);
     newArray = newArray.concat(resetObj);
     resetObj = this.emptyFields(resetObj);
     

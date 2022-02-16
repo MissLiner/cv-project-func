@@ -6,11 +6,10 @@ class Div extends Component {
     super(props)
   }
   render() {
-    const { isOpen, divKey, divText} = this.props;
+    const { isOpen, divText} = this.props;
     return (
       <div 
         contentEditable={isOpen}
-        key={divKey}
         >
         {divText}
        </div>

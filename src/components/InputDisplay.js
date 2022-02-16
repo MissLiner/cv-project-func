@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import uniqid from 'uniqid';
+//import uniqid from 'uniqid';
 import Button from './ElemButton';
 import '../styles/formStyles.css';
 import Div from './ElemDiv';
@@ -11,16 +11,18 @@ class InputDisplay extends Component {
   }
   render() {
     const { details, editFunc, isOpen, addFunc, sectionKey, infoType } = this.props;
-
+    
     const renderAllDivs = () => {
+      let keyID = 100;
       return (
         details.map(detail => {
           return (
             Object.entries(detail).map(entry => {
+              keyID += 1;
               return(
                 <Div 
                 isOpen={isOpen}
-                divKey={uniqid()}
+                key={keyID}
                 divText={entry[1]} /> 
               )
             })
