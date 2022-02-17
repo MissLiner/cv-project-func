@@ -9,6 +9,7 @@ class Button extends Component {
     return (
       <button
         type={this.props.type}
+        className={this.props.order}
         value={this.props.value}
         data-section={this.props.section}
         onClick={this.props.clickFunc}

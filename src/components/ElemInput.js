@@ -17,10 +17,9 @@ class Input extends Component {
       clickFunc } = this.props;
 
     return (
-      <label>{labelText}:&nbsp;
+      <label className={labelClass}>{labelText}:&nbsp;
         <input
           type={inputType}
-          className={labelClass}
           data-name={infoType}
           data-section={section}
           data-field={labelText}
