@@ -14,15 +14,18 @@ export function handleChange(e) {
 export function handleSubmit(e) {
   e.preventDefault();
 
-  const arrayKey = e.target.name;
-  const objKey = e.target.dataset.section;
+  const currentArrayKey = e.target.name;
+  const newObjKey = e.target.dataset.section;
+  const currentArray = this.state[currentArrayKey]
   let newArray = [];
-  newArray = newArray.concat(this.state[arrayKey]);
-  newArray = newArray.concat(this.state[objKey]);
-  console.log(this.state[objKey]);
+  newArray = newArray.concat(this.state[newObjKey]);
+  if(currentArray) {
+    newArray = newArray.concat(currentArray);
+  }
+  console.log(newArray);
   
   this.setState({
-    [arrayKey]: newArray,
+    [currentArrayKey]: newArray,
     display: "text",
   })
 };
