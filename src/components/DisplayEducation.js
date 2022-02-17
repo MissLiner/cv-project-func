@@ -5,7 +5,7 @@ import InputForm from './InputForm';
 import { handleChange, handleSubmit, handleAdd, handleEdit } from './HelperFuncs';
 import '../styles/formStyles.css';
 
-class DisplayEduInfo extends Component {
+class DisplayEducation extends Component {
   constructor(props) {
     super(props);
 
@@ -67,4 +67,4 @@ class DisplayEduInfo extends Component {
   }
 }
 
-export default DisplayEduInfo;
+export default DisplayEducation;

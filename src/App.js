@@ -3,7 +3,8 @@ import './App.css';
 import React, { Component } from 'react';
 import GenInfoForm from './components/GenInfoForm';
 import GenInfoDisplay from './components/GenInfoDisplay';
-import DisplayExpInfo from './components/DisplayExperience';
+import DisplayExperience from './components/DisplayExperience';
+import DisplayEducation from './components/DisplayEducation';
 import './styles/formStyles.css';
 
 class App extends Component {
@@ -97,7 +98,8 @@ class App extends Component {
       <div>
         <h1>CV Builder</h1>
         {renderPage()}
-        <DisplayExpInfo />
+        <DisplayExperience />
+        <DisplayEducation />
       </div>
     )
   }

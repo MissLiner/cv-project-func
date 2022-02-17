@@ -36,7 +36,7 @@ class InputDisplay extends Component {
           {renderAllDivs()}
         </div>
         <Button btnText="Edit" clickFunc={editFunc}></Button>
-        <Button btnText="Add Position" clickFunc={addFunc} name={infoType}section={sectionKey}></Button>
+        <Button btnText="Add New" clickFunc={addFunc} name={infoType} section={sectionKey}></Button>
       </div>
     )
   }
