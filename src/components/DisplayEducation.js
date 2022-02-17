@@ -5,24 +5,22 @@ import InputForm from './InputForm';
 import { handleChange, handleSubmit, handleAdd, handleEdit } from './HelperFuncs';
 import '../styles/formStyles.css';
 
-class DisplayExpInfo extends Component {
+class DisplayEduInfo extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      expInfo: [],
-      newExpInfo: {
-        company:    '',
+      eduInfo: [],
+      newEduInfo: {
+        school:    '',
         location:   '',
-        title:      '',
-        startDate:  '',
-        endDate:    '',
-        highlights:    '',
+        degreeYear:  '',
+        degreeName:    '',
       },
       isEditable: false,
       display: 'form',
     }
-    this.baseFormState = this.state.newExpInfo;
+    this.baseFormState = this.state.newEduInfo;
 
     this.handleChange = handleChange.bind(this);
     this.handleSubmit = handleSubmit.bind(this);
@@ -32,31 +30,31 @@ class DisplayExpInfo extends Component {
   
   render() {
     const renderPage = () => {
-      const { expInfo, newExpInfo } = this.state;
-      const expInfoLabels = ['company', 'location', 'title', 'startDate', 'endDate', 'highlights'];
+      const { eduInfo, newEduInfo } = this.state;
+      const eduInfoLabels = ['school', 'location', 'degreeYear', 'degreeName'];
      
       if(this.state.display === 'form') {
         return (
           <InputForm
             changeFunc={this.handleChange} 
             submitFunc={this.handleSubmit}
-            infoType="expInfo"
-            sectionKey="newExpInfo"
-            heading="Experience"
-            inputList={expInfoLabels}
-            details={newExpInfo}
+            infoType="eduInfo"
+            sectionKey="newEduInfo"
+            heading="Education"
+            inputList={eduInfoLabels}
+            details={newEduInfo}
           />
         )     
       }
       else if(this.state.display === 'text') {
         return (
           <InputDisplay
-            details={expInfo} 
+            details={eduInfo} 
             editFunc={this.handleEdit}
             isOpen={this.state.isEditable}
             addFunc={this.handleAdd}
-            infoType="expInfo"
-            sectionKey="newExpInfo"
+            infoType="eduInfo"
+            sectionKey="newEduInfo"
           />
         )
       }
@@ -69,4 +67,4 @@ class DisplayExpInfo extends Component {
   }
 }
 
-export default DisplayExpInfo;
+export default DisplayEduInfo;
