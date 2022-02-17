@@ -37,7 +37,7 @@ class InputForm extends Component {
     }
 
     return (
-      <form onSubmit={submitFunc} name={infoType} data-section={sectionKey}>
+      <form onSubmit={submitFunc} data-name={infoType} data-section={sectionKey}>
         <h2>{heading}</h2>
         {renderInputs()}
         <Button type="submit" btnText="Save" section={sectionKey} />       

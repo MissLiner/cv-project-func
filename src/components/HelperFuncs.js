@@ -14,7 +14,7 @@ export function handleChange(e) {
 export function handleSubmit(e) {
   e.preventDefault();
 
-  const currentArrayKey = e.target.name;
+  const currentArrayKey = e.target.dataset.name;
   const newObjKey = e.target.dataset.section;
   const currentArray = this.state[currentArrayKey]
   let newArray = [];
