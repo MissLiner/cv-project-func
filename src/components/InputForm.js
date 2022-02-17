@@ -14,10 +14,8 @@ class InputForm extends Component {
   }
   render() {
     const { inputList, submitFunc, details, infoType, sectionKey, heading, changeFunc } = this.props;
-    //let className = {infoType};
 
     const renderInputs = () => {
-      //const inputLabels = Object.keys(details)
       let newKeyID = 0;
       
       return(
