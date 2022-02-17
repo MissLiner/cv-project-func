@@ -9,7 +9,7 @@ class InputDisplay extends Component {
     super(props);
   }
   render() {
-    const { details, editFunc, isOpen, addFunc, sectionKey, needsAddBtn, infoType } = this.props;
+    const { details, editFunc, isOpen, addFunc, sectionKey, needsAddBtn } = this.props;
     
     const renderAllDivs = () => {
       let keyID = 100;
@@ -31,7 +31,7 @@ class InputDisplay extends Component {
     }
     const addAddBtn = () => {
       if(needsAddBtn === true) {
-        return <Button btnText="Add New" clickFunc={addFunc} name={infoType} section={sectionKey}></Button>
+        return <Button btnText="Add New" clickFunc={addFunc} section={sectionKey}></Button>
       }
     }
 

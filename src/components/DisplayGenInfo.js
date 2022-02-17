@@ -12,13 +12,13 @@ class DisplayGenInfo extends Component {
     this.state = {
       genInfo: [],
       newGenInfo: {
-        name:     '',
-        address:  '',
-        city:     '',
-        state:    '',
-        zip:      '',
-        phone:    '',
-        email:    '',
+        Name:     '',
+        Address:  '',
+        City:     '',
+        State:    '',
+        Zip:      '',
+        Phone:    '',
+        Email:    '',
       },
       isEditable: false,
       display: 'form',
@@ -30,7 +30,7 @@ class DisplayGenInfo extends Component {
   
   render() {
     const { genInfo, newGenInfo } = this.state;
-    const genInfoLabels = ['name', 'address', 'city', 'state', 'zip', 'phone', 'email'];
+    const genInfoLabels = [['Name', 'first'], ['Address', 'second'], ['City', 'third'], ['State', 'third'], ['Zip', 'third'], ['Phone', 'fourth'], ['Email', 'fourth']];
 
     const renderPage = () => {
       if(this.state.display === 'form') {
@@ -38,7 +38,7 @@ class DisplayGenInfo extends Component {
           <InputForm 
             changeFunc={this.handleChange} 
             submitFunc={this.handleSubmit}
-            infoType="genInfo"
+            infoType="newGenInfo"
             sectionKey="newGenInfo"
             heading="Basic Info"
             inputList={genInfoLabels}

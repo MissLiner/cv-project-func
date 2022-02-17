@@ -13,23 +13,31 @@ class InputForm extends Component {
     return capitalized;
   }
   render() {
-    const { submitFunc, details, infoType, sectionKey, heading, changeFunc } = this.props;
+    const { inputList, submitFunc, details, infoType, sectionKey, heading, changeFunc } = this.props;
     //let className = {infoType};
 
     const renderInputs = () => {
-      const inputLabels = Object.keys(details)
+      //const inputLabels = Object.keys(details)
       let newKeyID = 0;
       
       return(
-        inputLabels.map(inputLabel => {
+        inputList.map(input => {
           newKeyID += 1;
-          const label = this.capitalizeFirst(inputLabel);
+          const inputName = input[0];
+          const inputOrder = input[1];
+          // let input1;
+          // let input2;
+          // for(let detail of input) {
+            
+          // }
+          //const label = this.capitalizeFirst(input[0]);
           return(
             <Input
-              inputLabel={label}
-              stateProperty={inputLabel}
-              stateValue={details[inputLabel]}
-              section={sectionKey}
+              infoType={infoType}
+              inputValue={details[inputName]}
+              labelText={inputName}
+              labelClass={inputOrder}
+              section={inputName}
               changeFunc={changeFunc}
               key={newKeyID}
             />

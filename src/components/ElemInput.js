@@ -7,22 +7,25 @@ class Input extends Component {
   }
   render() {
     const { 
-      stateProperty, 
-      stateValue,
+      infoType, 
+      inputValue,
       inputType, 
+      labelText,
+      labelClass,
       section, 
       changeFunc, 
       clickFunc } = this.props;
 
     return (
-      <label>{this.props.inputLabel}:&nbsp;
+      <label>{labelText}:&nbsp;
         <input
-          name={stateProperty}
           type={inputType}
+          className={labelClass}
+          data-name={infoType}
           data-section={section}
           onChange={changeFunc}
           onClick={clickFunc}
-          value={stateValue}
+          value={inputValue}
         />
       </label>
     )
