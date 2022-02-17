@@ -14,10 +14,12 @@ class InputForm extends Component {
   }
   render() {
     const { submitFunc, details, infoType, sectionKey, heading, changeFunc } = this.props;
+    //let className = {infoType};
 
     const renderInputs = () => {
       const inputLabels = Object.keys(details)
       let newKeyID = 0;
+      
       return(
         inputLabels.map(inputLabel => {
           newKeyID += 1;
@@ -37,7 +39,7 @@ class InputForm extends Component {
     }
 
     return (
-      <form onSubmit={submitFunc} data-name={infoType} data-section={sectionKey}>
+      <form onSubmit={submitFunc} className={infoType + 'Form'} data-name={infoType} data-section={sectionKey}>
         <h2>{heading}</h2>
         {renderInputs()}
         <Button type="submit" btnText="Save" section={sectionKey} />       

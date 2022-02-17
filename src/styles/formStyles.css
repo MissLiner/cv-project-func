@@ -11,6 +11,9 @@ button {
   margin-top: 15px;
   width: 100px;
 }
+div {
+  margin-top: 10px;
+}
 
 .genInfoForm {
   grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
