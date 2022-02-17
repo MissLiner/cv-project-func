@@ -13,7 +13,7 @@ class App extends Component {
     super(props)
 
     this.state = {
-      genInfo: '',
+      genInfo: [],
       newGenInfo: {
         name:     '',
         address:  '',
@@ -24,72 +24,32 @@ class App extends Component {
         email:    '',
       },
       isEditable: false,
-      display: 'initial',
+      display: 'form',
     };
     this.handleChange = handleChange.bind(this);
     this.handleSubmit = handleSubmit.bind(this);
     this.handleEdit = handleEdit.bind(this);
   }
-  // handleChange = (e) => {
-  //   const section = e.target.dataset.section;
-  //   this.setState({
-  //     [section]: {
-  //       ...this.state[section],
-  //       [e.target.name]: e.target.value,
-  //     }
-  //   })
-  // }
-  // handleSubmitGenInfo = (e) => {
-  //   e.preventDefault();
-  //   this.setState({
-  //     display: 'locked',
-  //     genInfo: this.state.newGenInfo,
-  //     newGenInfo: {
-  //       name:     '',
-  //       address:  '',
-  //       city:     '',
-  //       state:    '',
-  //       zip:      '',
-  //       phone:    '',
-  //       email:    '',
-  //     }
-  //   })
-  // }
-
-  // handleEdit = (e) => {
-  //   const lockKey = e.target.dataset.section;
-
-  //   if(this.state[lockKey] === true) {
-  //     this.setState({
-  //       [lockKey]: false 
-  //     })
-  //   }
-  //   else if(this.state[lockKey] === false) {
-  //     this.setState({
-  //       [lockKey]: true 
-  //     })
-  //   }
-  // }
 
   render() {
     const { genInfo, newGenInfo } = this.state;
     const genInfoLabels = ['name', 'address', 'city', 'state', 'zip', 'phone', 'email'];
 
     const renderPage = () => {
-      if(this.state.display === 'initial') {
+      if(this.state.display === 'form') {
         return (
           <InputForm 
             changeFunc={this.handleChange} 
             submitFunc={this.handleSubmit}
-            infoType="eduInfo"
-            sectionKey="newEduInfo"
-            heading="Education"
+            infoType="genInfo"
+            sectionKey="newGenInfo"
+            heading="Basic Info"
             inputList={genInfoLabels}
             details={newGenInfo}
           />
         )     
       }
-      else if(this.state.display === 'locked') {
+      else if(this.state.display === 'text') {
         return(
           <InputDisplay 
             details={genInfo} 
@@ -98,6 +58,7 @@ class App extends Component {
             addFunc={this.handleAdd}
             infoType="genInfo"
             sectionKey="newGenInfo"
+            needsAddBtn={false}
           />
         )
       }

@@ -55,6 +55,7 @@ class DisplayEducation extends Component {
             addFunc={this.handleAdd}
             infoType="eduInfo"
             sectionKey="newEduInfo"
+            needsAddBtn={true}
           />
         )
       }

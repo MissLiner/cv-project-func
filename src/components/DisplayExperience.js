@@ -57,6 +57,7 @@ class DisplayExperience extends Component {
             addFunc={this.handleAdd}
             infoType="expInfo"
             sectionKey="newExpInfo"
+            needsAddBtn={true}
           />
         )
       }
