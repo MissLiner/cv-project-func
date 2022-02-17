@@ -4,7 +4,7 @@ import InputDisplay from './InputDisplay';
 import '../styles/formStyles.css';
 import InputForm from './InputForm';
 //import _ from 'lodash';
-import { handleChange, handleSubmit, handleAdd } from './HelperFuncs';
+import { handleChange, handleSubmit, handleAdd, handleEdit } from './HelperFuncs';
 
 class DisplayExpInfo extends Component {
   constructor(props) {
@@ -28,23 +28,9 @@ class DisplayExpInfo extends Component {
     this.handleChange = handleChange.bind(this);
     this.handleSubmit = handleSubmit.bind(this);
     this.handleAdd = handleAdd.bind(this);
+    this.handleEdit = handleEdit.bind(this);
   }
   
-  handleEdit = () => {
-    if(this.state.isEditable === true) {
-      this.setState({
-        editable: false 
-      })
-    }
-    else if(this.state.isEditable === false) {
-      this.setState({
-        editable: true 
-      })
-    }
-  }
-
-
- 
   render() {
     const renderPage = () => {
       const { expInfo, newExpInfo } = this.state;

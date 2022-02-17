@@ -39,3 +39,16 @@ export function handleAdd(e) {
     display: 'form',
   })
 }
+
+export function handleEdit() {
+  if(this.state.isEditable === true) {
+    this.setState({
+      editable: false 
+    })
+  }
+  else if(this.state.isEditable === false) {
+    this.setState({
+      editable: true 
+    })
+  }
+}
