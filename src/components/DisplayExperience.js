@@ -12,12 +12,12 @@ class DisplayExperience extends Component {
     this.state = {
       expInfo: [],
       newExpInfo: {
-        company:    '',
-        location:   '',
-        title:      '',
-        startDate:  '',
-        endDate:    '',
-        highlights:    '',
+        Company:    '',
+        Location:   '',
+        Title:      '',
+        StartDate:  '',
+        EndDate:    '',
+        Highlights:    '',
       },
       isEditable: false,
       display: 'form',
@@ -33,7 +33,7 @@ class DisplayExperience extends Component {
   render() {
     const renderPage = () => {
       const { expInfo, newExpInfo } = this.state;
-      const expInfoLabels = ['company', 'location', 'title', 'startDate', 'endDate', 'highlights'];
+      const expInfoLabels = [['Company', 'first'], ['Location', 'second'], ['Title', 'third'], ['StartDate', 'first'], ['EndDate', 'first'], ['Highlights', 'fourth']];
      
       if(this.state.display === 'form') {
         return (
