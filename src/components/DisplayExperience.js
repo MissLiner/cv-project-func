@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import InputDisplay from './InputDisplay';
 import '../styles/formStyles.css';
 import InputForm from './InputForm';
-import _ from 'lodash';
+//import _ from 'lodash';
 import { handleChange } from './HelperFuncs';
 
 class DisplayExpInfo extends Component {
@@ -23,6 +23,7 @@ class DisplayExpInfo extends Component {
       isEditable: false,
       display: 'form',
     }
+    this.baseFormState = this.state.newExpInfo;
     this.handleChange = handleChange.bind(this);
   }
   
@@ -32,22 +33,44 @@ class DisplayExpInfo extends Component {
 
     const arrayKey = e.target.name;
     const objKey = e.target.dataset.section;
-    let resetObj = _.cloneDeep(this.state[objKey]);
-    let newArray = _.cloneDeep(this.state[arrayKey]);
-    newArray = newArray.concat(resetObj);
-    //resetObj = this.emptyFields(resetObj);
+    let newArray = [];
+    newArray = newArray.concat(this.state[arrayKey]);
+    newArray = newArray.concat(this.state[objKey]);
+    // let resetObj = this.state[objKey];
+    // const resetObjKeys = Object.keys(resetObj);
+    console.log(this.state[objKey]);
     
     this.setState({
       [arrayKey]: newArray,
       //[objKey]: resetObj,
-      display: "text"
-    }, () => { 
-      resetObj = this.emptyFields(resetObj);
-      this.setState({
-        [objKey]: resetObj
-      })
+      display: "text",
     })
-  }
+    
+
+      // , () => { 
+      //   console.log("All done")
+        // resetObj = this.emptyFields(resetObj);
+        // for(let resetObjKey of resetObjKeys) {
+        //   this.setState({
+        //     [this.state[objKey]]: {
+        //       ...this.state[objKey],
+        //       [resetObjKey]: '',
+        //     }
+          
+        //[objKey]: resetObj
+        //})
+      // }
+  };
+  // componentDidUpdate(prevProps, prevState) {
+  //   if(this.state.expInfo !== prevState.expInfo) {
+  //     console.log('comparison worked!');
+  //     let resetObj = this.state.newExpInfo;
+  //     resetObj = this.emptyFields(resetObj);
+  //     this.setState({
+  //       newExpInfo: resetObj,
+  //     })
+  //   }
+  // };
   handleEdit = () => {
     if(this.state.isEditable === true) {
       this.setState({
@@ -60,20 +83,15 @@ class DisplayExpInfo extends Component {
       })
     }
   }
-  emptyFields = (stateObj) => {
-    const objKeys = Object.keys(stateObj);
-    //let clearedObj = _.cloneDeep(stateObj);
-
-    for(let objKey of objKeys) {
-      stateObj[objKey] = '';
-    }
-    return stateObj;
-    // this.setState({
-    //   [stateObj]: clearedObj
-    // })
+  emptyFields = (resetKey) => {
+    this.setState({ 
+      [resetKey]: this.baseFormState 
+    });
   }
 
-  handleAdd = () => {
+  handleAdd = (e) => {
+    const resetObjKey = e.target.dataset.section;
+    this.emptyFields(resetObjKey);
     this.setState({
       display: 'form',
     })
