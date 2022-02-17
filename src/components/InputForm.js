@@ -25,19 +25,14 @@ class InputForm extends Component {
           newKeyID += 1;
           const inputName = input[0];
           const inputOrder = input[1];
-          // let input1;
-          // let input2;
-          // for(let detail of input) {
-            
-          // }
-          //const label = this.capitalizeFirst(input[0]);
+ 
           return(
             <Input
               infoType={infoType}
               inputValue={details[inputName]}
               labelText={inputName}
               labelClass={inputOrder}
-              section={inputName}
+              section={sectionKey}
               changeFunc={changeFunc}
               key={newKeyID}
             />

@@ -1,6 +1,6 @@
 export function handleChange(e) {
-  const editObj = e.target.dataset.name;
-  const editKey = e.target.dataset.section;
+  const editObj = e.target.dataset.section;
+  const editKey = e.target.dataset.field;
   const newValue = e.target.value;
 
   this.setState({

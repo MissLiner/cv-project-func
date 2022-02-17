@@ -23,6 +23,7 @@ class Input extends Component {
           className={labelClass}
           data-name={infoType}
           data-section={section}
+          data-field={labelText}
           onChange={changeFunc}
           onClick={clickFunc}
           value={inputValue}

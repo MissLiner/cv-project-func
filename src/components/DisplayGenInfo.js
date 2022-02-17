@@ -38,7 +38,7 @@ class DisplayGenInfo extends Component {
           <InputForm 
             changeFunc={this.handleChange} 
             submitFunc={this.handleSubmit}
-            infoType="newGenInfo"
+            infoType="genInfo"
             sectionKey="newGenInfo"
             heading="Basic Info"
             inputList={genInfoLabels}
