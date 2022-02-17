@@ -36,41 +36,14 @@ class DisplayExpInfo extends Component {
     let newArray = [];
     newArray = newArray.concat(this.state[arrayKey]);
     newArray = newArray.concat(this.state[objKey]);
-    // let resetObj = this.state[objKey];
-    // const resetObjKeys = Object.keys(resetObj);
     console.log(this.state[objKey]);
     
     this.setState({
       [arrayKey]: newArray,
-      //[objKey]: resetObj,
       display: "text",
     })
-    
-
-      // , () => { 
-      //   console.log("All done")
-        // resetObj = this.emptyFields(resetObj);
-        // for(let resetObjKey of resetObjKeys) {
-        //   this.setState({
-        //     [this.state[objKey]]: {
-        //       ...this.state[objKey],
-        //       [resetObjKey]: '',
-        //     }
-          
-        //[objKey]: resetObj
-        //})
-      // }
   };
-  // componentDidUpdate(prevProps, prevState) {
-  //   if(this.state.expInfo !== prevState.expInfo) {
-  //     console.log('comparison worked!');
-  //     let resetObj = this.state.newExpInfo;
-  //     resetObj = this.emptyFields(resetObj);
-  //     this.setState({
-  //       newExpInfo: resetObj,
-  //     })
-  //   }
-  // };
+
   handleEdit = () => {
     if(this.state.isEditable === true) {
       this.setState({
