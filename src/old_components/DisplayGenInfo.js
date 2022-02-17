@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import InputDisplay from './InputDisplay';
-import InputForm from './InputForm';
+import InputDisplay from '../components/InputDisplay';
+import InputForm from '../components/InputForm';
 import '../styles/formStyles.css';
 
 class DisplayGenInfo extends Component {
