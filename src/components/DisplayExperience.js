@@ -42,16 +42,17 @@ class DisplayExpInfo extends Component {
       })
     }
   }
-  emptyFields = (resetKey) => {
-    this.setState({ 
-      [resetKey]: this.baseFormState 
-    });
-  }
+  // emptyFields = (resetKey) => {
+  //   this.setState({ 
+  //     [resetKey]: this.baseFormState 
+  //   });
+  // }
 
   handleAdd = (e) => {
     const resetObjKey = e.target.dataset.section;
-    this.emptyFields(resetObjKey);
+
     this.setState({
+      [resetObjKey]: this.baseFormState,
       display: 'form',
     })
   }
