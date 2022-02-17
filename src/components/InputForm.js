@@ -1,6 +1,5 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-// import uniqid from "uniqid";
 import Input from "./ElemInput";
 import Button from "./ElemButton";
 import '../styles/formStyles.css';

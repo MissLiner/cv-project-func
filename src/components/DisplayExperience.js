@@ -1,10 +1,9 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
 import InputDisplay from './InputDisplay';
-import '../styles/formStyles.css';
 import InputForm from './InputForm';
-//import _ from 'lodash';
 import { handleChange, handleSubmit, handleAdd, handleEdit } from './HelperFuncs';
+import '../styles/formStyles.css';
 
 class DisplayExpInfo extends Component {
   constructor(props) {

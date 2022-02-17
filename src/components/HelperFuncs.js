@@ -1,7 +1,3 @@
-/* eslint-disable no-useless-constructor */
-// import React from 'react';
-// import DisplayExperience from './DisplayExperience';
-
 export function handleChange(e) {
     const editObj = e.target.dataset.section;
     const editKey = e.target.name;
