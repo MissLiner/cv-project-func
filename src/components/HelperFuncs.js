@@ -30,3 +30,12 @@ export function handleSubmit(e) {
     display: "text",
   })
 };
+
+export function handleAdd(e) {
+  const resetObjKey = e.target.dataset.section;
+
+  this.setState({
+    [resetObjKey]: this.baseFormState,
+    display: 'form',
+  })
+}

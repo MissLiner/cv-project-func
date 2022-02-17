@@ -4,7 +4,7 @@ import InputDisplay from './InputDisplay';
 import '../styles/formStyles.css';
 import InputForm from './InputForm';
 //import _ from 'lodash';
-import { handleChange, handleSubmit } from './HelperFuncs';
+import { handleChange, handleSubmit, handleAdd } from './HelperFuncs';
 
 class DisplayExpInfo extends Component {
   constructor(props) {
@@ -24,12 +24,12 @@ class DisplayExpInfo extends Component {
       display: 'form',
     }
     this.baseFormState = this.state.newExpInfo;
+
     this.handleChange = handleChange.bind(this);
     this.handleSubmit = handleSubmit.bind(this);
+    this.handleAdd = handleAdd.bind(this);
   }
   
-
-
   handleEdit = () => {
     if(this.state.isEditable === true) {
       this.setState({
@@ -42,20 +42,8 @@ class DisplayExpInfo extends Component {
       })
     }
   }
-  // emptyFields = (resetKey) => {
-  //   this.setState({ 
-  //     [resetKey]: this.baseFormState 
-  //   });
-  // }
 
-  handleAdd = (e) => {
-    const resetObjKey = e.target.dataset.section;
 
-    this.setState({
-      [resetObjKey]: this.baseFormState,
-      display: 'form',
-    })
-  }
  
   render() {
     const renderPage = () => {
