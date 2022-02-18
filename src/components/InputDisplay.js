@@ -9,13 +9,13 @@ class InputDisplay extends Component {
     super(props);
   }
   render() {
-    const { details, editFunc, addFunc, infoType, sectionKey, needsAddBtn } = this.props;
+    const { details, editFunc, addFunc, infoType, sectionKey, needsAddBtn, infoTypeID } = this.props;
     
     const renderAllDivs = () => {
       return(
         details.map(detail => {
           const detailIndex = details.indexOf(detail);
-          const keyID = detailIndex;
+          const keyID = infoTypeID * (detailIndex + 2);
           return(
             <InputDisplayDetail 
               detail={detail} 

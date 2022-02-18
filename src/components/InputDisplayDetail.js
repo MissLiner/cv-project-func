@@ -10,12 +10,14 @@ class InputDisplayDetail extends Component {
   }
   render() {
     const { keyID, detail, detailIndex, infoType, sectionKey, editFunc } = this.props;
+    let subKeyID = (keyID + 1) * 100;
     const renderDiv = () => {
       return (
         Object.entries(detail).map(entry => {
+          subKeyID += 1;
           return(
             <Div 
-            key={keyID}
+            key={subKeyID}
             divText={entry[1]} /> 
           )
         })

@@ -13,10 +13,10 @@ class InputForm extends Component {
     return capitalized;
   }
   render() {
-    const { inputList, submitFunc, details, infoType, sectionKey, heading, changeFunc } = this.props;
+    const { inputList, submitFunc, details, infoType, sectionKey, heading, changeFunc, infoTypeID } = this.props;
 
     const renderInputs = () => {
-      let newKeyID = 0;
+      let newKeyID = infoTypeID;
       
       return(
         inputList.map(input => {

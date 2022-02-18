@@ -34,7 +34,7 @@ class DisplayExperience extends Component {
     const renderPage = () => {
       const { expInfo, newExpInfo } = this.state;
       const expInfoLabels = [['Company', 'first'], ['Location', 'second'], ['Title', 'fifth'], ['StartDate', 'third'], ['EndDate', 'fourth'], ['Highlights', 'sixth']];
-     
+      const infoTypeID = 450;
       if(this.state.display === 'form') {
         return (
           <InputForm
@@ -45,6 +45,7 @@ class DisplayExperience extends Component {
             heading="Experience"
             inputList={expInfoLabels}
             details={newExpInfo}
+            infoTypeID={infoTypeID}
           />
         )     
       }
@@ -57,6 +58,7 @@ class DisplayExperience extends Component {
             infoType="expInfo"
             sectionKey="newExpInfo"
             needsAddBtn={true}
+            infoTypeID={infoTypeID}
           />
         )
       }

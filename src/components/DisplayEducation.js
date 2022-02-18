@@ -18,6 +18,7 @@ class DisplayEducation extends Component {
         Year:  '',
       },
       display: 'form',
+      currentIndex: '',
     }
     this.baseFormState = this.state.newEduInfo;
 
@@ -31,7 +32,7 @@ class DisplayEducation extends Component {
     const renderPage = () => {
       const { eduInfo, newEduInfo } = this.state;
       const eduInfoLabels = [['School', 'first'], ['Location', 'second'], ['Degree', 'fourth'], ['Year', 'third']];
-     
+      const infoTypeID = 550;
       if(this.state.display === 'form') {
         return (
           <InputForm
@@ -42,6 +43,7 @@ class DisplayEducation extends Component {
             heading="Education"
             inputList={eduInfoLabels}
             details={newEduInfo}
+            infoTypeID={infoTypeID}
           />
         )     
       }
@@ -54,6 +56,7 @@ class DisplayEducation extends Component {
             infoType="eduInfo"
             sectionKey="newEduInfo"
             needsAddBtn={true}
+            infoTypeID={infoTypeID}
           />
         )
       }
