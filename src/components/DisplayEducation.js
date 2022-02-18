@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import InputDisplay from './InputDisplay';
 import InputForm from './InputForm';
 import { handleChange, handleSubmit, handleAdd, handleEdit } from './HelperFuncs';
+import uniqid from 'uniqid';
 import '../styles/formStyles.css';
 
 class DisplayEducation extends Component {
@@ -16,6 +17,7 @@ class DisplayEducation extends Component {
         Location:   '',
         Degree:    '',
         Year:  '',
+        baseID:   uniqid(),
       },
       display: 'form',
       currentIndex: '',
@@ -32,7 +34,7 @@ class DisplayEducation extends Component {
     const renderPage = () => {
       const { eduInfo, newEduInfo } = this.state;
       const eduInfoLabels = [['School', 'first'], ['Location', 'second'], ['Degree', 'fourth'], ['Year', 'third']];
-      const infoTypeID = 550;
+
       if(this.state.display === 'form') {
         return (
           <InputForm
@@ -43,7 +45,6 @@ class DisplayEducation extends Component {
             heading="Education"
             inputList={eduInfoLabels}
             details={newEduInfo}
-            infoTypeID={infoTypeID}
           />
         )     
       }
@@ -56,7 +57,6 @@ class DisplayEducation extends Component {
             infoType="eduInfo"
             sectionKey="newEduInfo"
             needsAddBtn={true}
-            infoTypeID={infoTypeID}
           />
         )
       }

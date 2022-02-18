@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import InputDisplay from './InputDisplay';
 import InputForm from './InputForm';
 import { handleChange, handleSubmit, handleEdit } from './HelperFuncs';
+import uniqid from 'uniqid';
 import '../styles/formStyles.css';
 
 class DisplayGenInfo extends Component {
@@ -19,6 +20,7 @@ class DisplayGenInfo extends Component {
         Zip:      '',
         Phone:    '',
         Email:    '',
+        baseID:   uniqid(),
       },
       display: 'form',
     };
@@ -30,7 +32,7 @@ class DisplayGenInfo extends Component {
   render() {
     const { genInfo, newGenInfo } = this.state;
     const genInfoLabels = [['Name', 'first widthMedium'], ['Address', 'fourth widthLarge'], ['City', 'fifth widthSmall'], ['State', 'sixth widthTiny'], ['Zip', 'seventh widthTiny'], ['Phone', 'second widthSmall'], ['Email', 'third widthMedium']];
-    const infoTypeID = 350;
+    
     const renderPage = () => {
       if(this.state.display === 'form') {
         return (
@@ -42,7 +44,6 @@ class DisplayGenInfo extends Component {
             heading="Basic Info"
             inputList={genInfoLabels}
             details={newGenInfo}
-            infoTypeID={infoTypeID}
           />
         )     
       }
@@ -54,7 +55,6 @@ class DisplayGenInfo extends Component {
             infoType="genInfo"
             sectionKey="newGenInfo"
             needsAddBtn={false}
-            infoTypeID={infoTypeID}
           />
         )
       }
