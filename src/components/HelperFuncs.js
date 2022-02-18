@@ -64,8 +64,8 @@ export function handleEdit(e) {
   })
 }
 
-export function countMaps() {
-  this.setState({
-    mapCounter: this.state.mapCounter++,
-  })
-}
+// export function countMaps() {
+//   this.setState({
+//     mapCounter: this.state.mapCounter++,
+//   })
+// }

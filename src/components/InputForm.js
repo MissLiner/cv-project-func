@@ -2,17 +2,17 @@
 import React, { Component } from 'react';
 import Input from "./ElemInput";
 import Button from "./ElemButton";
-import { countMaps } from './HelperFuncs';
+//import { countMaps } from './HelperFuncs';
 import '../styles/formStyles.css';
 
 class InputForm extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      mapCounter: 0,
-    }
-  this.countMaps = countMaps.bind(this);
+  //   this.state = {
+  //     mapCounter: 0,
+  //   }
+  // this.countMaps = countMaps.bind(this);
   }
 
   render() {
@@ -21,8 +21,8 @@ class InputForm extends Component {
     const renderInputs = () => {
       return(
         inputList.map(input => {
-          this.countMaps();
-          const keyID = this.state.mapCounter;
+          //this.countMaps();
+          //const keyID = this.state.mapCounter;
           const inputName = input[0];
           const inputOrder = input[1];
  

@@ -3,15 +3,15 @@ import React, { Component } from 'react';
 import Button from './ElemButton';
 import '../styles/formStyles.css';
 import InputDisplayDetail from './InputDisplayDetail';
-import { countMaps } from './HelperFuncs';
+//import { countMaps } from './HelperFuncs';
 
 class InputDisplay extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      mapCounter: 0,
-    }
-    this.countMaps = countMaps.bind(this);
+    // this.state = {
+    //   mapCounter: 0,
+    // }
+    // this.countMaps = countMaps.bind(this);
   }
 
   render() {
@@ -20,9 +20,9 @@ class InputDisplay extends Component {
     const renderAllDivs = () => {
       return(
         details.map(detail => {
-          this.countMaps();
+          //this.countMaps();
           const detailIndex = details.indexOf(detail);
-          const keyID = this.state.mapCounter;
+          //const keyID = this.state.mapCounter;
           return(
             <InputDisplayDetail 
               detail={detail} 
