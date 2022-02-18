@@ -12,11 +12,10 @@ class InputDisplay extends Component {
     const { details, editFunc, addFunc, infoType, sectionKey, needsAddBtn } = this.props;
     
     const renderAllDivs = () => {
-      let keyID = 100;
       return(
         details.map(detail => {
-          keyID += 1;
           const detailIndex = details.indexOf(detail);
+          const keyID = detailIndex;
           return(
             <InputDisplayDetail 
               detail={detail} 

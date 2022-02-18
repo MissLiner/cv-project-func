@@ -43,9 +43,13 @@ export function handleEdit(e) {
   const objArrayKey = e.target.dataset.name;
   const objHolderKey = e.target.dataset.section;
   const objArray = this.state[objArrayKey];
-  const objHolder = this.state[objHolderKey];
+  //const objHolder = this.state[objHolderKey];
+  const objIndex = e.target.dataset.arrindex;
+  const objToEdit = objArray[objIndex];
   
   this.setState({
-    display: 'form'
+    display: 'form',
+    [objHolderKey]: objToEdit,
+    editIndex: objIndex,
   })
 }

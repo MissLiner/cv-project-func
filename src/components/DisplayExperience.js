@@ -20,6 +20,7 @@ class DisplayExperience extends Component {
         Highlights:    '',
       },
       display: 'form',
+      editIndex: '',
     }
     this.baseFormState = this.state.newExpInfo;
 

@@ -13,7 +13,7 @@ class Button extends Component {
         value={this.props.value}
         data-name={this.props.infoType}
         data-section={this.props.sectionKey}
-        data-arrIndex={this.props.arrIndex}
+        data-arrindex={this.props.arrindex}
         onClick={this.props.clickFunc}
       >{this.props.btnText}</button>
     )
