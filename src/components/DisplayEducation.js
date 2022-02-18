@@ -14,8 +14,8 @@ class DisplayEducation extends Component {
       newEduInfo: {
         School:    '',
         Location:   '',
-        DegreeName:    '',
-        DegreeYear:  '',
+        Degree:    '',
+        Year:  '',
       },
       isEditable: false,
       display: 'form',
@@ -31,7 +31,7 @@ class DisplayEducation extends Component {
   render() {
     const renderPage = () => {
       const { eduInfo, newEduInfo } = this.state;
-      const eduInfoLabels = [['School', 'first'], ['Location', 'first'], ['DegreeName', 'second'], ['DegreeYear', 'second']];
+      const eduInfoLabels = [['School', 'first'], ['Location', 'second'], ['Degree', 'fourth'], ['Year', 'third']];
      
       if(this.state.display === 'form') {
         return (

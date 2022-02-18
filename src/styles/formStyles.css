@@ -67,6 +67,16 @@ grid-template-rows: repeat(8, 1fr)
   height: 80px;
 }
 
+.eduInfoForm {
+  grid-template-areas:
+    "a a a a a a"
+    "b b b b b b"
+    "c c c c c c"
+    "d e e e e e"
+    "i i i i i i";
+  grid-template-columns: repeat(5, 1fr); 
+}
+
 .first {
   grid-area: b;
 }
