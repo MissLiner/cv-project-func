@@ -1,19 +1,29 @@
+body {
+  background-color:#b0c3c9;
+}
+
 form {
-  background-color:seashell;
-  border: solid;
+  background-color:rgb(240, 226, 218);
+  border-radius: 25px;
   display: grid;
   grid-column-gap: 10px;
   padding: 15px 30px 15px 30px;
   width: 400px;
 }
-button {
-  margin-top: 15px;
-  width: 100px;
-}
+
 div {
   margin-top: 10px;
 }
+h1 {
+  color:white;
+  font-size: 30px;
+}
+h2 {
+  color:rgb(138, 138, 138);
+  font-size: 24px;
+}
 input {
+  border: none;
   display: block;
   margin-left: 0;
   min-width: 0;
@@ -37,6 +47,33 @@ label {
   display: flex;
   height: 100%;
   width: 100%;  
+}
+
+button {
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:linear-gradient(to bottom, #a2c3cf 5%, #5b7275 100%);
+	background-color:#a2c3cf;
+  border: none;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+  margin-top: 15px;
+	padding:5px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+  width: 100px;
+}
+button:hover {
+	background:linear-gradient(to bottom, #5b7275 5%, #a2c3cf 100%);
+	background-color:#5b7275;
+}
+button:active {
+	position:relative;
+	top:1px;
 }
 
 .genInfoForm {
