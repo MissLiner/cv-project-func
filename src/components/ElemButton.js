@@ -11,7 +11,8 @@ class Button extends Component {
         type={this.props.type}
         className={this.props.order}
         value={this.props.value}
-        data-section={this.props.section}
+        data-name={this.props.infoType}
+        data-section={this.props.sectionKey}
         onClick={this.props.clickFunc}
       >{this.props.btnText}</button>
     )

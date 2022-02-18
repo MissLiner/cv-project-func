@@ -24,7 +24,7 @@ class InputDisplayDetail extends Component {
     return(
       <div>
         {renderDiv()}
-        <Button btnText="Edit" clickFunc={editFunc}></Button>
+        <Button btnText="Edit" clickFunc={editFunc} infoType="infoType" sectionKey={sectionKey}></Button>
       </div>
     )
   }
