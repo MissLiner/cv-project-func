@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import Button from './ElemButton';
 import '../styles/formStyles.css';
-import Div from './ElemDiv';
+import InputDisplayDetail from './InputDisplayDetail';
 
 class InputDisplay extends Component {
   constructor(props) {
@@ -13,21 +13,39 @@ class InputDisplay extends Component {
     
     const renderAllDivs = () => {
       let keyID = 100;
-      return (
+      return(
         details.map(detail => {
-          return (
-            Object.entries(detail).map(entry => {
-              keyID += 1;
-              return(
-                <Div 
-                key={keyID}
-                divText={entry[1]} /> 
-              )
-            })
+          keyID += 1;
+          return(
+            <InputDisplayDetail 
+              detail={detail} 
+              keyID={keyID} 
+              editFunc={editFunc} />
           )
         })
       )
     }
+    // const renderAllDivs = () => {
+    //   let keyID = 100;
+    //   details.map(detail => {
+    //     const detailDiv = document.createElement('div');
+    //     Object.entries(detail).forEach(entry => {
+    //       keyID += 1;
+    //       const entryDiv = <Div 
+    //                         key={keyID}
+    //                         divText={entry[1]} /> 
+    //       detailDiv.appendChild(entryDiv);
+    //     })
+    //     Object.entries(detail).map(entry => {
+
+    //       return(
+
+    //           )
+    //         })
+    //       )
+    //     })
+    //   )
+    // }
     const addAddBtn = () => {
       if(needsAddBtn === true) {
         return <Button btnText="Add New" clickFunc={addFunc} section={sectionKey}></Button>
@@ -39,7 +57,6 @@ class InputDisplay extends Component {
         <div>
           {renderAllDivs()}
         </div>
-        <Button btnText="Edit" clickFunc={editFunc}></Button>
         {addAddBtn()}
       </div>
     )
