@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import InputDisplay from './InputDisplay';
 import InputForm from './InputForm';
 import { handleChange, handleSubmit, handleAdd, handleEdit } from './HelperFuncs';
+import uniqid from 'uniqid';
 import '../styles/formStyles.css';
 
 class DisplayExperience extends Component {
@@ -17,7 +18,8 @@ class DisplayExperience extends Component {
         Title:      '',
         StartDate:  '',
         EndDate:    '',
-        Highlights:    '',
+        Highlights: '',
+        baseID:     uniqid(),
       },
       display: 'form',
       editIndex: '',

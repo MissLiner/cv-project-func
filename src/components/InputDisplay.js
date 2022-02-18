@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Button from './ElemButton';
 import '../styles/formStyles.css';
 import InputDisplayDetail from './InputDisplayDetail';
+// import uniqid from 'uniqid';
 //import { countMaps } from './HelperFuncs';
 
 class InputDisplay extends Component {
@@ -19,10 +20,9 @@ class InputDisplay extends Component {
     
     const renderAllDivs = () => {
       return(
-        details.map(detail => {
-          //this.countMaps();
+        details.map((detail, i) => {
           const detailIndex = details.indexOf(detail);
-          //const keyID = this.state.mapCounter;
+          const keyID = detail.baseID + i;
           return(
             <InputDisplayDetail 
               detail={detail} 

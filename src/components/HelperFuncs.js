@@ -1,14 +1,27 @@
+import uniqid from 'uniqid';
+
 export function handleChange(e) {
   const editObj = e.target.dataset.section;
   const editKey = e.target.dataset.field;
   const newValue = e.target.value;
 
-  this.setState({
-    [editObj]: {
-      ...this.state[editObj],
-      [editKey]: newValue,
-    }
-  })
+  if(this.state.currentIndex === '') {
+    this.setState({
+      [editObj]: {
+        ...this.state[editObj],
+        [editKey]:  newValue,
+        baseID:     uniqid(),
+      }
+    })
+  } else {
+    this.setState({ 
+      [editObj]: {
+        ...this.state[editObj],
+        [editKey]:  newValue,
+      }
+    })
+  }
+  
 }
 
 export function handleSubmit(e) {
@@ -33,10 +46,8 @@ export function handleSubmit(e) {
     [currentArrayKey]: newArray,
   })
 
-
-  
   this.setState({
-    [currentArrayKey]: newArray,
+    [currentArrayKey]:  newArray,
     display: "text",
   })
 };
@@ -63,7 +74,9 @@ export function handleEdit(e) {
     editIndex: objIndex,
   })
 }
-
+// export function generateUniqid() {
+//   return
+// }
 // export function countMaps() {
 //   this.setState({
 //     mapCounter: this.state.mapCounter++,

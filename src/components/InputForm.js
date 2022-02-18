@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import Input from "./ElemInput";
 import Button from "./ElemButton";
+// import uniqid from 'uniqid';
 //import { countMaps } from './HelperFuncs';
 import '../styles/formStyles.css';
 
@@ -20,9 +21,8 @@ class InputForm extends Component {
 
     const renderInputs = () => {
       return(
-        inputList.map(input => {
-          //this.countMaps();
-          //const keyID = this.state.mapCounter;
+        inputList.map((input, i) => {
+          const keyID = i;
           const inputName = input[0];
           const inputOrder = input[1];
  

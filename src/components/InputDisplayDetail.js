@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Button from './ElemButton';
 import '../styles/formStyles.css';
 import Div from './ElemDiv';
+// import uniqid from 'uniqid';
 //import { countMaps } from './HelperFuncs';
 
 class InputDisplayDetail extends Component {
@@ -15,16 +16,15 @@ class InputDisplayDetail extends Component {
   // this.countMaps = countMaps.bind(this);
   }
   render() {
-    const { detail, detailIndex, infoType, sectionKey, editFunc } = this.props;
-    
+    const { detail, detailIndex, infoType, sectionKey, editFunc, keyID } = this.props;
+  
     const renderDiv = () => {
       return (
-        Object.entries(detail).map(entry => {
-          //this.countMaps();
-          //const keyID = this.state.mapCounter;
+        Object.entries(detail).map((entry, i) => {
+          const subKeyID = keyID + i;
           return(
             <Div 
-            key={keyID}
+            key={subKeyID}
             divText={entry[1]} /> 
           )
         })
@@ -33,7 +33,7 @@ class InputDisplayDetail extends Component {
     return(
       <div>
         {renderDiv()}
-        <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} sectionKey={sectionKey} arrIndex={detailIndex}></Button>
+        <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} sectionKey={sectionKey} arrIndex={detailIndex} key={detail.baseID + 'b1'}></Button>
       </div>
     )
   }
