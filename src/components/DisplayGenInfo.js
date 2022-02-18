@@ -20,7 +20,6 @@ class DisplayGenInfo extends Component {
         Phone:    '',
         Email:    '',
       },
-      isEditable: false,
       display: 'form',
     };
     this.handleChange = handleChange.bind(this);
@@ -51,7 +50,6 @@ class DisplayGenInfo extends Component {
           <InputDisplay 
             details={genInfo} 
             editFunc={this.handleEdit}
-            isOpen={this.state.isEditable}
             infoType="genInfo"
             sectionKey="newGenInfo"
             needsAddBtn={false}

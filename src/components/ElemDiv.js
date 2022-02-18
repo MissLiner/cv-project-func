@@ -6,11 +6,9 @@ class Div extends Component {
     super(props)
   }
   render() {
-    const { isOpen, divText} = this.props;
+    const { divText} = this.props;
     return (
-      <div 
-        contentEditable={isOpen}
-        >
+      <div>
         {divText}
        </div>
     )

@@ -19,7 +19,6 @@ class DisplayExperience extends Component {
         EndDate:    '',
         Highlights:    '',
       },
-      isEditable: false,
       display: 'form',
     }
     this.baseFormState = this.state.newExpInfo;
@@ -53,7 +52,6 @@ class DisplayExperience extends Component {
           <InputDisplay
             details={expInfo} 
             editFunc={this.handleEdit}
-            isOpen={this.state.isEditable}
             addFunc={this.handleAdd}
             infoType="expInfo"
             sectionKey="newExpInfo"

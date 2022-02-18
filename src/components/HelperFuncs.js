@@ -40,14 +40,7 @@ export function handleAdd(e) {
 }
 
 export function handleEdit() {
-  if(this.state.isEditable === true) {
-    this.setState({
-      editable: false 
-    })
-  }
-  else if(this.state.isEditable === false) {
-    this.setState({
-      editable: true 
-    })
-  }
+  this.setState({
+    display: 'form'
+  })
 }

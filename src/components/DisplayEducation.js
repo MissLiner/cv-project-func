@@ -17,7 +17,6 @@ class DisplayEducation extends Component {
         Degree:    '',
         Year:  '',
       },
-      isEditable: false,
       display: 'form',
     }
     this.baseFormState = this.state.newEduInfo;
@@ -51,7 +50,6 @@ class DisplayEducation extends Component {
           <InputDisplay
             details={eduInfo} 
             editFunc={this.handleEdit}
-            isOpen={this.state.isEditable}
             addFunc={this.handleAdd}
             infoType="eduInfo"
             sectionKey="newEduInfo"
