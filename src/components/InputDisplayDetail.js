@@ -3,21 +3,28 @@ import React, { Component } from 'react';
 import Button from './ElemButton';
 import '../styles/formStyles.css';
 import Div from './ElemDiv';
+import { countMaps } from './HelperFuncs';
 
 class InputDisplayDetail extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      mapCounter: 0,
+    }
+  this.countMaps = countMaps.bind(this);
   }
   render() {
-    const { keyID, detail, detailIndex, infoType, sectionKey, editFunc } = this.props;
-    let subKeyID = (keyID + 1) * 100;
+    const { detail, detailIndex, infoType, sectionKey, editFunc } = this.props;
+    
     const renderDiv = () => {
       return (
         Object.entries(detail).map(entry => {
-          subKeyID += 1;
+          this.countMaps();
+          const keyID = this.state.mapCounter;
           return(
             <Div 
-            key={subKeyID}
+            key={keyID}
             divText={entry[1]} /> 
           )
         })

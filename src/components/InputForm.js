@@ -2,25 +2,27 @@
 import React, { Component } from 'react';
 import Input from "./ElemInput";
 import Button from "./ElemButton";
+import { countMaps } from './HelperFuncs';
 import '../styles/formStyles.css';
 
 class InputForm extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+
+    this.state = {
+      mapCounter: 0,
+    }
+  this.countMaps = countMaps.bind(this);
   }
-  capitalizeFirst = (str) => {
-    const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
-    return capitalized;
-  }
+
   render() {
-    const { inputList, submitFunc, details, infoType, sectionKey, heading, changeFunc, infoTypeID } = this.props;
+    const { inputList, submitFunc, details, infoType, sectionKey, heading, changeFunc } = this.props;
 
     const renderInputs = () => {
-      let newKeyID = infoTypeID;
-      
       return(
         inputList.map(input => {
-          newKeyID += 1;
+          this.countMaps();
+          const keyID = this.state.mapCounter;
           const inputName = input[0];
           const inputOrder = input[1];
  
@@ -32,7 +34,7 @@ class InputForm extends Component {
               elemClass={inputOrder}
               section={sectionKey}
               changeFunc={changeFunc}
-              key={newKeyID}
+              key={keyID}
             />
           )
         })

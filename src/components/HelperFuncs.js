@@ -63,3 +63,9 @@ export function handleEdit(e) {
     editIndex: objIndex,
   })
 }
+
+export function countMaps() {
+  this.setState({
+    mapCounter: this.state.mapCounter++,
+  })
+}
