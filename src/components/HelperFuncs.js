@@ -20,7 +20,7 @@ export function handleSubmit(e) {
   let newArray = [];
   newArray = newArray.concat(this.state[newObjKey]);
   if(currentArray) {
-    newArray = newArray.concat(currentArray);
+    newArray = currentArray.concat(newArray);
   }
   console.log(newArray);
   
