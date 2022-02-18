@@ -58,6 +58,7 @@ export function handleAdd(e) {
   this.setState({
     [resetObjKey]: this.baseFormState,
     display: 'form',
+    currentIndex: '',
   })
 }
 
