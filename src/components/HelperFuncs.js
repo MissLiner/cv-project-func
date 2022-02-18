@@ -13,16 +13,27 @@ export function handleChange(e) {
 
 export function handleSubmit(e) {
   e.preventDefault();
-
+//also fix addNew to change index back to ''
   const currentArrayKey = e.target.dataset.name;
   const newObjKey = e.target.dataset.section;
   const currentArray = this.state[currentArrayKey]
+  const currentIndex = this.state.editIndex;
+  const newObj = this.state[newObjKey]
+
   let newArray = [];
-  newArray = newArray.concat(this.state[newObjKey]);
   if(currentArray) {
     newArray = currentArray.concat(newArray);
   }
-  console.log(newArray);
+  if(currentIndex === '') {
+    newArray = newArray.concat(newObj);
+  } else {
+    newArray.splice(currentIndex, 1, newObj);
+  }
+  this.setState({
+    [currentArrayKey]: newArray,
+  })
+
+
   
   this.setState({
     [currentArrayKey]: newArray,
@@ -43,7 +54,6 @@ export function handleEdit(e) {
   const objArrayKey = e.target.dataset.name;
   const objHolderKey = e.target.dataset.section;
   const objArray = this.state[objArrayKey];
-  //const objHolder = this.state[objHolderKey];
   const objIndex = e.target.dataset.arrindex;
   const objToEdit = objArray[objIndex];
   
