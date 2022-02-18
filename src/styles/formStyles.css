@@ -4,9 +4,6 @@ form {
   margin: 15px 10px 0px 10px;
   padding: 15px;
 }
-input {
-  margin-top: 10px;
-}
 button {
   margin-top: 15px;
   width: 100px;
@@ -16,21 +13,73 @@ div {
 }
 
 .genInfoForm {
-  grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr auto;
-  grid-template-columns: auto auto auto auto;
+  display: grid;
+  grid-template-areas:
+    "a a a a a a a a"
+    ". b b c d d . ."
+    ". e e e e . . ."
+    ". f f g h . . ."
+    "i i i i i i i i";
+  grid-template-columns: repeat(7, 1fr);
+    
+}
+input {
+  display: block;
+  margin-left: 0;
+  min-width: 0;
+  text-align: left;
+  width: 100%;
+  
+}
+label {
+  display: block;
+  margin-left: 0;
+  min-width: 0;
+  width: 100%;
+}
+.inputBox {
+  margin-left: 0;
+  display: flex;
+  flex-flow: row wrap;
+  /* margin: 0 -1rem 1rem -1rem; */
+  width: 100%;  
+}
+.heading {
+  grid-area: a;
 }
 .first {
-  grid-row-start: 2;
+  grid-area: b;
 }
 .second {
-  grid-row-start: 3;
+  grid-area: c;
 }
 .third {
-  grid-row-start: 4;
+  grid-area: d;
 }
 .fourth {
-  grid-row-start: 5;
+  grid-area: e;
 }
 .fifth {
-  grid-row-start: 6;
+  grid-area: f;
 }
+.sixth {
+  grid-area: g;
+}
+.seventh {
+  grid-area: h;
+}
+.bottom {
+  grid-area: i;
+}
+/* .widthTiny {
+  width: 50px;
+}
+.widthSmall {
+  width: 100px;
+}
+.widthMedium {
+  width: 200px;
+}
+.widthLarge {
+  width: 300px;
+} */

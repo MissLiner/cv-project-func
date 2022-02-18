@@ -29,7 +29,7 @@ class InputForm extends Component {
               infoType={infoType}
               inputValue={details[inputName]}
               labelText={inputName}
-              labelClass={inputOrder}
+              elemClass={inputOrder}
               section={sectionKey}
               changeFunc={changeFunc}
               key={newKeyID}
@@ -41,9 +41,9 @@ class InputForm extends Component {
 
     return (
       <form onSubmit={submitFunc} className={infoType + 'Form'} data-name={infoType} data-section={sectionKey}>
-        <h2>{heading}</h2>
+        <h2 className="heading">{heading}</h2>
         {renderInputs()}
-        <Button type="submit" order="fifth" btnText="Save" section={sectionKey} />       
+        <Button type="submit" order="bottom" btnText="Save" section={sectionKey} />       
       </form>
     )
   }

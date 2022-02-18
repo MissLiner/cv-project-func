@@ -11,23 +11,26 @@ class Input extends Component {
       inputValue,
       inputType, 
       labelText,
-      labelClass,
+      elemClass,
       section, 
       changeFunc, 
       clickFunc } = this.props;
 
     return (
-      <label className={labelClass}>{labelText}:&nbsp;
-        <input
-          type={inputType}
-          data-name={infoType}
-          data-section={section}
-          data-field={labelText}
-          onChange={changeFunc}
-          onClick={clickFunc}
-          value={inputValue}
-        />
-      </label>
+      <div className={elemClass + " inputBox"}>
+        {/* <label>{labelText}:&nbsp; */}
+          <input
+            type={inputType}
+            placeholder={labelText}
+            data-name={infoType}
+            data-section={section}
+            data-field={labelText}
+            onChange={changeFunc}
+            onClick={clickFunc}
+            value={inputValue}
+          />
+        {/* </label> */}
+      </div>
     )
   }
 }

@@ -30,7 +30,7 @@ class DisplayGenInfo extends Component {
   
   render() {
     const { genInfo, newGenInfo } = this.state;
-    const genInfoLabels = [['Name', 'first'], ['Address', 'second'], ['City', 'third'], ['State', 'third'], ['Zip', 'third'], ['Phone', 'fourth'], ['Email', 'fourth']];
+    const genInfoLabels = [['Name', 'first widthMedium'], ['Address', 'fourth widthLarge'], ['City', 'fifth widthSmall'], ['State', 'sixth widthTiny'], ['Zip', 'seventh widthTiny'], ['Phone', 'second widthSmall'], ['Email', 'third widthMedium']];
 
     const renderPage = () => {
       if(this.state.display === 'form') {
