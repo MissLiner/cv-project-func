@@ -33,7 +33,7 @@ class DisplayExperience extends Component {
   render() {
     const renderPage = () => {
       const { expInfo, newExpInfo } = this.state;
-      const expInfoLabels = [['Company', 'first'], ['Location', 'second'], ['Title', 'third'], ['StartDate', 'first'], ['EndDate', 'first'], ['Highlights', 'fourth']];
+      const expInfoLabels = [['Company', 'first'], ['Location', 'second'], ['Title', 'fifth'], ['StartDate', 'third'], ['EndDate', 'fourth'], ['Highlights', 'sixth']];
      
       if(this.state.display === 'form') {
         return (
