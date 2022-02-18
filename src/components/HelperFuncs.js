@@ -39,7 +39,12 @@ export function handleAdd(e) {
   })
 }
 
-export function handleEdit() {
+export function handleEdit(e) {
+  const objArrayKey = e.target.dataset.name;
+  const objHolderKey = e.target.dataset.section;
+  const objArray = this.state[objArrayKey];
+  const objHolder = this.state[objHolderKey];
+  
   this.setState({
     display: 'form'
   })

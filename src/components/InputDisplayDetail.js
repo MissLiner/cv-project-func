@@ -9,7 +9,7 @@ class InputDisplayDetail extends Component {
     super(props);
   }
   render() {
-    const { keyID, detail, editFunc } = this.props;
+    const { keyID, detail, infoType, sectionKey, editFunc } = this.props;
     const renderDiv = () => {
       return (
         Object.entries(detail).map(entry => {
@@ -24,7 +24,7 @@ class InputDisplayDetail extends Component {
     return(
       <div>
         {renderDiv()}
-        <Button btnText="Edit" clickFunc={editFunc} infoType="infoType" sectionKey={sectionKey}></Button>
+        <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} sectionKey={sectionKey}></Button>
       </div>
     )
   }
