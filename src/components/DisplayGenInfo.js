@@ -60,7 +60,7 @@ class DisplayGenInfo extends Component {
             infoType="genInfo"
             sectionKey="newGenInfo"
             details={genInfo} 
-
+            inputList={genInfoLabels}
             needsAddBtn={false}
 
             editFunc={this.handleEdit}

@@ -9,7 +9,12 @@ class InputDisplayDetail extends Component {
     super(props);
   }
   render() {
-    const { detail, detailIndex, infoType, sectionKey, editFunc, keyID } = this.props;
+    const { infoType, 
+            sectionKey,
+            detail, 
+            detailIndex, 
+            editFunc, 
+            keyID } = this.props;
   
     const renderDiv = () => {
       return (

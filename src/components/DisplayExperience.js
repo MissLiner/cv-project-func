@@ -57,6 +57,7 @@ class DisplayExperience extends Component {
           <InputDisplay
             heading="Experience"
             details={expInfo} 
+            inputList={expInfoLabels}
             editFunc={this.handleEdit}
             addFunc={this.handleAdd}
             infoType="expInfo"

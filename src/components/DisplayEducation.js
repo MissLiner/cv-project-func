@@ -54,6 +54,7 @@ class DisplayEducation extends Component {
           <InputDisplay
             heading="Education"
             details={eduInfo} 
+            inputList={eduInfoLabels}
             editFunc={this.handleEdit}
             addFunc={this.handleAdd}
             infoType="eduInfo"

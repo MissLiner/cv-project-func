@@ -10,14 +10,23 @@ class InputDisplay extends Component {
   }
 
   render() {
-    const { details, editFunc, addFunc, infoType, sectionKey, needsAddBtn, heading } = this.props;
+    const { heading,
+            infoType, 
+            sectionKey, 
+            details, 
+            inputList,
+            editFunc, 
+            addFunc, 
+
+            needsAddBtn, 
+             } = this.props;
 
     const renderAllDivs = () => {
       return(
         details.map((detail, i) => {
           const detailIndex = details.indexOf(detail);
           const keyID = detail.baseID + i;
-          
+
           return(
             <InputDisplayDetail 
               infoType={infoType}
