@@ -52,6 +52,7 @@ class DisplayEducation extends Component {
       else if(this.state.display === 'text') {
         return (
           <InputDisplay
+            heading="Education"
             details={eduInfo} 
             editFunc={this.handleEdit}
             addFunc={this.handleAdd}

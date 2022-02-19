@@ -55,6 +55,7 @@ class DisplayExperience extends Component {
       else if(this.state.display === 'text') {
         return (
           <InputDisplay
+            heading="Experience"
             details={expInfo} 
             editFunc={this.handleEdit}
             addFunc={this.handleAdd}

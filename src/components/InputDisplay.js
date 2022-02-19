@@ -16,7 +16,7 @@ class InputDisplay extends Component {
   }
 
   render() {
-    const { details, editFunc, addFunc, infoType, sectionKey, needsAddBtn } = this.props;
+    const { details, editFunc, addFunc, infoType, sectionKey, needsAddBtn, heading } = this.props;
     
     const renderAllDivs = () => {
       return(
@@ -43,6 +43,7 @@ class InputDisplay extends Component {
 
     return (
       <div>
+        <h2 className="heading">{heading}</h2>
         <div>
           {renderAllDivs()}
         </div>
