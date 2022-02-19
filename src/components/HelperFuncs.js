@@ -6,7 +6,6 @@ export function handleChange(e) {
   const newValue = e.target.value;
 
   if(this.state.editIndex === 'none') {
-    console.log('making new!');
     this.setState({
       [editObj]: {
         ...this.state[editObj],
@@ -15,14 +14,12 @@ export function handleChange(e) {
       },
     })
   } else {
-    console.log('editing!');
     this.setState({ 
       [editObj]: {
         ...this.state[editObj],
         [editKey]:  newValue,
       }
-    })
-    
+    }) 
   }
 }
 
@@ -50,21 +47,19 @@ export function handleSubmit(e) {
 
   this.setState({
     [currentArrayKey]:  newArray,
-    display: "text",
+    display: 'text',
     editIndex: 'none',
   })
 };
 
 export function handleAdd(e) {
   const resetObjKey = e.target.dataset.section;
-  //const resetObj = this.state[resetObjKey];
 
   this.setState({
     [resetObjKey]: this.baseFormState,
     display: 'form',
     editIndex: 'none',
   })
-
 }
 
 export function handleEdit(e) {
@@ -72,7 +67,6 @@ export function handleEdit(e) {
   const objHolderKey = e.target.dataset.section;
   const objArray = this.state[objArrayKey];
   const objIndex = e.target.dataset.arrindex;
-  console.log(objIndex);
   const objToEdit = objArray[objIndex];
   
   this.setState({
@@ -81,11 +75,3 @@ export function handleEdit(e) {
     editIndex: objIndex,
   })
 }
-// export function generateUniqid() {
-//   return
-// }
-// export function countMaps() {
-//   this.setState({
-//     mapCounter: this.state.mapCounter++,
-//   })
-// }
