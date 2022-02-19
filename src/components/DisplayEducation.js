@@ -11,7 +11,7 @@ class DisplayEducation extends Component {
     super(props);
 
     this.state = {
-      eduInfo: [],
+      eduInfo:    [],
       newEduInfo: {
         School:   '',
         Location: '',
@@ -19,8 +19,8 @@ class DisplayEducation extends Component {
         Year:     '',
         baseID:   uniqid(),
       },
-      display: 'form',
-      editIndex: 'none',
+      display:    'form',
+      editIndex:  'none',
     }
     this.baseFormState = this.state.newEduInfo;
 
@@ -34,7 +34,7 @@ class DisplayEducation extends Component {
     const renderPage = () => {
       const { eduInfo, newEduInfo } = this.state;
       const eduInfoLabels = [['School', 'first'], ['Location', 'second'], 
-                              ['Degree', 'fourth'], ['Year', 'third']];
+                            ['Degree', 'fourth'], ['Year', 'third']];
 
       if(this.state.display === 'form') {
         return (

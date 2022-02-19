@@ -11,7 +11,7 @@ class DisplayExperience extends Component {
     super(props);
 
     this.state = {
-      expInfo: [],
+      expInfo:    [],
       newExpInfo: {
         Company:    '',
         Location:   '',
@@ -21,8 +21,8 @@ class DisplayExperience extends Component {
         Highlights: '',
         baseID:     uniqid(),
       },
-      display: 'form',
-      editIndex: 'none',
+      display:    'form',
+      editIndex:  'none',
     }
     this.baseFormState = this.state.newExpInfo;
 
@@ -35,7 +35,9 @@ class DisplayExperience extends Component {
   render() {
     const renderPage = () => {
       const { expInfo, newExpInfo } = this.state;
-      const expInfoLabels = [['Company', 'first'], ['Location', 'second'], ['Title', 'fifth'], ['StartDate', 'third'], ['EndDate', 'fourth'], ['Highlights', 'sixth']];
+      const expInfoLabels = [['Company', 'first'], ['Location', 'second'], 
+                            ['Title', 'fifth'], ['StartDate', 'third'], 
+                            ['EndDate', 'fourth'], ['Highlights', 'sixth']];
    
       if(this.state.display === 'form') {
         return (

@@ -11,19 +11,19 @@ class DisplayGenInfo extends Component {
     super(props);
 
     this.state = {
-      genInfo: [],
+      genInfo:    [],
       newGenInfo: {
-        Name:     '',
-        Address:  '',
-        City:     '',
-        State:    '',
-        Zip:      '',
-        Phone:    '',
-        Email:    '',
-        baseID:   uniqid(),
+        Name:       '',
+        Address:    '',
+        City:       '',
+        State:      '',
+        Zip:        '',
+        Phone:      '',
+        Email:      '',
+        baseID:     uniqid(),
       },
-      display: 'form',
-      editIndex: 'none',
+      display:    'form',
+      editIndex:  'none',
     };
     this.handleChange = handleChange.bind(this);
     this.handleSubmit = handleSubmit.bind(this);
@@ -32,7 +32,10 @@ class DisplayGenInfo extends Component {
   
   render() {
     const { genInfo, newGenInfo } = this.state;
-    const genInfoLabels = [['Name', 'first'], ['Address', 'fourth'], ['City', 'fifth'], ['State', 'sixth'], ['Zip', 'seventh'], ['Phone', 'second'], ['Email', 'third']];
+    const genInfoLabels = [['Name', 'first'], ['Address', 'fourth'], 
+                          ['City', 'fifth'], ['State', 'sixth'], 
+                          ['Zip', 'seventh'], ['Phone', 'second'], 
+                          ['Email', 'third']];
 
     const renderPage = () => {
       if(this.state.display === 'form') {
