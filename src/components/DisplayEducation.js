@@ -13,10 +13,10 @@ class DisplayEducation extends Component {
     this.state = {
       eduInfo: [],
       newEduInfo: {
-        School:    '',
-        Location:   '',
-        Degree:    '',
-        Year:  '',
+        School:   '',
+        Location: '',
+        Degree:   '',
+        Year:     '',
         baseID:   uniqid(),
       },
       display: 'form',
@@ -33,7 +33,8 @@ class DisplayEducation extends Component {
   render() {
     const renderPage = () => {
       const { eduInfo, newEduInfo } = this.state;
-      const eduInfoLabels = [['School', 'first'], ['Location', 'second'], ['Degree', 'fourth'], ['Year', 'third']];
+      const eduInfoLabels = [['School', 'first'], ['Location', 'second'], 
+                              ['Degree', 'fourth'], ['Year', 'third']];
 
       if(this.state.display === 'form') {
         return (
