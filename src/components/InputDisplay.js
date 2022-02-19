@@ -3,21 +3,15 @@ import React, { Component } from 'react';
 import Button from './ElemButton';
 import '../styles/formStyles.css';
 import InputDisplayDetail from './InputDisplayDetail';
-// import uniqid from 'uniqid';
-//import { countMaps } from './HelperFuncs';
 
 class InputDisplay extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   mapCounter: 0,
-    // }
-    // this.countMaps = countMaps.bind(this);
   }
 
   render() {
     const { details, editFunc, addFunc, infoType, sectionKey, needsAddBtn, heading } = this.props;
-    
+
     const renderAllDivs = () => {
       return(
         details.map((detail, i) => {

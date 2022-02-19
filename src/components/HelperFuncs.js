@@ -75,3 +75,7 @@ export function handleEdit(e) {
     editIndex: objIndex,
   })
 }
+export function removeLastVal(wholeArr) {
+  wholeArr.pop();
+  return wholeArr;
+}

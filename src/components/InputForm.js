@@ -2,18 +2,11 @@
 import React, { Component } from 'react';
 import Input from "./ElemInput";
 import Button from "./ElemButton";
-// import uniqid from 'uniqid';
-//import { countMaps } from './HelperFuncs';
 import '../styles/formStyles.css';
 
 class InputForm extends Component {
   constructor(props) {
     super(props);
-
-  //   this.state = {
-  //     mapCounter: 0,
-  //   }
-  // this.countMaps = countMaps.bind(this);
   }
 
   render() {
