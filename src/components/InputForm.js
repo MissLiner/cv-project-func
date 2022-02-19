@@ -10,7 +10,13 @@ class InputForm extends Component {
   }
 
   render() {
-    const { inputList, submitFunc, details, infoType, sectionKey, heading, changeFunc } = this.props;
+    const { heading, 
+            infoType, 
+            sectionKey, 
+            details, 
+            inputList, 
+            changeFunc, 
+            submitFunc } = this.props;
 
     const renderInputs = () => {
       return(
@@ -22,12 +28,14 @@ class InputForm extends Component {
           return(
             <Input
               infoType={infoType}
+              sectionKey={sectionKey}
               inputValue={details[inputName]}
-              labelText={inputName}
+
+              defaultText={inputName}
               elemClass={inputOrder}
-              section={sectionKey}
-              changeFunc={changeFunc}
               key={keyID}
+
+              changeFunc={changeFunc}
             />
           )
         })
@@ -35,10 +43,23 @@ class InputForm extends Component {
     }
 
     return (
-      <form onSubmit={submitFunc} className={infoType + 'Form'} data-name={infoType} data-section={sectionKey}>
+      <form 
+        data-name={infoType} 
+        data-section={sectionKey}
+        className={infoType + 'Form'} 
+        onSubmit={submitFunc} 
+        >
+        
         <h2 className="heading">{heading}</h2>
+        
         {renderInputs()}
-        <Button type="submit" order="bottom" btnText="Save" section={sectionKey} />       
+        
+        <Button 
+          type="submit" 
+          order="bottom" 
+          btnText="Save" 
+          section={sectionKey} 
+        />       
       </form>
     )
   }

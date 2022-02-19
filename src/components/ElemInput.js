@@ -8,11 +8,12 @@ class Input extends Component {
   render() {
     const { 
       infoType, 
+      sectionKey, 
       inputValue,
       inputType, 
-      labelText,
+      defaultText,
       elemClass,
-      section, 
+      
       changeFunc, 
       clickFunc } = this.props;
 
@@ -20,13 +21,15 @@ class Input extends Component {
       <div className={elemClass + " inputBox"}>
           <input
             type={inputType}
-            placeholder={labelText}
             data-name={infoType}
-            data-section={section}
-            data-field={labelText}
+            data-section={sectionKey}
+            data-field={defaultText}
+
+            placeholder={defaultText}
+            value={inputValue}
+
             onChange={changeFunc}
             onClick={clickFunc}
-            value={inputValue}
           />
       </div>
     )

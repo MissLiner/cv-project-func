@@ -41,24 +41,29 @@ class DisplayGenInfo extends Component {
       if(this.state.display === 'form') {
         return (
           <InputForm 
-            changeFunc={this.handleChange} 
-            submitFunc={this.handleSubmit}
+            heading=""
             infoType="genInfo"
             sectionKey="newGenInfo"
-            heading="Basic Info"
-            inputList={genInfoLabels}
             details={newGenInfo}
+
+            inputList={genInfoLabels}
+
+            changeFunc={this.handleChange} 
+            submitFunc={this.handleSubmit}
           />
         )     
       }
       else if(this.state.display === 'text') {
         return(
           <InputDisplay 
-            details={genInfo} 
-            editFunc={this.handleEdit}
+            heading=""
             infoType="genInfo"
             sectionKey="newGenInfo"
+            details={genInfo} 
+
             needsAddBtn={false}
+
+            editFunc={this.handleEdit}
           />
         )
       }

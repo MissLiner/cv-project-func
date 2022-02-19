@@ -17,12 +17,14 @@ class InputDisplay extends Component {
         details.map((detail, i) => {
           const detailIndex = details.indexOf(detail);
           const keyID = detail.baseID + i;
+          
           return(
             <InputDisplayDetail 
-              detail={detail} 
-              keyID={keyID} 
               infoType={infoType}
               sectionKey={sectionKey}
+              detail={detail} 
+              keyID={keyID} 
+
               editFunc={editFunc}
               detailIndex={detailIndex} />
           )
