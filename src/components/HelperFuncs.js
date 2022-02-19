@@ -5,61 +5,66 @@ export function handleChange(e) {
   const editKey = e.target.dataset.field;
   const newValue = e.target.value;
 
-  if(this.state.currentIndex === '') {
+  if(this.state.editIndex === 'none') {
+    console.log('making new!');
     this.setState({
       [editObj]: {
         ...this.state[editObj],
         [editKey]:  newValue,
         baseID:     uniqid(),
-      }
+      },
     })
   } else {
+    console.log('editing!');
     this.setState({ 
       [editObj]: {
         ...this.state[editObj],
         [editKey]:  newValue,
       }
     })
+    
   }
-  
 }
 
 export function handleSubmit(e) {
   e.preventDefault();
-//also fix addNew to change index back to ''
+
   const currentArrayKey = e.target.dataset.name;
   const newObjKey = e.target.dataset.section;
   const currentArray = this.state[currentArrayKey]
   const currentIndex = this.state.editIndex;
-  const newObj = this.state[newObjKey]
-
+  let newObj = this.state[newObjKey]
   let newArray = [];
+
   if(currentArray) {
     newArray = currentArray.concat(newArray);
   }
-  if(currentIndex === '') {
+
+  if(currentIndex === 'none') {
+    newObj.baseID = uniqid();
+    console.log(newObj.baseID);
     newArray = newArray.concat(newObj);
   } else {
     newArray.splice(currentIndex, 1, newObj);
   }
-  this.setState({
-    [currentArrayKey]: newArray,
-  })
 
   this.setState({
     [currentArrayKey]:  newArray,
     display: "text",
+    editIndex: 'none',
   })
 };
 
 export function handleAdd(e) {
   const resetObjKey = e.target.dataset.section;
+  //const resetObj = this.state[resetObjKey];
 
   this.setState({
     [resetObjKey]: this.baseFormState,
     display: 'form',
-    currentIndex: '',
+    editIndex: 'none',
   })
+
 }
 
 export function handleEdit(e) {
@@ -67,6 +72,7 @@ export function handleEdit(e) {
   const objHolderKey = e.target.dataset.section;
   const objArray = this.state[objArrayKey];
   const objIndex = e.target.dataset.arrindex;
+  console.log(objIndex);
   const objToEdit = objArray[objIndex];
   
   this.setState({

@@ -22,7 +22,7 @@ class DisplayExperience extends Component {
         baseID:     uniqid(),
       },
       display: 'form',
-      editIndex: '',
+      editIndex: 'none',
     }
     this.baseFormState = this.state.newExpInfo;
 

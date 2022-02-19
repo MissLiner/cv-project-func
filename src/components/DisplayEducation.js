@@ -20,7 +20,7 @@ class DisplayEducation extends Component {
         baseID:   uniqid(),
       },
       display: 'form',
-      currentIndex: '',
+      editIndex: 'none',
     }
     this.baseFormState = this.state.newEduInfo;
 

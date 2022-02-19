@@ -37,7 +37,7 @@ class InputDisplay extends Component {
     }
     const addAddBtn = () => {
       if(needsAddBtn === true) {
-        return <Button btnText="Add New" clickFunc={addFunc} sectionKey={sectionKey}></Button>
+        return <Button btnText="Add New" clickFunc={addFunc} sectionKey={sectionKey} key={infoType + 'add'}></Button>
       }
     }
 

@@ -23,6 +23,7 @@ class DisplayGenInfo extends Component {
         baseID:   uniqid(),
       },
       display: 'form',
+      editIndex: 'none',
     };
     this.handleChange = handleChange.bind(this);
     this.handleSubmit = handleSubmit.bind(this);

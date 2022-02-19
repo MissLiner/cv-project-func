@@ -31,7 +31,7 @@ class InputDisplayDetail extends Component {
       )
   }
     return(
-      <div>
+      <div key={detail.baseID}>
         {renderDiv()}
         <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} sectionKey={sectionKey} arrIndex={detailIndex} key={detail.baseID + 'b1'}></Button>
       </div>
