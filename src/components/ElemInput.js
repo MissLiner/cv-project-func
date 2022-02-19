@@ -18,7 +18,6 @@ class Input extends Component {
 
     return (
       <div className={elemClass + " inputBox"}>
-        {/* <label>{labelText}:&nbsp; */}
           <input
             type={inputType}
             placeholder={labelText}
@@ -29,7 +28,6 @@ class Input extends Component {
             onClick={clickFunc}
             value={inputValue}
           />
-        {/* </label> */}
       </div>
     )
   }
