@@ -33,7 +33,7 @@ class InputDisplay extends Component {
               sectionKey={sectionKey}
               detail={detail} 
               keyID={keyID} 
-
+              inputList={inputList}
               editFunc={editFunc}
               detailIndex={detailIndex} />
           )

@@ -20,11 +20,15 @@ class InputDisplayDetail extends Component {
       return (
         Object.entries(detail).map((entry, i) => {
           const subKeyID = keyID + i;
-          return(
-            <Div 
-            key={subKeyID}
-            divText={entry[1]} /> 
-          )
+          if(entry[0] !== "baseID") {
+            return(
+              <Div 
+              key={subKeyID}
+              divText={entry[1]} /> 
+            )
+          } else {
+            return null;
+          }
         })
       )
   }
