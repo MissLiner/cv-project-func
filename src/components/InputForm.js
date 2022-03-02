@@ -32,7 +32,7 @@ class InputForm extends Component {
               inputValue={details[inputName]}
 
               defaultText={inputName}
-              elemClass={inputOrder}
+              elemClass={inputOrder + "Form"}
               key={keyID}
 
               changeFunc={changeFunc}
@@ -56,7 +56,7 @@ class InputForm extends Component {
         
         <Button 
           type="submit" 
-          order="bottom" 
+          order="bottomForm" 
           btnText="Save" 
           section={sectionKey} 
         />       

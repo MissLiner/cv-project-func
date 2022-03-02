@@ -36,7 +36,7 @@ class InputDisplayDetail extends Component {
       )
   }
     return(
-      <div key={detail.baseID} className={infoType + "Form " + infoType + "Display"}>  
+      <div key={detail.baseID} className={infoType + "Display infoDisplay"}>  
         {renderDiv()}
         <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} sectionKey={sectionKey} arrIndex={detailIndex} key={detail.baseID + 'b1'} order="bottom"></Button>
       </div>

@@ -76,6 +76,15 @@ button:active {
 	top:1px;
 }
 
+.infoDisplay {
+  background-color:rgb(240, 226, 218);
+  border-radius: 25px;
+  display: flex;
+  font-family:'Times New Roman', Times, serif;
+  /* grid-column-gap: 10px; */
+  padding: 15px 30px 15px 30px;
+  width: 400px;
+}
 .genInfoForm {
   grid-template-areas:
     "a a a a a a"
@@ -87,12 +96,13 @@ button:active {
   grid-template-columns: repeat(6, 1fr); 
 }
 .genInfoDisplay {
-  background-color:rgb(240, 226, 218);
-  border-radius: 25px;
-  display: grid;
-  grid-column-gap: 10px;
-  padding: 15px 30px 15px 30px;
-  width: 400px;
+  /* grid-template-areas:
+  "b b b b b b"
+  "c c c c c c"
+  ". d d e f ."
+  ". h h g g ."
+  "i i i i i i";
+grid-template-columns: repeat(6, 1fr);  */
 }
 .expInfoForm {
   grid-template-areas:
@@ -108,7 +118,7 @@ button:active {
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(8, 1fr) 
 }
-.expInfoForm .sixth input {
+.expInfoForm .sixthForm input {
   height: 80px;
 }
 
@@ -122,27 +132,27 @@ button:active {
   grid-template-columns: repeat(5, 1fr); 
 }
 
-.first {
+.firstForm {
   grid-area: b;
 }
-.second {
+.secondForm {
   grid-area: c;
 }
-.third {
+.thirdForm {
   grid-area: d;
 }
-.fourth {
+.fourthForm {
   grid-area: e;
 }
-.fifth {
+.fifthForm {
   grid-area: f;
 }
-.sixth {
+.sixthForm {
   grid-area: g;
 }
-.seventh {
+.seventhForm {
   grid-area: h;
 }
-.bottom {
+.bottomForm {
   grid-area: i;
 }
