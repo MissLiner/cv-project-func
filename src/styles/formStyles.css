@@ -96,6 +96,8 @@ button:active {
   grid-template-columns: repeat(6, 1fr); 
 }
 .genInfoDisplay {
+  flex-wrap: wrap;
+  justify-content: center;
   /* grid-template-areas:
   "b b b b b b"
   "c c c c c c"
@@ -155,4 +157,30 @@ grid-template-columns: repeat(6, 1fr);  */
 }
 .bottomForm {
   grid-area: i;
+}
+.first {
+  width: 100%;
+}
+.second {
+  width: 100%;
+}
+.third {
+  text-align: right;
+  width: 45%;
+}
+.fourth {
+  width: 10%;
+}
+.fifth {
+  justify-self: left;
+  text-align: left;
+  width: 45%;
+}
+.sixth {
+  text-align: right;
+  width: 50%;
+}
+.seventh {
+  text-align: left;
+  width: 50%;
 }
