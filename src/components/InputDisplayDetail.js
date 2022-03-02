@@ -14,7 +14,9 @@ class InputDisplayDetail extends Component {
             detail, 
             detailIndex, 
             editFunc, 
-            keyID } = this.props;
+            keyID,
+            inputList,
+           } = this.props;
   
     const renderDiv = () => {
       return (
@@ -24,7 +26,8 @@ class InputDisplayDetail extends Component {
             return(
               <Div 
               key={subKeyID}
-              divText={entry[1]} /> 
+              divText={entry[1]}
+              elemClass={inputList[i][1]} /> 
             )
           } else {
             return null;
@@ -33,9 +36,9 @@ class InputDisplayDetail extends Component {
       )
   }
     return(
-      <div key={detail.baseID}>
+      <div key={detail.baseID} className={infoType + "Form " + infoType + "Display"}>  
         {renderDiv()}
-        <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} sectionKey={sectionKey} arrIndex={detailIndex} key={detail.baseID + 'b1'}></Button>
+        <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} sectionKey={sectionKey} arrIndex={detailIndex} key={detail.baseID + 'b1'} order="bottom"></Button>
       </div>
     )
   }

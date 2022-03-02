@@ -6,9 +6,9 @@ class Div extends Component {
     super(props)
   }
   render() {
-    const { divText} = this.props;
+    const { divText, elemClass} = this.props;
     return (
-      <div>
+      <div className={elemClass}>
         {divText}
        </div>
     )
