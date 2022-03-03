@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import Button from './ElemButton';
 import '../styles/formStyles.css';
+import Button from './ElemButton';
 
 class EduTemplate extends Component {
   constructor(props) {

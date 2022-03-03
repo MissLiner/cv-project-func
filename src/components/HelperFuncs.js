@@ -39,7 +39,6 @@ export function handleSubmit(e) {
 
   if(currentIndex === 'none') {
     newObj.baseID = uniqid();
-    console.log(newObj.baseID);
     newArray = newArray.concat(newObj);
   } else {
     newArray.splice(currentIndex, 1, newObj);

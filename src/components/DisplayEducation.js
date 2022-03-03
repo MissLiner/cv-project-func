@@ -1,10 +1,12 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
+import '../styles/formStyles.css';
 import InputForm from './InputForm';
+import EduTemplate from './TemplateEdu';
 import { handleChange, handleSubmit, handleAdd, handleEdit } from './HelperFuncs';
 import uniqid from 'uniqid';
-import '../styles/formStyles.css';
-import EduTemplate from './TemplateEdu';
+
+
 
 class DisplayEducation extends Component {
   constructor(props) {

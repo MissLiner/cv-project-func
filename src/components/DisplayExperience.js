@@ -1,10 +1,10 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
+import '../styles/formStyles.css';
 import InputForm from './InputForm';
 import ExpTemplate from './TemplateExp';
 import { handleChange, handleSubmit, handleAdd, handleEdit } from './HelperFuncs';
 import uniqid from 'uniqid';
-import '../styles/formStyles.css';
 
 class DisplayExperience extends Component {
   constructor(props) {
