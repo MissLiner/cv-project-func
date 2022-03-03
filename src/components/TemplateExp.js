@@ -23,10 +23,9 @@ class ExpTemplate extends Component {
           return (
             <div className='resumeExpJob' key={keyID}>
               <div className='companyInfo flex'>
-                <div className='company left'>{job.Company}</div>
-                <div className='location right'>{job.Location}</div>
+                <div className='company left'><b>{job.Title}</b> | {job.Company}, {job.Location}</div>
+                <div className='dates right emphasized'>{job.StartDate} - {job.EndDate}</div>
               </div>
-              <div className='dates left'>{job.StartDate} - {job.EndDate}</div>
               <div className='highlights left'>{job.Highlights}</div>
             </div>
           )

@@ -22,8 +22,8 @@ class EduTemplate extends Component {
           const keyID = school.baseID + i;
           return (
             <div className='resumeEduSchool flex' key={keyID}>
-              <div className='degreeInfo left'>{school.Degree} | {school.School}, {school.Location}</div>
-              <div className='schoolYear right'>{school.Year}</div>
+              <div className='degreeInfo left'><b>{school.Degree}</b>| {school.School}, {school.Location}</div>
+              <div className='schoolYear right emphasized'>{school.Year}</div>
             </div>
           )
           })
