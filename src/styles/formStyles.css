@@ -76,12 +76,11 @@ button:active {
 	top:1px;
 }
 
-.infoDisplay {
+.resume {
   background-color:rgb(240, 226, 218);
   border-radius: 25px;
-  display: flex;
+  display: block;
   font-family:'Times New Roman', Times, serif;
-  /* grid-column-gap: 10px; */
   padding: 15px 30px 15px 30px;
   width: 400px;
 }
@@ -95,17 +94,7 @@ button:active {
     "i i i i i i";
   grid-template-columns: repeat(6, 1fr); 
 }
-.genInfoDisplay {
-  flex-wrap: wrap;
-  justify-content: center;
-  /* grid-template-areas:
-  "b b b b b b"
-  "c c c c c c"
-  ". d d e f ."
-  ". h h g g ."
-  "i i i i i i";
-grid-template-columns: repeat(6, 1fr);  */
-}
+
 .expInfoForm {
   grid-template-areas:
     "a a a a a a"
@@ -157,34 +146,4 @@ grid-template-columns: repeat(6, 1fr);  */
 }
 .bottomForm {
   grid-area: i;
-}
-
-
-.NameDisplay {
-  font-size:larger;
-  font-weight: bold;
-  width: 100%;
-}
-.PhoneDisplay {
-  width: 100%;
-}
-.EmailDisplay {
-  text-align: right;
-  width: 45%;
-}
-.AddressDisplay {
-  width: 10%;
-}
-.CityDisplay {
-  justify-self: left;
-  text-align: left;
-  width: 45%;
-}
-.StateDisplay {
-  text-align: right;
-  width: 50%;
-}
-.ZipDisplay {
-  text-align: left;
-  width: 50%;
 }

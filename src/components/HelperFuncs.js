@@ -1,5 +1,4 @@
 import uniqid from 'uniqid';
-import { useState } from 'react';
 
 export function handleChange(e) {
   const editObj = e.target.dataset.section;

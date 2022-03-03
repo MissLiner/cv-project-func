@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import HeaderTemplate from './headerTemplate';
-import InputDisplay from './InputDisplay';
+import HeaderTemplate from './HeaderTemplate';
+// import InputDisplay from './InputDisplay';
 import InputForm from './InputForm';
 import { handleChange, handleSubmit, handleEdit } from './HelperFuncs';
 import uniqid from 'uniqid';
@@ -58,7 +58,10 @@ class DisplayGenInfo extends Component {
       }
       else if(this.state.display === 'text') {
         return(
-          <HeaderTemplate headerData={genInfo} />
+          <HeaderTemplate 
+            headerData={genInfo}
+            editFunc={this.handleEdit}
+            infoType="genInfo" />
           // <InputDisplay 
           //   heading=""
           //   infoType="genInfo"
