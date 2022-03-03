@@ -5,55 +5,6 @@
 body {
   background-color:#b0c3c9;
 }
-
-form {
-  background-color:rgb(240, 226, 218);
-  border-radius: 25px;
-  display: grid;
-  grid-column-gap: 10px;
-  padding: 15px 130px 15px 130px;
-  width: 400px;
-}
-
-div {
-  margin-top: 10px;
-}
-h1 {
-  color:white;
-  font-size: 30px;
-}
-h2 {
-  color:rgb(138, 138, 138);
-  font-family: arial;
-  font-size: 24px;
-}
-input {
-  border: none;
-  display: block;
-  margin-left: 0;
-  min-width: 0;
-  text-align: left;
-  margin-top: 0;
-  width: 100%;
-}
-label {
-  display: block;
-  margin-left: 0;
-  min-width: 0;
-  width: 100%;
-}
-
-
-.heading {
-  grid-area: a;
-}
-.inputBox {
-  margin-left: 0;
-  display: flex;
-  height: 100%;
-  width: 100%;  
-}
-
 button {
 	box-shadow: 0px 10px 14px -7px #276873;
 	background:linear-gradient(to bottom, #a2c3cf 5%, #5b7275 100%);
@@ -80,12 +31,51 @@ button:active {
 	position:relative;
 	top:1px;
 }
+div {
+  margin-top: 10px;
+}
+form {
+  background-color:rgb(240, 226, 218);
+  border-radius: 25px;
+  display: grid;
+  grid-column-gap: 10px;
+  padding: 15px 130px 15px 130px;
+  width: 400px;
+}
+h1 {
+  color:white;
+  font-size: 30px;
+}
+h2 {
+  color:rgb(138, 138, 138);
+  font-family: arial;
+  font-size: 24px;
+}
+input {
+  border: none;
+  display: block;
+  margin-left: 0;
+  min-width: 0;
+  text-align: left;
+  margin-top: 0;
+  width: 100%;
+}
+label {
+  display: block;
+  margin-left: 0;
+  min-width: 0;
+  width: 100%;
+}
 
+/* BASIC FORMATTING */
 .bolded {
   font-weight: bold;
 }
 .emphasized {
   font-style: italic;
+}
+.flex {
+  display: flex;
 }
 .larger {
   font-size: larger;
@@ -100,19 +90,17 @@ button:active {
   margin-right: 0;
   text-align: right;
 }
-.flex {
+
+/* INPUT FORM */
+.heading {
+  grid-area: a;
+}
+.inputBox {
+  margin-left: 0;
   display: flex;
+  height: 100%;
+  width: 100%;  
 }
-.resume {
-  background-color:rgb(240, 226, 218);
-  border-radius: 25px;
-  display: block;
-  font-family:'Times New Roman', Times, serif;
-  padding: 15px 30px 15px 30px;
-  width: 600px;
-}
-
-
 .genInfoForm {
   grid-template-areas:
     "a a a a a a"
@@ -176,3 +164,17 @@ button:active {
 .bottomForm {
   grid-area: i;
 }
+
+
+/* TEMPLATES */
+.resume {
+  background-color:rgb(240, 226, 218);
+  border-radius: 25px;
+  display: block;
+  font-family:'Times New Roman', Times, serif;
+  padding: 15px 30px 15px 30px;
+  width: 600px;
+}
+
+
+
