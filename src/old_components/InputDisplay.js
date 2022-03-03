@@ -1,8 +1,8 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import Button from './ElemButton';
+import Button from '../components/ElemButton';
 import '../styles/formStyles.css';
-import InputDisplayDetail from './InputDisplayDetail';
+import InputDisplayDetail from '../components/InputDisplayDetail';
 
 class InputDisplay extends Component {
   constructor(props) {

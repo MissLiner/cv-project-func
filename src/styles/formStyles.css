@@ -83,6 +83,9 @@ button:active {
 .emphasized {
   font-style: italic;
 }
+.larger {
+  font-size: larger;
+}
 .left {
   justify-self:left;
   margin-left: 0;
