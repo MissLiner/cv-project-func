@@ -21,15 +21,9 @@ class EduTemplate extends Component {
         eduData.map((school, i) => {
           const keyID = school.baseID + i;
           return (
-            <div className='resumeEduSchool' key={keyID}>
-              <div className='schoolInfo'>
-                <div className='school left'>{school.School}</div>
-                <div className='location right'>{school.Location}</div>
-              </div>
-              <div className="degreeInfo">
-                <div className='year right'>{school.Year}</div>
-                <div className='degree left'>{school.Degree}</div>
-              </div>
+            <div className='resumeEduSchool flex' key={keyID}>
+              <div className='degreeInfo left'>{school.Degree} | {school.School}, {school.Location}</div>
+              <div className='schoolYear right'>{school.Year}</div>
             </div>
           )
           })
@@ -37,6 +31,7 @@ class EduTemplate extends Component {
     }
     return (
       <div className="resumeEdu resume">
+        <h2>Education</h2>
         {renderAllDivs()}
       
         <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} />

@@ -22,7 +22,7 @@ class ExpTemplate extends Component {
           const keyID = job.baseID + i;
           return (
             <div className='resumeExpJob' key={keyID}>
-              <div className='companyInfo'>
+              <div className='companyInfo flex'>
                 <div className='company left'>{job.Company}</div>
                 <div className='location right'>{job.Location}</div>
               </div>
@@ -35,6 +35,7 @@ class ExpTemplate extends Component {
     }
     return (
       <div className="resumeExp resume">
+        <h2>Experience</h2>
         {renderAllDivs()}
       
         <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} />

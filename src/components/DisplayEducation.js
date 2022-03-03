@@ -52,7 +52,7 @@ class DisplayEducation extends Component {
       else if(this.state.display === 'text') {
         return (
           <EduTemplate
-            expData={eduInfo}
+            eduData={eduInfo}
             infoType="eduInfo"
             editFunc={this.handleEdit}
             addFunc={this.handleAdd}

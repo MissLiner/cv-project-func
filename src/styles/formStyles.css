@@ -20,6 +20,7 @@ h1 {
 }
 h2 {
   color:rgb(138, 138, 138);
+  font-family: arial;
   font-size: 24px;
 }
 input {
@@ -95,7 +96,7 @@ button:active {
   width: 400px;
 }
 
-.companyInfo {
+.flex {
   display: flex;
 }
 .genInfoForm {
