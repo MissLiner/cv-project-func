@@ -33,6 +33,9 @@ class InputForm extends Component {
 
               defaultText={inputName}
               elemClass={inputOrder + "Form"}
+              elemType={inputList[i][2]}
+              elemLength={inputList[i][3]}
+
               key={keyID}
 
               changeFunc={changeFunc}

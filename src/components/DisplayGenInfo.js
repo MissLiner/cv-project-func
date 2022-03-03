@@ -32,10 +32,10 @@ class DisplayGenInfo extends Component {
   
   render() {
     const { genInfo, newGenInfo } = this.state;
-    const genInfoLabels = [ ['Name', 'first'], ['Phone', 'second'], 
-                            ['Email', 'third'], ['Address', 'fourth'], 
-                            ['City', 'fifth'], ['State', 'sixth'], 
-                            ['Zip', 'seventh'],  
+    const genInfoLabels = [ ['Name', 'first', 'text'], ['Phone', 'second', 'tel' ], 
+                            ['Email', 'third', 'email'], ['Address', 'fourth', 'text'], 
+                            ['City', 'fifth', 'text'], ['State', 'sixth', 'text', '2'], 
+                            ['Zip', 'seventh', 'text', '5'],  
                           ];
 
     const renderPage = () => {
@@ -63,7 +63,7 @@ class DisplayGenInfo extends Component {
             details={genInfo} 
 
             needsAddBtn={false}
-            
+
             editFunc={this.handleEdit}
           />
         )

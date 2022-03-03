@@ -10,9 +10,10 @@ class Input extends Component {
       infoType, 
       sectionKey, 
       inputValue,
-      inputType, 
       defaultText,
       elemClass,
+      elemType,
+      elemLength,
       
       changeFunc, 
       clickFunc } = this.props;
@@ -20,13 +21,16 @@ class Input extends Component {
     return (
       <div className={elemClass + " inputBox"}>
           <input
-            type={inputType}
+            type={elemType}
+            maxLength={elemLength}
+            minLength={elemLength}
             data-name={infoType}
             data-section={sectionKey}
             data-field={defaultText}
 
             placeholder={defaultText}
             value={inputValue}
+
 
             onChange={changeFunc}
             onClick={clickFunc}

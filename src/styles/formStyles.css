@@ -158,29 +158,33 @@ grid-template-columns: repeat(6, 1fr);  */
 .bottomForm {
   grid-area: i;
 }
-.first {
+
+
+.NameDisplay {
+  font-size:larger;
+  font-weight: bold;
   width: 100%;
 }
-.second {
+.PhoneDisplay {
   width: 100%;
 }
-.third {
+.EmailDisplay {
   text-align: right;
   width: 45%;
 }
-.fourth {
+.AddressDisplay {
   width: 10%;
 }
-.fifth {
+.CityDisplay {
   justify-self: left;
   text-align: left;
   width: 45%;
 }
-.sixth {
+.StateDisplay {
   text-align: right;
   width: 50%;
 }
-.seventh {
+.ZipDisplay {
   text-align: left;
   width: 50%;
 }

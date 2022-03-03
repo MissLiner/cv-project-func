@@ -27,7 +27,7 @@ class InputDisplayDetail extends Component {
               <Div 
               key={subKeyID}
               divText={entry[1]}
-              elemClass={inputList[i][1]} /> 
+              elemClass={inputList[i][0] + "Display"} /> 
             )
           } else {
             return null;
