@@ -1,20 +1,14 @@
 /* eslint-disable no-useless-constructor */
 import './App.css';
 import React, { Component } from 'react';
-import './styles/formStyles.css';
+import './App.css';
 import DisplayExperience from './components/DisplayExperience';
 import DisplayEducation from './components/DisplayEducation';
 import DisplayGenInfo from './components/DisplayGenInfo';
 
 class App extends Component {
   constructor(props) {
-    super(props)
-    this.state = {
-      genDisplay: 'form',
-      expDisplay: 'form',
-      eduDisplay: 'form',
-    }
-
+    super(props);
   }
 
   render() {

@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import '../styles/formStyles.css';
+import '../App.css';
 import Button from './ElemButton';
 
 class ExpTemplate extends Component {

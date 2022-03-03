@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import '../styles/formStyles.css';
+import '../App.css';
 import InputForm from './InputForm';
 import EduTemplate from './TemplateEdu';
 import { handleChange, handleSubmit, handleAdd, handleEdit } from './HelperFuncs';

@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import '../styles/formStyles.css';
+import '../App.css';
 import Input from "./ElemInput";
 import Button from "./ElemButton";
 
