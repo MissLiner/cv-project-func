@@ -1,10 +1,10 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import InputDisplay from './InputDisplay';
 import InputForm from './InputForm';
 import { handleChange, handleSubmit, handleAdd, handleEdit } from './HelperFuncs';
 import uniqid from 'uniqid';
 import '../styles/formStyles.css';
+import EduTemplate from './TemplateEdu';
 
 class DisplayEducation extends Component {
   constructor(props) {
@@ -51,15 +51,12 @@ class DisplayEducation extends Component {
       }
       else if(this.state.display === 'text') {
         return (
-          <InputDisplay
-            heading="Education"
-            details={eduInfo} 
-            inputList={eduInfoLabels}
+          <EduTemplate
+            expData={eduInfo}
+            infoType="eduInfo"
             editFunc={this.handleEdit}
             addFunc={this.handleAdd}
-            infoType="eduInfo"
-            sectionKey="newEduInfo"
-            needsAddBtn={true}
+            sectionKey="newEduInfo" 
           />
         )
       }
