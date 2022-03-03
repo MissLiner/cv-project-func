@@ -13,7 +13,7 @@ class HeaderTemplate extends Component {
       editFunc,
       infoType,
     } = this.props;
-    // const allValues = Object.values(headerData);
+
     return (
       <div className='resumeHeader resume'>
         <div className='name'>{headerData[0].Name}</div>

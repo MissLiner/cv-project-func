@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import InputDisplay from './InputDisplay';
 import InputForm from './InputForm';
+import ExpTemplate from './TemplateExp';
 import { handleChange, handleSubmit, handleAdd, handleEdit } from './HelperFuncs';
 import uniqid from 'uniqid';
 import '../styles/formStyles.css';
@@ -54,16 +54,23 @@ class DisplayExperience extends Component {
       }
       else if(this.state.display === 'text') {
         return (
-          <InputDisplay
-            heading="Experience"
-            details={expInfo} 
-            inputList={expInfoLabels}
+          <ExpTemplate 
+            expData={expInfo}
+            infoType="expInfo"
             editFunc={this.handleEdit}
             addFunc={this.handleAdd}
-            infoType="expInfo"
-            sectionKey="newExpInfo"
-            needsAddBtn={true}
           />
+
+          // <InputDisplay
+          //   heading="Experience"
+          //   details={expInfo} 
+          //   inputList={expInfoLabels}
+          //   editFunc={this.handleEdit}
+          //   addFunc={this.handleAdd}
+          //   infoType="expInfo"
+          //   sectionKey="newExpInfo"
+          //   needsAddBtn={true}
+          // />
         )
       }
     }

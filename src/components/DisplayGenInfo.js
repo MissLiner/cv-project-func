@@ -1,7 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import HeaderTemplate from './HeaderTemplate';
-// import InputDisplay from './InputDisplay';
+import HeaderTemplate from './TemplateHeader';
 import InputForm from './InputForm';
 import { handleChange, handleSubmit, handleEdit } from './HelperFuncs';
 import uniqid from 'uniqid';
@@ -62,17 +61,6 @@ class DisplayGenInfo extends Component {
             headerData={genInfo}
             editFunc={this.handleEdit}
             infoType="genInfo" />
-          // <InputDisplay 
-          //   heading=""
-          //   infoType="genInfo"
-          //   sectionKey="newGenInfo"
-          //   inputList={genInfoLabels}
-          //   details={genInfo} 
-
-          //   needsAddBtn={false}
-
-          //   editFunc={this.handleEdit}
-          // />
         )
       }
     }
