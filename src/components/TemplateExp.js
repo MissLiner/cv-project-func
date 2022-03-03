@@ -13,39 +13,32 @@ class ExpTemplate extends Component {
       editFunc,
       infoType,
       addFunc,
+      sectionKey,
     } = this.props;
 
     const renderAllDivs = () => {
       return (
-        expData.map((job) => {
-          console.log(job);
-          console.log(job.Company);
+        expData.map((job, i) => {
+          const keyID = job.baseID + i;
           return (
-            <div className='resumeExpJob'>
+            <div className='resumeExpJob' key={keyID}>
               <div className='companyInfo'>
-                <div className='company'>{job.Company}</div>
-                <div className='location'>{job.Location}</div>
+                <div className='company left'>{job.Company}</div>
+                <div className='location right'>{job.Location}</div>
               </div>
-              <div className='dates'>{job.StartDate} - {job.EndDate}</div>
-              <div className='highlights'>{job.Highlights}</div>
+              <div className='dates left'>{job.StartDate} - {job.EndDate}</div>
+              <div className='highlights left'>{job.Highlights}</div>
             </div>
           )
           })
       )
     }
     return (
-      // <div className='resumeExp resume'>
-      //   <div className='companyInfo'>
-      //     <div className='company'>{expData[0].Company}</div>
-      //     <div className='location'>{expData[0].Location}</div>
-      //   </div>
-      //   <div className='dates'>{expData[0].StartDate} - {expData[0].EndDate}</div>
-      //   <div className='highlights'>{expData[0].Highlights}</div>
       <div className="resumeExp resume">
         {renderAllDivs()}
       
         <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} />
-        <Button btnText="Add New" clickFunc={addFunc} />
+        <Button btnText="Add New" clickFunc={addFunc} sectionKey={sectionKey} />
       </div>
     )
   }

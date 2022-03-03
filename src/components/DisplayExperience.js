@@ -59,18 +59,8 @@ class DisplayExperience extends Component {
             infoType="expInfo"
             editFunc={this.handleEdit}
             addFunc={this.handleAdd}
+            sectionKey="newExpInfo" 
           />
-
-          // <InputDisplay
-          //   heading="Experience"
-          //   details={expInfo} 
-          //   inputList={expInfoLabels}
-          //   editFunc={this.handleEdit}
-          //   addFunc={this.handleAdd}
-          //   infoType="expInfo"
-          //   sectionKey="newExpInfo"
-          //   needsAddBtn={true}
-          // />
         )
       }
     }
