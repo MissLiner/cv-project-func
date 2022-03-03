@@ -16,7 +16,8 @@ class InputForm extends Component {
             details, 
             inputList, 
             changeFunc, 
-            submitFunc } = this.props;
+            submitFunc,
+            updateFunc } = this.props;
 
     const renderInputs = () => {
       return(
@@ -62,6 +63,7 @@ class InputForm extends Component {
           order="bottomForm" 
           btnText="Save" 
           section={sectionKey} 
+          updateFunc={updateFunc}
         />       
       </form>
     )

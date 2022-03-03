@@ -12,15 +12,26 @@ import DisplayGenInfo from './components/DisplayGenInfo';
 class App extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      genDisplay: 'form',
+      expDisplay: 'form',
+      eduDisplay: 'form',
+    }
+
   }
 
   render() {
-    
-      
+    const updateDisplayStatus = (displayProp, newStatus) => {
+      console.log(displayProp);
+      console.log(newStatus);
+      this.setState({
+        [displayProp]: newStatus,
+      })
+    }
     return (
       <div>
         <h1>CV Builder</h1>
-        <DisplayGenInfo />
+        <DisplayGenInfo updateFunc={updateDisplayStatus}/>
         <DisplayExperience />
         <DisplayEducation />
       </div>

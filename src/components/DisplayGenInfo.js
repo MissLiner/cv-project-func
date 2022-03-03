@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
+import HeaderTemplate from './headerTemplate';
 import InputDisplay from './InputDisplay';
 import InputForm from './InputForm';
 import { handleChange, handleSubmit, handleEdit } from './HelperFuncs';
@@ -32,6 +33,7 @@ class DisplayGenInfo extends Component {
   
   render() {
     const { genInfo, newGenInfo } = this.state;
+    const { updateFunc } = this.props;
     const genInfoLabels = [ ['Name', 'first', 'text'], ['Phone', 'second', 'tel' ], 
                             ['Email', 'third', 'email'], ['Address', 'fourth', 'text'], 
                             ['City', 'fifth', 'text'], ['State', 'sixth', 'text', '2'], 
@@ -50,22 +52,24 @@ class DisplayGenInfo extends Component {
 
             changeFunc={this.handleChange} 
             submitFunc={this.handleSubmit}
+            updateFunc={updateFunc}
           />
         )     
       }
       else if(this.state.display === 'text') {
         return(
-          <InputDisplay 
-            heading=""
-            infoType="genInfo"
-            sectionKey="newGenInfo"
-            inputList={genInfoLabels}
-            details={genInfo} 
+          <HeaderTemplate headerData={genInfo} />
+          // <InputDisplay 
+          //   heading=""
+          //   infoType="genInfo"
+          //   sectionKey="newGenInfo"
+          //   inputList={genInfoLabels}
+          //   details={genInfo} 
 
-            needsAddBtn={false}
+          //   needsAddBtn={false}
 
-            editFunc={this.handleEdit}
-          />
+          //   editFunc={this.handleEdit}
+          // />
         )
       }
     }
