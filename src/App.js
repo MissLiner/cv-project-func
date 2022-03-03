@@ -12,17 +12,10 @@ class App extends Component {
   }
 
   render() {
-    const updateDisplayStatus = (displayProp, newStatus) => {
-      console.log(displayProp);
-      console.log(newStatus);
-      this.setState({
-        [displayProp]: newStatus,
-      })
-    }
     return (
       <div>
         <h1>CV Builder</h1>
-        <DisplayGenInfo updateFunc={updateDisplayStatus}/>
+        <DisplayGenInfo />
         <DisplayExperience />
         <DisplayEducation />
       </div>
