@@ -78,3 +78,16 @@ export function removeLastVal(wholeArr) {
   wholeArr.pop();
   return wholeArr;
 }
+
+export function storeState(stateObj) {
+  window.localStorage.setItem(stateObj, JSON.stringify(stateObj));
+}
+export function getStateFromStorage(stateObj) {
+  if (localStorage.getItem(stateObj)) {
+      let storedObj = JSON.parse(window.localStorage.getItem(stateObj));
+      this.setState({
+        stateObj: storedObj,
+      })
+      console.log(storedObj);
+  }
+}
