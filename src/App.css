@@ -22,7 +22,6 @@ h1 {
 }
 h2 {
   color:rgb(138, 138, 138);
-  font-family: arial;
   font-size: 24px;
 }
 input {
@@ -214,6 +213,7 @@ label {
   width: 600px;
 }
 .pubResume {
+  font-family: 'Times New Roman', Times, serif !important;
   width: 500px;
 }
 .pubResumePage {

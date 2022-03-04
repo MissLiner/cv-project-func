@@ -44,15 +44,12 @@ export function handleSubmit(e) {
     newArray.splice(currentIndex, 1, newObj);
   }
   localStorage.setItem(currentArrayKey, JSON.stringify(newArray));
-  console.log(localStorage);
 
   this.setState({
     [currentArrayKey]:  newArray,
     display: 'text',
     editIndex: 'none',
-  }
-  // , () => { localStorage.setItem(currentArrayKey, JSON.stringify(this.state[currentArrayKey])); }
-  )
+  })
 };
 
 export function handleAdd(e) {
