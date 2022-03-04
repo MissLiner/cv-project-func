@@ -43,6 +43,8 @@ export function handleSubmit(e) {
   } else {
     newArray.splice(currentIndex, 1, newObj);
   }
+  localStorage.setItem(currentArrayKey, JSON.stringify(newArray));
+  console.log(localStorage);
 
   this.setState({
     [currentArrayKey]:  newArray,
@@ -80,7 +82,8 @@ export function removeLastVal(wholeArr) {
 }
 
 export function storeState(stateObj) {
-  window.localStorage.setItem(stateObj, JSON.stringify(stateObj));
+  localStorage.setItem(this.state[0], JSON.stringify(stateObj));
+  console.log(localStorage);
 }
 export function getStateFromStorage(stateObj) {
   if (localStorage.getItem(stateObj)) {

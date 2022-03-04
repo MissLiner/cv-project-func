@@ -3,7 +3,10 @@ import React, { Component } from 'react';
 import '../App.css';
 import HeaderTemplate from './TemplateHeader';
 import InputForm from './InputForm';
-import { handleChange, handleSubmit, handleEdit } from './HelperFuncs';
+import {  handleChange, 
+          handleSubmit, 
+          handleEdit,
+        } from './HelperFuncs';
 import uniqid from 'uniqid';
 
 class DisplayGenInfo extends Component {
