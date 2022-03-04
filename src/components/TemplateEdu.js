@@ -35,9 +35,11 @@ class EduTemplate extends Component {
           eduData.map((school, i) => {
             const keyID = school.baseID + i;
             return (
-              <div className='resumeEduSchool flex' key={keyID}>
-                <div className='degreeInfo left'><b>{school.Degree}</b>| {school.School}, {school.Location}</div>
-                <div className='schoolYear right emphasized'>{school.Year}</div>
+              <div>
+                <div className='resumeEduSchool flex' key={keyID}>
+                  <div className='degreeInfo left'><b>{school.Degree}</b>| {school.School}, {school.Location}</div>
+                  <div className='schoolYear right emphasized'>{school.Year}</div>
+                </div>
                 <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} sectionKey={sectionKey} arrIndex={i} order='regularBtn' />
               </div>
             )
@@ -48,7 +50,7 @@ class EduTemplate extends Component {
     const addAddNewBtn = () => {
       if(isPublished === false) {
         return(
-          <Button btnText="Add New" clickFunc={addFunc} sectionKey={sectionKey} order='regularBtn' />
+          <Button btnText="Add New" clickFunc={addFunc} sectionKey={sectionKey} order='regularBtn addBtn' />
         )
       }
     }
@@ -61,9 +63,10 @@ class EduTemplate extends Component {
     }
     return (
       <div className={setDivClass()}>
-        <h2>Education</h2>
+        <div id="eduHeader">
+          <h2>Education {addAddNewBtn()}</h2>
+        </div>
         {renderAllDivs()}
-        {addAddNewBtn()}
       </div>
     )
   }

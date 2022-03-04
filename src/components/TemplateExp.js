@@ -49,7 +49,7 @@ class ExpTemplate extends Component {
     const addAddBtn = () => {
       if(isPublished === false) {
         return(
-          <Button btnText="Add New" clickFunc={addFunc} sectionKey={sectionKey} order='regularBtn' />
+          <Button btnText="Add New" clickFunc={addFunc} sectionKey={sectionKey} order='regularBtn addBtn' />
         )
       }
     }
@@ -62,9 +62,8 @@ class ExpTemplate extends Component {
     }
     return (
       <div className={setDivClass()}>
-        <h2>Experience</h2>
+        <h2>Experience {addAddBtn()}</h2>
         {renderAllDivs()}
-        {addAddBtn()}
       </div>
     )
   }
