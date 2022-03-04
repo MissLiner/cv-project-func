@@ -11,6 +11,7 @@ class EduTemplate extends Component {
     const {
       eduData,
       editFunc,
+      deleteFunc,
       infoType,
       addFunc,
       sectionKey,
@@ -41,6 +42,7 @@ class EduTemplate extends Component {
                   <div className='schoolYear right emphasized'>{school.Year}</div>
                 </div>
                 <Button btnText="Edit" btnKey={keyID + 'btn'} clickFunc={editFunc} infoType={infoType} sectionKey={sectionKey} arrIndex={i} order='regularBtn' />
+                <Button btnText="Delete" btnKey={keyID + 'btn'} clickFunc={deleteFunc} infoType={infoType} sectionKey={sectionKey} arrIndex={i} order='regularBtn' />
               </div>
             )
           })

@@ -75,6 +75,19 @@ export function handleEdit(e) {
     editIndex: objIndex,
   })
 }
+export function handleDelete(e) {
+  const deleteObjKey = e.target.dataset.section;
+  const deleteObjIndex = e.target.dataset.index;
+  let newArray = [];
+  const deleteObjArray = this.state[deleteObjKey[deleteObjIndex]];
+  newArray.concat(deleteObjArray);
+  newArray.splice(deleteObjIndex, 1);
+
+  this.setState({
+    [deleteObjKey]: newArray,
+  })
+}
+
 export function removeLastVal(wholeArr) {
   wholeArr.pop();
   return wholeArr;

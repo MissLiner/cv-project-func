@@ -11,6 +11,7 @@ class ExpTemplate extends Component {
     const {
       expData,
       editFunc,
+      deleteFunc,
       infoType,
       addFunc,
       sectionKey,
@@ -30,6 +31,7 @@ class ExpTemplate extends Component {
                 </div>
                 <div className='highlights left'>{job.Highlights}</div>
                 <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} sectionKey={sectionKey} arrIndex={i} order='regularBtn' />
+                <Button btnText="Delete" clickFunc={deleteFunc} infoType={infoType} sectionKey={sectionKey} arrIndex={i} order='regularBtn' />
               </div>
             )
           } else {

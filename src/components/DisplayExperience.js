@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import InputForm from './InputForm';
 import ExpTemplate from './TemplateExp';
-import { handleChange, handleSubmit, handleAdd, handleEdit } from './HelperFuncs';
+import { handleChange, handleSubmit, handleAdd, handleEdit, handleDelete } from './HelperFuncs';
 import uniqid from 'uniqid';
 
 class DisplayExperience extends Component {
@@ -30,6 +30,7 @@ class DisplayExperience extends Component {
     this.handleSubmit = handleSubmit.bind(this);
     this.handleAdd = handleAdd.bind(this);
     this.handleEdit = handleEdit.bind(this);
+    this.handleDelete = handleDelete.bind(this);
   }
   componentDidMount() {
     if(localStorage.getItem('expInfo')) {
@@ -68,6 +69,7 @@ class DisplayExperience extends Component {
             infoType="expInfo"
             editFunc={this.handleEdit}
             addFunc={this.handleAdd}
+            deleteFunc={this.handleDelete}
             sectionKey="newExpInfo" 
             isPublished={isPublished}
           />
