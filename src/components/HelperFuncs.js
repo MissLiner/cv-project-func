@@ -50,7 +50,9 @@ export function handleSubmit(e) {
     [currentArrayKey]:  newArray,
     display: 'text',
     editIndex: 'none',
-  })
+  }
+  // , () => { localStorage.setItem(currentArrayKey, JSON.stringify(this.state[currentArrayKey])); }
+  )
 };
 
 export function handleAdd(e) {

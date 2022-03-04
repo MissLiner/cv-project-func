@@ -31,7 +31,15 @@ class DisplayExperience extends Component {
     this.handleAdd = handleAdd.bind(this);
     this.handleEdit = handleEdit.bind(this);
   }
-  
+  componentDidMount() {
+    if(localStorage.getItem('expInfo')) {
+      const expInfo = JSON.parse(localStorage.getItem('expInfo'));
+      this.setState({ 
+        expInfo,
+        display: 'text',
+      });
+    }
+  }
   render() {
     const renderPage = () => {
       const { expInfo, newExpInfo } = this.state;

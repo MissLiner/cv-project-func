@@ -33,12 +33,13 @@ class DisplayGenInfo extends Component {
     this.handleEdit = handleEdit.bind(this);
   }
   componentDidMount() {
-    const isLocalStorage = localStorage.getItem('genInfo');
-    const genInfo = isLocalStorage ? JSON.parse(isLocalStorage) : '';
-    this.setState({ 
-      genInfo,
-      display: 'text',
-    });
+    if(localStorage.getItem('genInfo')) {
+      const genInfo = JSON.parse(localStorage.getItem('genInfo'));
+      this.setState({ 
+        genInfo,
+        display: 'text',
+      });
+    }
   }
   
   render() {
