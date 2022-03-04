@@ -76,11 +76,11 @@ export function handleEdit(e) {
   })
 }
 export function handleDelete(e) {
-  const deleteObjKey = e.target.dataset.section;
-  const deleteObjIndex = e.target.dataset.index;
+  const deleteObjKey = e.target.dataset.name;
+  const deleteObjIndex = e.target.dataset.arrindex;
   let newArray = [];
-  const deleteObjArray = this.state[deleteObjKey[deleteObjIndex]];
-  newArray.concat(deleteObjArray);
+  const deleteObjArray = this.state[deleteObjKey];
+  newArray = newArray.concat(deleteObjArray);
   newArray.splice(deleteObjIndex, 1);
 
   this.setState({
