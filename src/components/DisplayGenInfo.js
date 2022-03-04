@@ -41,9 +41,12 @@ class DisplayGenInfo extends Component {
   render() {
     const { genInfo, newGenInfo } = this.state;
     const { updateFunc, isPublished } = this.props;
-    const genInfoLabels = [ ['Name', 'first', 'text'], ['Phone', 'second', 'tel' ], 
-                            ['Email', 'third', 'email'], ['Address', 'fourth', 'text'], 
-                            ['City', 'fifth', 'text'], ['State', 'sixth', 'text', '2'], 
+    const genInfoLabels = [ ['Name', 'first', 'text'], 
+                            ['Phone', 'second', 'tel' ], 
+                            ['Email', 'third', 'email'], 
+                            ['Address', 'fourth', 'text'], 
+                            ['City', 'fifth', 'text'], 
+                            ['State', 'sixth', 'text', '2'], 
                             ['Zip', 'seventh', 'text', '5'],  
                           ];
 
