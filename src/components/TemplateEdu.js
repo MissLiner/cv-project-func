@@ -38,7 +38,7 @@ class EduTemplate extends Component {
               <div className='resumeEduSchool flex' key={keyID}>
                 <div className='degreeInfo left'><b>{school.Degree}</b>| {school.School}, {school.Location}</div>
                 <div className='schoolYear right emphasized'>{school.Year}</div>
-                <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} order='regularBtn' />
+                <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} sectionKey={sectionKey} arrIndex={i} order='regularBtn' />
               </div>
             )
           })

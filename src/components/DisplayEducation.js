@@ -6,8 +6,6 @@ import EduTemplate from './TemplateEdu';
 import { handleChange, handleSubmit, handleAdd, handleEdit } from './HelperFuncs';
 import uniqid from 'uniqid';
 
-
-
 class DisplayEducation extends Component {
   constructor(props) {
     super(props);
@@ -31,6 +29,15 @@ class DisplayEducation extends Component {
     this.handleAdd = handleAdd.bind(this);
     this.handleEdit = handleEdit.bind(this);
   }
+  componentDidMount() {
+    if(localStorage.getItem('eduInfo')) {
+      const eduInfo = JSON.parse(localStorage.getItem('eduInfo'));
+      this.setState({ 
+        eduInfo,
+        display: 'text',
+      });
+    }
+  }
   
   render() {
     const renderPage = () => {
@@ -39,9 +46,6 @@ class DisplayEducation extends Component {
       const eduInfoLabels = [['School', 'first'], ['Location', 'second'], 
                             ['Degree', 'fourth'], ['Year', 'third']];
 
-      // if(this.state.display === 'form' && isPublished === true) {
-      //   alert('Please add at least one school before publishing');
-      // } else 
       if (this.state.display === 'form') {
         return (
           <InputForm
