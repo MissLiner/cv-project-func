@@ -29,7 +29,7 @@ class ExpTemplate extends Component {
                   <div className='dates right emphasized'>{job.StartDate} - {job.EndDate}</div>
                 </div>
                 <div className='highlights left'>{job.Highlights}</div>
-                <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} order='regularBtn' />
+                <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} sectionKey={sectionKey} arrIndex={i} order='regularBtn' />
               </div>
             )
           } else {
