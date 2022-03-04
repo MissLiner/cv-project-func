@@ -39,7 +39,7 @@ class App extends Component {
       })
     }
   }
-
+// DO NEXT - ADD NEW BTNS NOT WORKING
   render() {
     const { isPublished } = this.state;
 

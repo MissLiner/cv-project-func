@@ -9,6 +9,7 @@ class Button extends Component {
     return (
       <button
         type={this.props.type}
+        key={this.props.btnKey}
         className={this.props.order}
         value={this.props.value}
         data-name={this.props.infoType}

@@ -22,13 +22,12 @@ h1 {
 }
 h2 {
   border-bottom: solid;
-  border-color:rgb(123, 122, 122);
+  border-color:rgb(87, 87, 87);
   border-width: 1px;
   color:rgb(123, 122, 122);
-  font-size: 18px;
+  font-size: 22px;
   height: 36px;
-  /* text-decoration: underline; */
-  
+  text-align: left;
 }
 input {
   border: none;
@@ -210,15 +209,12 @@ label {
 
 
 /* TEMPLATES */
-/* .eduHeader {
-  display: grid;
-} */
+
 .addBtn {
   margin-left: 100px;
   margin-top: 0px;
-  position: absolute;
-  /* float: right; */
-  /* right: 0px; */
+  position: relative;
+  float: right;
 }
 .pubResume .name {
   font-size:24px;

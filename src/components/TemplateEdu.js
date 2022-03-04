@@ -35,12 +35,12 @@ class EduTemplate extends Component {
           eduData.map((school, i) => {
             const keyID = school.baseID + i;
             return (
-              <div>
-                <div className='resumeEduSchool flex' key={keyID}>
+              <div key={keyID}>
+                <div className='resumeEduSchool flex'>
                   <div className='degreeInfo left'><b>{school.Degree}</b>| {school.School}, {school.Location}</div>
                   <div className='schoolYear right emphasized'>{school.Year}</div>
                 </div>
-                <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} sectionKey={sectionKey} arrIndex={i} order='regularBtn' />
+                <Button btnText="Edit" btnKey={keyID + 'btn'} clickFunc={editFunc} infoType={infoType} sectionKey={sectionKey} arrIndex={i} order='regularBtn' />
               </div>
             )
           })

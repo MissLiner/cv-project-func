@@ -64,6 +64,7 @@ class ExpTemplate extends Component {
       <div className={setDivClass()}>
         <h2>Experience {addAddBtn()}</h2>
         {renderAllDivs()}
+        
       </div>
     )
   }
