@@ -52,9 +52,15 @@ class EduTemplate extends Component {
         )
       }
     }
-    // fix edit button to attach to each section
+    const setDivClass = () => {
+      if(isPublished === false) {
+        return 'resumeEdu resume' 
+      } else {
+        return 'pubEdu pubResume'
+      }
+    }
     return (
-      <div className="resumeEdu resume">
+      <div className={setDivClass()}>
         <h2>Education</h2>
         {renderAllDivs()}
         {addAddNewBtn()}

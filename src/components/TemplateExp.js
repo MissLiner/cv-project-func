@@ -53,8 +53,15 @@ class ExpTemplate extends Component {
         )
       }
     }
+    const setDivClass = () => {
+      if(isPublished === false) {
+        return 'resumeExp resume' 
+      } else {
+        return 'pubExp pubResume'
+      }
+    }
     return (
-      <div className="resumeExp resume">
+      <div className={setDivClass()}>
         <h2>Experience</h2>
         {renderAllDivs()}
         {addAddBtn()}
