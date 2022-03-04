@@ -213,6 +213,16 @@ label {
   padding: 15px 30px 15px 30px;
   width: 600px;
 }
+.pubResume {
+  width: 500px;
+}
+.pubResumePage {
+  background-color: white;
+  border: solid;
+  border-color: black;
+  height: 750px;
+  width:600px;
+}
 
 
 

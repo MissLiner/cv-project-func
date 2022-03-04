@@ -43,7 +43,7 @@ class DisplayGenInfo extends Component {
       if(this.state.display === 'form') {
         return (
           <InputForm 
-            heading=""
+            heading="Contact Info"
             infoType="genInfo"
             sectionKey="newGenInfo"
             inputList={genInfoLabels}

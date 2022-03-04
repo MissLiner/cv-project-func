@@ -16,12 +16,16 @@ class App extends Component {
     this.handlePublish = this.handlePublish.bind(this);
   }
   handlePublish(e) {
+    const resumePage = document.getElementById("resumePage");
+
     if(this.state.isPublished === false) {
+      resumePage.classList.add("pubResumePage");
       e.target.textContent = "Unpublish";
       this.setState({
         isPublished: true
       })
     } else {
+      resumePage.classList.remove("pubResumePage");
       e.target.textContent = "Publish";
       this.setState({
         isPublished: false
@@ -36,9 +40,11 @@ class App extends Component {
       <div>
         <h1>ResumeMaker</h1>
         <Button btnText='Publish' order='resumeBtn glass' clickFunc={this.handlePublish} />
-        <DisplayGenInfo isPublished={isPublished} />
-        <DisplayExperience isPublished={isPublished} />
-        <DisplayEducation isPublished={isPublished} />
+        <div id="resumePage">
+          <DisplayGenInfo isPublished={isPublished} />
+          <DisplayExperience isPublished={isPublished} />
+          <DisplayEducation isPublished={isPublished} />
+        </div>
       </div>
     )
   }
