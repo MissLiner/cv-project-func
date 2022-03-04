@@ -31,6 +31,10 @@ class DisplayGenInfo extends Component {
     this.handleChange = handleChange.bind(this);
     this.handleSubmit = handleSubmit.bind(this);
     this.handleEdit = handleEdit.bind(this);
+
+    const isLocalStorage = localStorage.getItem('genInfo') === 'true';
+    const storedObj = isLocalStorage ? JSON.parse(window.localStorage.getItem('genInfo')) : '';
+    this.setState({ storedObj });
   }
   
   render() {
