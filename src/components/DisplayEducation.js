@@ -35,6 +35,7 @@ class DisplayEducation extends Component {
   render() {
     const renderPage = () => {
       const { eduInfo, newEduInfo } = this.state;
+      const { isPublished } = this.props;
       const eduInfoLabels = [['School', 'first'], ['Location', 'second'], 
                             ['Degree', 'fourth'], ['Year', 'third']];
 
@@ -59,6 +60,7 @@ class DisplayEducation extends Component {
             editFunc={this.handleEdit}
             addFunc={this.handleAdd}
             sectionKey="newEduInfo" 
+            isPublished={isPublished}
           />
         )
       }

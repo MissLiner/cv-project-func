@@ -60,7 +60,7 @@ class InputForm extends Component {
         
         <Button 
           type="submit" 
-          order="bottomForm" 
+          order="bottomForm regularBtn" 
           btnText="Save" 
           section={sectionKey} 
           updateFunc={updateFunc}

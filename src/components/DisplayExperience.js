@@ -35,6 +35,7 @@ class DisplayExperience extends Component {
   render() {
     const renderPage = () => {
       const { expInfo, newExpInfo } = this.state;
+      const { isPublished } = this.props;
       const expInfoLabels = [['Company', 'first'], ['Location', 'second'], 
                             ['Title', 'fifth'], ['StartDate', 'third'], 
                             ['EndDate', 'fourth'], ['Highlights', 'sixth']];
@@ -60,6 +61,7 @@ class DisplayExperience extends Component {
             editFunc={this.handleEdit}
             addFunc={this.handleAdd}
             sectionKey="newExpInfo" 
+            isPublished={isPublished}
           />
         )
       }

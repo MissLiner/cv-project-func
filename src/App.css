@@ -5,32 +5,6 @@
 body {
   background-color:#b0c3c9;
 }
-button {
-	box-shadow: 0px 10px 14px -7px #276873;
-	background:linear-gradient(to bottom, #a2c3cf 5%, #5b7275 100%);
-	background-color:#a2c3cf;
-  border: none;
-	border-radius:8px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:14px;
-	font-weight:bold;
-  margin-top: 15px;
-	padding:5px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #3d768a;
-  width: 100px;
-}
-button:hover {
-	background:linear-gradient(to bottom, #5b7275 5%, #a2c3cf 100%);
-	background-color:#5b7275;
-}
-button:active {
-	position:relative;
-	top:1px;
-}
 div {
   margin-top: 10px;
 }
@@ -65,6 +39,70 @@ label {
   margin-left: 0;
   min-width: 0;
   width: 100%;
+}
+/* BUTTONS */
+.regularBtn {
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:linear-gradient(to bottom, #a2c3cf 5%, #5b7275 100%);
+	background-color:#a2c3cf;
+  border: none;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+  margin-top: 15px;
+	padding:5px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+  width: 100px;
+}
+.regularBtn:hover {
+	background:linear-gradient(to bottom, #5b7275 5%, #a2c3cf 100%);
+	background-color:#5b7275;
+}
+.regularBtn:active {
+	position:relative;
+	top:1px;
+}
+.resumeBtn {
+  left: 100px;
+  padding: 10px;
+  position: absolute;
+  top: 10px;
+  width: 160px;
+}
+.glass{
+  /* source: https://simplestepscode.com/css-glass-button-tutorial/ */
+	/* background styles */
+	display: inline-block;
+	padding: 5px 5px;
+	background-image: linear-gradient(rgb(20, 114, 164),rgb(120, 174, 203));
+
+	/* text styles */
+	text-decoration: none;
+	color: #fff;
+	font-size: 20px;
+	font-family: sans-serif;
+	font-weight: 600;
+  border-color:rgb(172, 164, 159);
+  border-radius: 3px;
+  box-shadow: 0px 1px 4px -2px rgb(50, 50, 50);
+  text-shadow: 0px -1px #333;
+}
+.glass:after{
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: calc(100% - 4px);
+	height: 50%;
+	background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+}
+.glass:hover{
+	background: linear-gradient(rgb(0, 166, 184),rgb(102, 180, 228));
 }
 
 /* BASIC FORMATTING */

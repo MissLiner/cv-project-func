@@ -5,7 +5,7 @@ import Button from './ElemButton';
 
 class ExpTemplate extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
   render() {
     const {
@@ -14,31 +14,50 @@ class ExpTemplate extends Component {
       infoType,
       addFunc,
       sectionKey,
+      isPublished,
     } = this.props;
 
     const renderAllDivs = () => {
       return (
         expData.map((job, i) => {
           const keyID = job.baseID + i;
-          return (
-            <div className='resumeExpJob' key={keyID}>
-              <div className='companyInfo flex'>
-                <div className='company left'><b>{job.Title}</b> | {job.Company}, {job.Location}</div>
-                <div className='dates right emphasized'>{job.StartDate} - {job.EndDate}</div>
+          if(isPublished === false) {
+            return (
+              <div className='resumeExpJob' key={keyID}>
+                <div className='companyInfo flex'>
+                  <div className='company left'><b>{job.Title}</b> | {job.Company}, {job.Location}</div>
+                  <div className='dates right emphasized'>{job.StartDate} - {job.EndDate}</div>
+                </div>
+                <div className='highlights left'>{job.Highlights}</div>
+                <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} order='regularBtn' />
               </div>
-              <div className='highlights left'>{job.Highlights}</div>
-            </div>
-          )
-          })
+            )
+          } else {
+            return (
+              <div className='resumeExpJob' key={keyID}>
+                <div className='companyInfo flex'>
+                  <div className='company left'><b>{job.Title}</b> | {job.Company}, {job.Location}</div>
+                  <div className='dates right emphasized'>{job.StartDate} - {job.EndDate}</div>
+                </div>
+                <div className='highlights left'>{job.Highlights}</div>
+              </div>
+            )
+          }
+        })
       )
+    }
+    const addAddBtn = () => {
+      if(isPublished === false) {
+        return(
+          <Button btnText="Add New" clickFunc={addFunc} sectionKey={sectionKey} order='regularBtn' />
+        )
+      }
     }
     return (
       <div className="resumeExp resume">
         <h2>Experience</h2>
         {renderAllDivs()}
-      
-        <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} />
-        <Button btnText="Add New" clickFunc={addFunc} sectionKey={sectionKey} />
+        {addAddBtn()}
       </div>
     )
   }

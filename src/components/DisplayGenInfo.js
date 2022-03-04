@@ -32,7 +32,7 @@ class DisplayGenInfo extends Component {
   
   render() {
     const { genInfo, newGenInfo } = this.state;
-    const { updateFunc } = this.props;
+    const { updateFunc, isPublished } = this.props;
     const genInfoLabels = [ ['Name', 'first', 'text'], ['Phone', 'second', 'tel' ], 
                             ['Email', 'third', 'email'], ['Address', 'fourth', 'text'], 
                             ['City', 'fifth', 'text'], ['State', 'sixth', 'text', '2'], 
@@ -60,7 +60,9 @@ class DisplayGenInfo extends Component {
           <HeaderTemplate 
             headerData={genInfo}
             editFunc={this.handleEdit}
-            infoType="genInfo" />
+            infoType="genInfo" 
+            isPublished={isPublished}
+            />
         )
       }
     }
