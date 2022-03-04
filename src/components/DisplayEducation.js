@@ -39,7 +39,10 @@ class DisplayEducation extends Component {
       const eduInfoLabels = [['School', 'first'], ['Location', 'second'], 
                             ['Degree', 'fourth'], ['Year', 'third']];
 
-      if(this.state.display === 'form') {
+      // if(this.state.display === 'form' && isPublished === true) {
+      //   alert('Please add at least one school before publishing');
+      // } else 
+      if (this.state.display === 'form') {
         return (
           <InputForm
             changeFunc={this.handleChange} 

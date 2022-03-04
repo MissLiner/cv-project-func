@@ -31,7 +31,7 @@ class App extends Component {
 
   render() {
     const { isPublished } = this.state;
-    // const { handlePublish } = this.props;
+
     return (
       <div>
         <h1>ResumeMaker</h1>
