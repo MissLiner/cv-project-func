@@ -35,7 +35,10 @@ class DisplayGenInfo extends Component {
   componentDidMount() {
     const isLocalStorage = localStorage.getItem('genInfo');
     const genInfo = isLocalStorage ? JSON.parse(isLocalStorage) : '';
-    this.setState({ genInfo });
+    this.setState({ 
+      genInfo,
+      display: 'text',
+    });
   }
   
   render() {
