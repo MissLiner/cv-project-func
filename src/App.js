@@ -17,8 +17,15 @@ class App extends Component {
   }
   handlePublish(e) {
     const resumePage = document.getElementById("resumePage");
+    const allBtns = document.getElementsByTagName("button");
 
     if(this.state.isPublished === false) {
+      for(let btn of allBtns) {
+        if(btn.textContent === 'Save') {
+          alert("Please save all work before publishing");
+          return;
+        }
+      };
       resumePage.classList.add("pubResumePage");
       e.target.textContent = "Unpublish";
       this.setState({
