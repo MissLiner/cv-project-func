@@ -21,8 +21,14 @@ h1 {
   font-size: 30px;
 }
 h2 {
-  color:rgb(138, 138, 138);
-  font-size: 24px;
+  border-bottom: solid;
+  border-color:rgb(123, 122, 122);
+  border-width: 1px;
+  color:rgb(123, 122, 122);
+  font-size: 18px;
+  height: 36px;
+  /* text-decoration: underline; */
+  
 }
 input {
   border: none;
@@ -204,6 +210,17 @@ label {
 
 
 /* TEMPLATES */
+.pubResume .name {
+  font-size:24px;
+  font-family: helvetica, arial, sans-serif;
+  margin-top: 20px;
+}
+.address1 {
+  margin-top: 5px !important;
+}
+.contacts {
+  margin-top: 0px !important;
+}
 .resume {
   background-color:rgb(240, 226, 218);
   border-radius: 25px;
@@ -213,13 +230,14 @@ label {
   width: 600px;
 }
 .pubResume {
-  font-family: 'Times New Roman', Times, serif !important;
   width: 500px;
 }
 .pubResumePage {
   background-color: white;
   border: solid;
   border-color: black;
+  font-family: 'Times New Roman', Times, serif !important;
+  font-size: 12px;
   height: 750px;
   width:600px;
 }
