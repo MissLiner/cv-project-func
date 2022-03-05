@@ -39,13 +39,13 @@ class App extends Component {
       })
     }
   }
-// DO NEXT - ADD NEW BTNS NOT WORKING
+
   render() {
     const { isPublished } = this.state;
 
     return (
       <div>
-        <h1>ResumeMaker</h1>
+        <h1>ResuMaker</h1>
         <Button btnText='Publish' order='resumeBtn glass' clickFunc={this.handlePublish} />
         <div id="resumePage">
           <DisplayGenInfo isPublished={isPublished} />
