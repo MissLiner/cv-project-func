@@ -10,8 +10,16 @@ class DisplayExperience extends Component {
   constructor(props) {
     super(props);
 
+    let storedExpInfo = [];
+    let storedDisplay = 'form';
+
+    if(localStorage.getItem('expInfo')) {
+      storedExpInfo = JSON.parse(localStorage.getItem('expInfo'));
+      storedDisplay = 'text';
+    }
+
     this.state = {
-      expInfo:    [],
+      expInfo:    storedExpInfo,
       newExpInfo: {
         Company:    '',
         Location:   '',
@@ -21,9 +29,10 @@ class DisplayExperience extends Component {
         Highlights: '',
         baseID:     uniqid(),
       },
-      display:    'form',
+      display:    storedDisplay,
       editIndex:  'none',
     }
+
     this.baseFormState = this.state.newExpInfo;
 
     this.handleChange = handleChange.bind(this);
@@ -33,15 +42,7 @@ class DisplayExperience extends Component {
     this.handleDelete = handleDelete.bind(this);
     this.handleCancel = handleCancel.bind(this);
   }
-  componentDidMount() {
-    if(localStorage.getItem('expInfo')) {
-      const expInfo = JSON.parse(localStorage.getItem('expInfo'));
-      this.setState({ 
-        expInfo,
-        display: 'text',
-      });
-    }
-  }
+  
   render() {
     const renderPage = () => {
       const { expInfo, newExpInfo } = this.state;

@@ -10,8 +10,15 @@ class DisplayEducation extends Component {
   constructor(props) {
     super(props);
 
+    let storedEduInfo = [];
+    let storedDisplay = 'form';
+
+    if(localStorage.getItem('eduInfo')) {
+      storedEduInfo = JSON.parse(localStorage.getItem('eduInfo'));
+      storedDisplay = 'text';
+    }
     this.state = {
-      eduInfo:    [],
+      eduInfo:    storedEduInfo,
       newEduInfo: {
         School:   '',
         Location: '',
@@ -19,7 +26,7 @@ class DisplayEducation extends Component {
         Year:     '',
         baseID:   uniqid(),
       },
-      display:    'form',
+      display:    storedDisplay,
       editIndex:  'none',
     }
     this.baseFormState = this.state.newEduInfo;
@@ -30,15 +37,6 @@ class DisplayEducation extends Component {
     this.handleEdit = handleEdit.bind(this);
     this.handleDelete = handleDelete.bind(this);
     this.handleCancel = handleCancel.bind(this);
-  }
-  componentDidMount() {
-    if(localStorage.getItem('eduInfo')) {
-      const eduInfo = JSON.parse(localStorage.getItem('eduInfo'));
-      this.setState({ 
-        eduInfo,
-        display: 'text',
-      });
-    }
   }
   
   render() {

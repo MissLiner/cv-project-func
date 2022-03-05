@@ -13,8 +13,15 @@ class DisplayGenInfo extends Component {
   constructor(props) {
     super(props);
 
+    let storedGenInfo = [];
+    let storedDisplay = 'form';
+
+    if(localStorage.getItem('genInfo')) {
+      storedGenInfo = JSON.parse(localStorage.getItem('genInfo'));
+      storedDisplay = 'text';
+    }
     this.state = {
-      genInfo:    [],
+      genInfo:    storedGenInfo,
       newGenInfo: {
         Name:       '',
         Address:    '',
@@ -25,21 +32,12 @@ class DisplayGenInfo extends Component {
         Email:      '',
         baseID:     uniqid(),
       },
-      display:    'form',
+      display:    storedDisplay,
       editIndex:  'none',
     };
     this.handleChange = handleChange.bind(this);
     this.handleSubmit = handleSubmit.bind(this);
     this.handleEdit = handleEdit.bind(this);
-  }
-  componentDidMount() {
-    if(localStorage.getItem('genInfo')) {
-      const genInfo = JSON.parse(localStorage.getItem('genInfo'));
-      this.setState({ 
-        genInfo,
-        display: 'text',
-      });
-    }
   }
   
   render() {
