@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import InputForm from './InputForm';
 import ExpTemplate from './TemplateExp';
-import { handleChange, handleSubmit, handleAdd, handleEdit, handleDelete } from './HelperFuncs';
+import { handleChange, handleSubmit, handleAdd, handleEdit, handleDelete, handleCancel } from './HelperFuncs';
 import uniqid from 'uniqid';
 
 class DisplayExperience extends Component {
@@ -31,6 +31,7 @@ class DisplayExperience extends Component {
     this.handleAdd = handleAdd.bind(this);
     this.handleEdit = handleEdit.bind(this);
     this.handleDelete = handleDelete.bind(this);
+    this.handleCancel = handleCancel.bind(this);
   }
   componentDidMount() {
     if(localStorage.getItem('expInfo')) {
@@ -54,6 +55,7 @@ class DisplayExperience extends Component {
           <InputForm
             changeFunc={this.handleChange} 
             submitFunc={this.handleSubmit}
+            cancelFunc={this.handleCancel}
             infoType="expInfo"
             sectionKey="newExpInfo"
             heading="Experience"

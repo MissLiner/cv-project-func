@@ -53,6 +53,7 @@ export function handleSubmit(e) {
 };
 
 export function handleAdd(e) {
+  e.preventDefault();
   const resetObjKey = e.target.dataset.section;
 
   this.setState({
@@ -63,6 +64,7 @@ export function handleAdd(e) {
 }
 
 export function handleEdit(e) {
+  e.preventDefault();
   const objArrayKey = e.target.dataset.name;
   const objHolderKey = e.target.dataset.section;
   const objArray = this.state[objArrayKey];
@@ -76,6 +78,7 @@ export function handleEdit(e) {
   })
 }
 export function handleDelete(e) {
+  e.preventDefault();
   const deleteArrKey = e.target.dataset.name;
   const deleteObjIndex = e.target.dataset.arrindex;
   let newArray = [];
@@ -88,7 +91,12 @@ export function handleDelete(e) {
   })
   localStorage.setItem(deleteArrKey, JSON.stringify(newArray));
 }
-
+export function handleCancel(e) {
+  e.preventDefault();
+  this.setState({
+    display: 'text',
+  })
+}
 export function removeLastVal(wholeArr) {
   wholeArr.pop();
   return wholeArr;

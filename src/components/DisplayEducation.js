@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import InputForm from './InputForm';
 import EduTemplate from './TemplateEdu';
-import { handleChange, handleSubmit, handleAdd, handleEdit } from './HelperFuncs';
+import { handleChange, handleSubmit, handleAdd, handleEdit, handleDelete, handleCancel } from './HelperFuncs';
 import uniqid from 'uniqid';
 
 class DisplayEducation extends Component {
@@ -28,6 +28,8 @@ class DisplayEducation extends Component {
     this.handleSubmit = handleSubmit.bind(this);
     this.handleAdd = handleAdd.bind(this);
     this.handleEdit = handleEdit.bind(this);
+    this.handleDelete = handleDelete.bind(this);
+    this.handleCancel = handleCancel.bind(this);
   }
   componentDidMount() {
     if(localStorage.getItem('eduInfo')) {
@@ -51,6 +53,7 @@ class DisplayEducation extends Component {
           <InputForm
             changeFunc={this.handleChange} 
             submitFunc={this.handleSubmit}
+            cancelFunc={this.handleCancel}
             infoType="eduInfo"
             sectionKey="newEduInfo"
             heading="Education"
@@ -66,6 +69,7 @@ class DisplayEducation extends Component {
             infoType="eduInfo"
             editFunc={this.handleEdit}
             addFunc={this.handleAdd}
+            deleteFunc={this.handleDelete}
             sectionKey="newEduInfo" 
             isPublished={isPublished}
           />

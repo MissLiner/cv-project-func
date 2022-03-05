@@ -17,7 +17,8 @@ class InputForm extends Component {
             inputList, 
             changeFunc, 
             submitFunc,
-            updateFunc } = this.props;
+            updateFunc,
+            cancelFunc } = this.props;
 
     const renderInputs = () => {
       return(
@@ -57,14 +58,22 @@ class InputForm extends Component {
         <h2 className="heading">{heading}</h2>
         
         {renderInputs()}
-        
+        <div className='bottomForm'>
         <Button 
           type="submit" 
-          order="bottomForm regularBtn" 
+          order="regularBtn" 
           btnText="Save" 
           section={sectionKey} 
           updateFunc={updateFunc}
-        />       
+        />     
+        <Button 
+          type='button'
+          order="regularBtn" 
+          btnText="Cancel" 
+          section={sectionKey} 
+          clickFunc={cancelFunc}
+        />  
+        </div>
       </form>
     )
   }
