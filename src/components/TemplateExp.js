@@ -26,20 +26,43 @@ class ExpTemplate extends Component {
             return (
               <div className='resumeExpJob' key={keyID}>
                 <div className='companyInfo flex'>
-                  <div className='company left'><b>{job.Title}</b> | {job.Company}, {job.Location}</div>
-                  <div className='dates right emphasized'>{job.StartDate} - {job.EndDate}</div>
+                  <div className='company left'>
+                    <b>{job.Title}</b> | {job.Company}, {job.Location}
+                  </div>
+                  <div className='dates right emphasized'>
+                    {job.StartDate} - {job.EndDate}
+                  </div>
                 </div>
                 <div className='highlights left'>{job.Highlights}</div>
-                <Button btnText="Edit" clickFunc={editFunc} infoType={infoType} sectionKey={sectionKey} arrIndex={i} order='regularBtn' />
-                <Button btnText="Delete" clickFunc={deleteFunc} infoType={infoType} sectionKey={sectionKey} arrIndex={i} order='regularBtn' />
+
+                <Button 
+                  btnText="Edit" 
+                  clickFunc={editFunc} 
+                  infoType={infoType} 
+                  sectionKey={sectionKey} 
+                  arrIndex={i} 
+                  order='regularBtn'
+                 />
+                <Button 
+                  btnText="Delete" 
+                  clickFunc={deleteFunc} 
+                  infoType={infoType} 
+                  sectionKey={sectionKey} 
+                  arrIndex={i} 
+                  order='regularBtn'
+                 />
               </div>
             )
           } else {
             return (
               <div className='resumeExpJob' key={keyID}>
                 <div className='companyInfo flex'>
-                  <div className='company left'><b>{job.Title}</b> | {job.Company}, {job.Location}</div>
-                  <div className='dates right emphasized'>{job.StartDate} - {job.EndDate}</div>
+                  <div className='company left'>
+                    <b>{job.Title}</b> | {job.Company}, {job.Location}
+                  </div>
+                  <div className='dates right emphasized'>
+                    {job.StartDate} - {job.EndDate}
+                  </div>
                 </div>
                 <div className='highlights left'>{job.Highlights}</div>
               </div>
@@ -51,7 +74,12 @@ class ExpTemplate extends Component {
     const addAddBtn = () => {
       if(isPublished === false) {
         return(
-          <Button btnText="Add New" clickFunc={addFunc} sectionKey={sectionKey} order='regularBtn addBtn' />
+          <Button 
+            btnText="Add New" 
+            clickFunc={addFunc} 
+            sectionKey={sectionKey} 
+            order='regularBtn addBtn'
+           />
         )
       }
     }
@@ -66,7 +94,6 @@ class ExpTemplate extends Component {
       <div className={setDivClass()}>
         <h2>Experience {addAddBtn()}</h2>
         {renderAllDivs()}
-        
       </div>
     )
   }

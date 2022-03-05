@@ -52,12 +52,11 @@ class InputForm extends Component {
         data-name={infoType} 
         data-section={sectionKey}
         className={infoType + 'Form'} 
-        onSubmit={submitFunc} 
-        >
-        
+        onSubmit={submitFunc}
+      >
         <h2 className="heading">{heading}</h2>
-        
         {renderInputs()}
+
         <div className='bottomForm'>
         <Button 
           type="submit" 
@@ -65,14 +64,14 @@ class InputForm extends Component {
           btnText="Save" 
           section={sectionKey} 
           updateFunc={updateFunc}
-        />     
+         />     
         <Button 
           type='button'
           order="regularBtn" 
           btnText="Cancel" 
           section={sectionKey} 
           clickFunc={cancelFunc}
-        />  
+         />  
         </div>
       </form>
     )

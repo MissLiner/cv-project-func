@@ -6,17 +6,26 @@ class Button extends Component {
     super(props)
   }
   render() {
+    const { type,
+            btnKey,
+            order,
+            value,
+            infoType,
+            sectionKey,
+            arrIndex,
+            clickFunc,
+            btnText } = this.props;
     return (
       <button
-        type={this.props.type}
-        key={this.props.btnKey}
-        className={this.props.order}
-        value={this.props.value}
-        data-name={this.props.infoType}
-        data-section={this.props.sectionKey}
-        data-arrindex={this.props.arrIndex}
-        onClick={this.props.clickFunc}
-      >{this.props.btnText}</button>
+        type={type}
+        key={btnKey}
+        className={order}
+        value={value}
+        data-name={infoType}
+        data-section={sectionKey}
+        data-arrindex={arrIndex}
+        onClick={clickFunc}
+      >{btnText}</button>
     )
   }
 }

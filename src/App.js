@@ -46,7 +46,11 @@ class App extends Component {
     return (
       <div>
         <h1>ResuMaker</h1>
-        <Button btnText='Publish' order='resumeBtn glass' clickFunc={this.handlePublish} />
+        <Button 
+          btnText='Publish' 
+          order='resumeBtn glass' 
+          clickFunc={this.handlePublish}
+         />
         <div id="resumePage">
           <DisplayGenInfo isPublished={isPublished} />
           <DisplayExperience isPublished={isPublished} />
