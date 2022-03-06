@@ -28,12 +28,8 @@ class InputForm extends Component {
           const inputOrder = input[1];
  
           return(
-            <div className={inputOrder + "Form inputBox"}>
-
-
+            <div key={keyID} className={inputOrder + "Form inputBox"}>
             <input
-              
-              key={keyID}
               type={inputList[i][2]}
               maxLength={inputList[i][3]}
               minLength={inputList[i][3]}
@@ -47,7 +43,7 @@ class InputForm extends Component {
               onChange={changeFunc}
               onClick={submitFunc}
             />
-                        </div>
+            </div>
             // <Input
             //   infoType={infoType}
             //   sectionKey={sectionKey}
