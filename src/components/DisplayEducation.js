@@ -27,6 +27,19 @@ function DisplayEducation() {
   const [eduInfo, setEduInfo] = useState(storedEduInfo);
   const [display, setDisplay] = useState(storedDisplay);
   const [eduIndex, setEduIndex] = useState('none');
+  const handleChange = (e) => {
+    e.preventDefault();
+
+    let editObj = newEduInfo;
+    const editKey = e.target.dataset.field;
+    const newValue = e.target.value;
+
+    editObj[editKey] = newValue;
+    if(eduIndex === 'none') { editObj.baseID = uniqid() };
+
+    setNewEduInfo(editObj);
+
+  }
     // this.handleChange = handleChange.bind(this);
     // this.handleSubmit = handleSubmit.bind(this);
     // this.handleAdd = handleAdd.bind(this);
@@ -42,9 +55,9 @@ function DisplayEducation() {
     if (this.state.display === 'form') {
       return (
         <InputForm
-          changeFunc={this.handleChange} 
-          submitFunc={this.handleSubmit}
-          cancelFunc={this.handleCancel}
+          changeFunc={handleChange()} 
+          // submitFunc={this.handleSubmit}
+          // cancelFunc={this.handleCancel}
           infoType="eduInfo"
           sectionKey="newEduInfo"
           heading="Education"
@@ -58,9 +71,9 @@ function DisplayEducation() {
         <EduTemplate
           eduData={eduInfo}
           infoType="eduInfo"
-          editFunc={this.handleEdit}
-          addFunc={this.handleAdd}
-          deleteFunc={this.handleDelete}
+          // editFunc={this.handleEdit}
+          // addFunc={this.handleAdd}
+          // deleteFunc={this.handleDelete}
           sectionKey="newEduInfo" 
           isPublished={isPublished}
         />
