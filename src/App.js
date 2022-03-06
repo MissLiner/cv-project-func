@@ -23,6 +23,7 @@ function App() {
         }
       };
       resumePage.classList.add("pubResumePage");
+      e.target.textContent = "Unpublish";
       toggleIsPublished();
     } else {
       resumePage.classList.remove("pubResumePage");
