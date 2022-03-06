@@ -2,10 +2,10 @@
 import './App.css';
 import React, { Component } from 'react';
 import './App.css';
-import DisplayExperience from './components/DisplayExperience';
-import DisplayEducation from './components/DisplayEducation';
-import DisplayGenInfo from './components/DisplayGenInfo';
-import Button from './components/ElemButton';
+import DisplayExperience from '../components/DisplayExperience';
+import DisplayEducation from '../components/DisplayEducation';
+import DisplayGenInfo from '../components/DisplayGenInfo';
+import Button from '../components/ElemButton';
 
 class App extends Component {
   constructor(props) {
