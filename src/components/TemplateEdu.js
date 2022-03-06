@@ -45,24 +45,22 @@ class EduTemplate extends Component {
                   </div>
                   <div className='schoolYear right emphasized'>{school.Year}</div>
                 </div>
-                <Button 
-                  btnText="Edit" 
-                  btnKey={keyID + 'btn'} 
-                  clickFunc={editFunc} 
-                  infoType={infoType} 
-                  sectionKey={sectionKey} 
-                  arrIndex={i} 
-                  order='regularBtn'
-                 />
-                <Button 
-                  btnText="Delete" 
-                  btnKey={keyID + 'btn'} 
-                  clickFunc={deleteFunc} 
-                  infoType={infoType} 
-                  sectionKey={sectionKey} 
-                  arrIndex={i} 
-                  order='regularBtn'
-                 />
+                <button 
+                  key={keyID + 'btn'} 
+                  onClick={editFunc} 
+                  data-name={infoType} 
+                  data-section={sectionKey} 
+                  data-arrindex={i} 
+                  className='regularBtn'
+                 >Edit</button>
+                <button 
+                  key={keyID + 'btn'} 
+                  onClick={deleteFunc} 
+                  data-name={infoType} 
+                  data-section={sectionKey} 
+                  data-arrindex={i} 
+                  className='regularBtn'
+                 >Delete</button>
               </div>
             )
           })
@@ -72,12 +70,11 @@ class EduTemplate extends Component {
     const addAddNewBtn = () => {
       if(isPublished === false) {
         return(
-          <Button 
-            btnText="Add New" 
-            clickFunc={addFunc} 
-            sectionKey={sectionKey} 
-            order='regularBtn addBtn'
-           />
+          <button 
+            onClick={addFunc} 
+            data-section={sectionKey} 
+            className='regularBtn addBtn'
+           >Add New</button>
         )
       }
     }

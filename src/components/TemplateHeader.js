@@ -1,7 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
 import '../App.css';
-import Button from './ElemButton';
 
 class HeaderTemplate extends Component {
   constructor(props) {
@@ -27,13 +26,13 @@ class HeaderTemplate extends Component {
             <div className='contacts'>
               {headerData[0].Email} | {headerData[0].Phone}
             </div>
-            <Button 
-              btnText="Edit" 
-              clickFunc={editFunc} 
-              infoType={infoType} 
-              sectionKey="newGenInfo" 
-              arrIndex='0' 
-              order='regularBtn' />
+            <button 
+              onClick={editFunc} 
+              data-name={infoType} 
+              data-section="newGenInfo"
+              data-arrindex="0"
+              className="regularBtn"
+              >Edit</button>
           </div>
         )
       } else {
