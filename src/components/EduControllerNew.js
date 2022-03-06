@@ -15,6 +15,7 @@ import uniqid from 'uniqid';
 function DisplayEducation(props) {
   let storedEduInfo = [];
   let storedDisplay = 'form';
+
   const newEduInfoBaseState = {
     newEduInfo: {
       School:   '',
@@ -35,14 +36,12 @@ function DisplayEducation(props) {
   const [eduIndex, setEduIndex] = useState('none');
   
   const handleEduChange = (e) => {
-    const eduEditObj = handleChange(e, eduInfo, eduIndex);
+    const eduEditObj = handleChange(e, newEduInfo, eduIndex);
     setNewEduInfo(eduEditObj);
   }
-    // this.handleSubmit = handleSubmit.bind(this);
-    // this.handleAdd = handleAdd.bind(this);
-    // this.handleEdit = handleEdit.bind(this);
-    // this.handleDelete = handleDelete.bind(this);
-    // this.handleCancel = handleCancel.bind(this);
+  const handleEduSubmit = (e) => {
+
+  }
   const renderPage = () => {
     const eduInfoLabels = [['School', 'first'], ['Location', 'second'], 
                           ['Degree', 'fourth'], ['Year', 'third']];

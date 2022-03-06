@@ -1,6 +1,17 @@
 import uniqid from 'uniqid';
 
-export function handleChange(e) {
+export function handleChange(e, info, index) {
+  const editKey = e.target.dataset.field;
+  const newValue = e.target.value;
+
+  info[editKey] = newValue;
+
+  if(index === 'none') {
+    info.baseID = uniqid();
+  }
+  return{ info };
+}
+export function handleChangeOld(e) {
   const editObj = e.target.dataset.section;
   const editKey = e.target.dataset.field;
   const newValue = e.target.value;

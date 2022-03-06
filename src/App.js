@@ -2,9 +2,9 @@ import './App.css';
 import React, { useState } from 'react';
 import GenController from './components/GenController';
 import ExpController from './components/ExpController';
-import EduController from './components/EduController';
+import EduController from './components/EduControllerNew';
 
-function App() {
+const App = () => {
   const [isPublished, setIsPublished] = useState(false);
 
   const toggleIsPublished = () => {
@@ -20,6 +20,7 @@ function App() {
       }
     };
   }
+
   const toggleResumeClass = () => {
     const resumePage = document.getElementById("resumePage");
 
