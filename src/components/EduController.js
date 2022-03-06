@@ -3,7 +3,12 @@ import React, { Component } from 'react';
 import '../App.css';
 import InputForm from './InputForm';
 import EduTemplate from './EduTemplate';
-import { handleChange, handleSubmit, handleAdd, handleEdit, handleDelete, handleCancel } from './HelperFuncs';
+import {  handleChange, 
+          handleSubmit, 
+          handleAdd, 
+          handleEdit, 
+          handleDelete, 
+          handleCancel } from './HelperFuncs';
 import uniqid from 'uniqid';
 
 class EduController extends Component {
