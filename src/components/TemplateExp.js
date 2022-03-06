@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
 import '../App.css';
-import Button from './ElemButton';
+import Button from '../old_components/ElemButton';
 
 class ExpTemplate extends Component {
   constructor(props) {
