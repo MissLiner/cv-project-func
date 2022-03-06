@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { useState } from 'react';
 import '../App.css';
-import InputForm from './InputFormNew';
+import InputForm from './InputForm';
 import EduTemplate from './TemplateEdu';
 import { handleChange, 
         // handleSubmit, 

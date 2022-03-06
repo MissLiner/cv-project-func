@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
 import '../App.css';
-import InputForm from './InputFormNew';
+import InputForm from './InputForm';
 import ExpTemplate from './TemplateExp';
 import { handleChange, handleSubmit, handleAdd, handleEdit, handleDelete, handleCancel } from './HelperFuncs';
 import uniqid from 'uniqid';

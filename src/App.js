@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import DisplayExperience from './components/DisplayExperience';
 import DisplayEducation from './components/DisplayEducationNew';
 import DisplayGenInfo from './components/DisplayGenInfo';
-import Button from './components/ElemButton';
 
 function App() {
   const [isPublished, setIsPublished] = useState(false);
@@ -34,11 +33,12 @@ function App() {
   return (
     <div>
       <h1>ResuMaker</h1>
-      <Button 
-        btnText='Publish' 
-        order='resumeBtn glass' 
-        clickFunc={handlePublish}
-        />
+      <button 
+        className='resumeBtn glass' 
+        onClick={handlePublish}
+        >Publish
+      </button>
+
       <div id="resumePage">
         <DisplayGenInfo isPublished={isPublished} />
         <DisplayExperience isPublished={isPublished} />
