@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-const HeaderTemplate = (props) => {
+const GenTemplate = (props) => {
 
   const renderHeader = () => {
     if(props.isPublished === false) {
@@ -46,4 +46,4 @@ const HeaderTemplate = (props) => {
     </div>  
   )
 }
-export default HeaderTemplate;
+export default GenTemplate;

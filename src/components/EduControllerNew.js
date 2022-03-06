@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import '../App.css';
 import InputForm from './InputForm';
-import EduTemplate from './TemplateEdu';
+import EduTemplate from './EduTemplate';
 import { handleChange, 
         // handleSubmit, 
         // handleAdd, 

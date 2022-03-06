@@ -1,15 +1,14 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
-import '../App.css';
-import Button from '../old_components/ElemButton';
+import '../App.css'; 
 
-class EduTemplate extends Component {
+class ExpTemplate extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
   render() {
     const {
-      eduData,
+      expData,
       editFunc,
       deleteFunc,
       infoType,
@@ -19,32 +18,22 @@ class EduTemplate extends Component {
     } = this.props;
 
     const renderAllDivs = () => {
-      if(isPublished === true) {
-        return (
-          eduData.map((school, i) => {
-            const keyID = school.baseID + i;
+      return (
+        expData.map((job, i) => {
+          const keyID = job.baseID + i;
+          if(isPublished === false) {
             return (
-              <div className='resumeEduSchool flex' key={keyID}>
-                <div className='degreeInfo left'>
-                  <b>{school.Degree}</b>| {school.School}, {school.Location}
-                </div>
-                <div className='schoolYear right emphasized'>{school.Year}</div>
-              </div>
-            )
-          })
-        )
-      } else {
-        return (
-          eduData.map((school, i) => {
-            const keyID = school.baseID + i;
-            return (
-              <div key={keyID}>
-                <div className='resumeEduSchool flex'>
-                  <div className='degreeInfo left'>
-                    <b>{school.Degree}</b>| {school.School}, {school.Location}
+              <div className='resumeExpJob' key={keyID}>
+                <div className='companyInfo flex'>
+                  <div className='company left'>
+                    <b>{job.Title}</b> | {job.Company}, {job.Location}
                   </div>
-                  <div className='schoolYear right emphasized'>{school.Year}</div>
+                  <div className='dates right emphasized'>
+                    {job.StartDate} - {job.EndDate}
+                  </div>
                 </div>
+                <div className='highlights left'>{job.Highlights}</div>
+
                 <button 
                   key={keyID + 'btn'} 
                   onClick={editFunc} 
@@ -63,11 +52,25 @@ class EduTemplate extends Component {
                  >Delete</button>
               </div>
             )
-          })
-        )
-      }
+          } else {
+            return (
+              <div className='resumeExpJob' key={keyID}>
+                <div className='companyInfo flex'>
+                  <div className='company left'>
+                    <b>{job.Title}</b> | {job.Company}, {job.Location}
+                  </div>
+                  <div className='dates right emphasized'>
+                    {job.StartDate} - {job.EndDate}
+                  </div>
+                </div>
+                <div className='highlights left'>{job.Highlights}</div>
+              </div>
+            )
+          }
+        })
+      )
     }
-    const addAddNewBtn = () => {
+    const addAddBtn = () => {
       if(isPublished === false) {
         return(
           <button 
@@ -80,17 +83,17 @@ class EduTemplate extends Component {
     }
     const setDivClass = () => {
       if(isPublished === false) {
-        return 'resumeEdu resume' 
+        return 'resumeExp resume' 
       } else {
-        return 'pubEdu pubResume'
+        return 'pubExp pubResume'
       }
     }
     return (
       <div className={setDivClass()}>
-          <h2>Education {addAddNewBtn()}</h2>
+        <h2>Experience {addAddBtn()}</h2>
         {renderAllDivs()}
       </div>
     )
   }
 }
-export default EduTemplate;
+export default ExpTemplate;

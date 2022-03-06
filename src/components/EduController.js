@@ -2,11 +2,11 @@
 import React, { Component } from 'react';
 import '../App.css';
 import InputForm from './InputForm';
-import EduTemplate from './TemplateEdu';
+import EduTemplate from './EduTemplate';
 import { handleChange, handleSubmit, handleAdd, handleEdit, handleDelete, handleCancel } from './HelperFuncs';
 import uniqid from 'uniqid';
 
-class DisplayEducation extends Component {
+class EduController extends Component {
   constructor(props) {
     super(props);
 
@@ -82,4 +82,4 @@ class DisplayEducation extends Component {
   }
 }
 
-export default DisplayEducation;
+export default EduController;

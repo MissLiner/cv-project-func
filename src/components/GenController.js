@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
 import '../App.css';
-import HeaderTemplate from './TemplateHeader';
+import GenTemplate from './GenTemplate'; 
 import InputForm from './InputForm';
 import {  handleChange, 
           handleSubmit, 
@@ -9,7 +9,7 @@ import {  handleChange,
         } from './HelperFuncs';
 import uniqid from 'uniqid';
 
-class DisplayGenInfo extends Component {
+class GenController extends Component {
   constructor(props) {
     super(props);
 
@@ -70,7 +70,7 @@ class DisplayGenInfo extends Component {
       }
       else if(this.state.display === 'text') {
         return(
-          <HeaderTemplate 
+          <GenTemplate 
             headerData={genInfo}
             editFunc={this.handleEdit}
             infoType="genInfo" 
@@ -86,5 +86,4 @@ class DisplayGenInfo extends Component {
     )
   }
 }
-
-export default DisplayGenInfo;
+export default GenController;

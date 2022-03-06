@@ -7,7 +7,7 @@ const InputForm = (props) => {
       props.inputList.map((input, i) => {
         const keyID = i;
         const inputName = input[0];
-        const inputOrder = input[1];
+        const inputOrder = input[1]; 
 
         return(
           <div key={keyID} className={inputOrder + "Form inputBox"}>

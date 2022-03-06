@@ -1,8 +1,8 @@
 import './App.css';
 import React, { useState } from 'react';
-import DisplayExperience from './components/DisplayExperience';
-import DisplayEducation from './components/DisplayEducationNew';
-import DisplayGenInfo from './components/DisplayGenInfo';
+import GenController from './components/GenController';
+import ExpController from './components/ExpController';
+import EduController from './components/EduControllerNew';
 
 function App() {
   const [isPublished, setIsPublished] = useState(false);
@@ -40,9 +40,9 @@ function App() {
       </button>
 
       <div id="resumePage">
-        <DisplayGenInfo isPublished={isPublished} />
-        <DisplayExperience isPublished={isPublished} />
-        <DisplayEducation isPublished={isPublished} />
+        <GenController isPublished={isPublished} />
+        <ExpController isPublished={isPublished} />
+        <EduController isPublished={isPublished} />
       </div>
     </div>
   )
