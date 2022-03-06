@@ -39,6 +39,7 @@ function DisplayEducation(props) {
     const eduEditObj = handleChange(e, newEduInfo, eduIndex);
     setNewEduInfo(eduEditObj);
   }
+
   const handleEduSubmit = () => {
     let newObj = Object.assign({}, newEduInfo);
     let newArray = [];
@@ -54,6 +55,10 @@ function DisplayEducation(props) {
     setDisplay('text');
     setEduIndex('none');
     localStorage.setItem('eduInfo', JSON.stringify(newArray));
+  }
+  const handleEduAdd = () => {
+    setNewEduInfo(newEduInfoBaseState);
+    setDisplay('form');
   }
   const renderPage = () => {
     const eduInfoLabels = [['School', 'first'], ['Location', 'second'], 
@@ -79,7 +84,7 @@ function DisplayEducation(props) {
           eduData={eduInfo}
           infoType="eduInfo"
           // editFunc={this.handleEdit}
-          // addFunc={this.handleAdd}
+          addFunc={handleEduAdd}
           // deleteFunc={this.handleDelete}
           sectionKey="newEduInfo" 
           isPublished={props.isPublished}
