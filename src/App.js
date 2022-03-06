@@ -11,24 +11,31 @@ function App() {
     setIsPublished(!isPublished);
   }
 
-  function handlePublish(e) {
-    const resumePage = document.getElementById("resumePage");
+  const checkIfSaved = () => {
     const allBtns = document.getElementsByTagName("button");
+    for(let btn of allBtns) {
+      if(btn.textContent === 'Save') {
+        alert("Please save all work before publishing");
+        return;
+      }
+    };
+  }
+  const toggleResumeClass = () => {
+    const resumePage = document.getElementById("resumePage");
 
-    if(isPublished === false) {
-      for(let btn of allBtns) {
-        if(btn.textContent === 'Save') {
-          alert("Please save all work before publishing");
-          return;
-        }
-      };
+    if(!isPublished) {
       resumePage.classList.add("pubResumePage");
-      toggleIsPublished();
     } else {
       resumePage.classList.remove("pubResumePage");
-      toggleIsPublished();
     }
   }
+
+  const handlePublish = () => {
+    checkIfSaved();
+    toggleResumeClass();
+    toggleIsPublished();
+  }
+
   return (
     <div>
       <h1>ResuMaker</h1>
