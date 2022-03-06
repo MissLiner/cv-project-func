@@ -49,14 +49,15 @@ class EduController extends Component {
       if (this.state.display === 'form') {
         return (
           <InputForm
+            heading="Education"
+            infoType="eduInfo"
+            sectionKey="newEduInfo"
+            inputList={eduInfoLabels}
+            details={newEduInfo}
+
             changeFunc={this.handleChange} 
             submitFunc={this.handleSubmit}
             cancelFunc={this.handleCancel}
-            infoType="eduInfo"
-            sectionKey="newEduInfo"
-            heading="Education"
-            inputList={eduInfoLabels}
-            details={newEduInfo}
           />
         )     
       }

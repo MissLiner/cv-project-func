@@ -10,7 +10,7 @@ const InputForm = (props) => {
         const inputOrder = input[1]; 
 
         return(
-          <div key={keyID} className={inputOrder + "Form inputBox"}>
+          <div key={inputName + keyID} className={inputOrder + "Form inputBox"}>
             <input
               type={props.inputList[i][2]}
               maxLength={props.inputList[i][3]}
@@ -30,7 +30,7 @@ const InputForm = (props) => {
     )
   }
   return (
-    <form 
+    <form key={props.infoType}
       data-name={props.infoType} 
       data-section={props.sectionKey}
       className={props.infoType + 'Form'} 

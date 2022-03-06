@@ -35,7 +35,7 @@ class ExpTemplate extends Component {
                 <div className='highlights left'>{job.Highlights}</div>
 
                 <button 
-                  key={keyID + 'btn'} 
+                  key={keyID + 'editBtn'} 
                   onClick={editFunc} 
                   data-name={infoType} 
                   data-section={sectionKey} 
@@ -43,7 +43,7 @@ class ExpTemplate extends Component {
                   className='regularBtn'
                  >Edit</button>
                 <button 
-                  key={keyID + 'btn'} 
+                  key={keyID + 'delBtn'} 
                   onClick={deleteFunc} 
                   data-name={infoType} 
                   data-section={sectionKey} 

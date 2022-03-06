@@ -30,7 +30,7 @@ const EduTemplate = (props) => {
                 <div className='schoolYear right emphasized'>{school.Year}</div>
               </div>
               <button 
-                key={keyID + 'btn'} 
+                key={keyID + 'editBtn'} 
                 onClick={props.editFunc} 
                 data-name={props.infoType} 
                 data-section={props.sectionKey} 
@@ -38,7 +38,7 @@ const EduTemplate = (props) => {
                 className='regularBtn'
                >Edit</button>
               <button 
-                key={keyID + 'btn'} 
+                key={keyID + 'delBtn'} 
                 onClick={props.deleteFunc} 
                 data-name={props.infoType} 
                 data-section={props.sectionKey} 
