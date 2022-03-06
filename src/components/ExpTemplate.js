@@ -1,5 +1,4 @@
-/* eslint-disable no-useless-constructor */
-import React, { Component } from 'react';
+import React from 'react';
 import '../App.css'; 
 
 const ExpTemplate = (props) => {
@@ -12,6 +11,7 @@ const ExpTemplate = (props) => {
     sectionKey,
     isPublished,
   } = props;
+  
   const renderAllDivs = () => {
     return (
       expData.map((job, i) => {

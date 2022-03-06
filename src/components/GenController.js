@@ -71,7 +71,7 @@ class GenController extends Component {
       else if(this.state.display === 'text') {
         return(
           <GenTemplate 
-            headerData={genInfo}
+            genData={genInfo}
             editFunc={this.handleEdit}
             infoType="genInfo" 
             isPublished={isPublished}

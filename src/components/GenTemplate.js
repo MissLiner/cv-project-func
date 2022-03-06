@@ -2,22 +2,28 @@ import React from 'react';
 import '../App.css';
 
 const GenTemplate = (props) => {
-
+  const {
+    genData,
+    editFunc,
+    infoType,
+    isPublished,
+  } = props;
+  
   const renderHeader = () => {
-    if(props.isPublished === false) {
+    if(isPublished === false) {
       return (
         <div className='resumeHeader resume'>
-          <div className='name bolded larger'>{props.headerData[0].Name}</div>
+          <div className='name bolded larger'>{genData[0].Name}</div>
           <div className='address1'>
-            {props.headerData[0].Address} | {props.headerData[0].City}, 
-            {props.headerData[0].State} {props.headerData[0].Zip}
+            {genData[0].Address} | {genData[0].City}, 
+            {genData[0].State} {genData[0].Zip}
           </div>
           <div className='contacts'>
-            {props.headerData[0].Email} | {props.headerData[0].Phone}
+            {genData[0].Email} | {genData[0].Phone}
           </div>
           <button 
-            onClick={props.editFunc} 
-            data-name={props.infoType} 
+            onClick={editFunc} 
+            data-name={infoType} 
             data-section="newGenInfo"
             data-arrindex="0"
             className="regularBtn"
@@ -27,13 +33,13 @@ const GenTemplate = (props) => {
     } else {
       return (
         <div className='pubHeader pubResume'>
-        <div className='name bolded larger'>{props.headerData[0].Name}</div>
+        <div className='name bolded larger'>{genData[0].Name}</div>
         <div className='address1'>
-          {props.headerData[0].Address} | {props.headerData[0].City}, 
-          {props.headerData[0].State} {props.headerData[0].Zip}
+          {genData[0].Address} | {genData[0].City}, 
+          {genData[0].State} {genData[0].Zip}
         </div>
         <div className='contacts'>
-          {props.headerData[0].Email} | {props.headerData[0].Phone}
+          {genData[0].Email} | {genData[0].Phone}
         </div>
       </div>
       )

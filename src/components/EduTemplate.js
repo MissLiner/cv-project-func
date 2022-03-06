@@ -2,10 +2,20 @@ import React from 'react';
 import '../App.css';
 
 const EduTemplate = (props) => {
+  const {
+    eduData,
+    editFunc,
+    deleteFunc,
+    infoType,
+    addFunc,
+    sectionKey,
+    isPublished,
+  } = props;
+
   const renderAllDivs = () => {
-    if(props.isPublished === true) {
+    if(isPublished === true) {
       return (
-        props.eduData.map((school, i) => {
+        eduData.map((school, i) => {
           const keyID = school.baseID + i;
           return (
             <div className='resumeEduSchool flex' key={keyID}>
@@ -19,7 +29,7 @@ const EduTemplate = (props) => {
       )
     } else {
       return (
-        props.eduData.map((school, i) => {
+        eduData.map((school, i) => {
           const keyID = school.baseID + i;
           return (
             <div key={keyID}>
@@ -31,17 +41,17 @@ const EduTemplate = (props) => {
               </div>
               <button 
                 key={keyID + 'editBtn'} 
-                onClick={props.editFunc} 
-                data-name={props.infoType} 
-                data-section={props.sectionKey} 
+                onClick={editFunc} 
+                data-name={infoType} 
+                data-section={sectionKey} 
                 data-arrindex={i} 
                 className='regularBtn'
                >Edit</button>
               <button 
                 key={keyID + 'delBtn'} 
-                onClick={props.deleteFunc} 
-                data-name={props.infoType} 
-                data-section={props.sectionKey} 
+                onClick={deleteFunc} 
+                data-name={infoType} 
+                data-section={sectionKey} 
                 data-arrindex={i} 
                 className='regularBtn'
                >Delete</button>
@@ -52,18 +62,18 @@ const EduTemplate = (props) => {
     }
   }
   const addAddNewBtn = () => {
-    if(props.isPublished === false) {
+    if(isPublished === false) {
       return(
         <button 
-          onClick={props.addFunc} 
-          data-section={props.sectionKey} 
+          onClick={addFunc} 
+          data-section={sectionKey} 
           className='regularBtn addBtn'
          >Add New</button>
       )
     }
   }
   const setDivClass = () => {
-    if(props.isPublished === false) {
+    if(isPublished === false) {
       return 'resumeEdu resume' 
     } else {
       return 'pubEdu pubResume'
