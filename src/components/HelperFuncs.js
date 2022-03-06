@@ -6,9 +6,6 @@ export function handleChange(e, info, index) {
   let infoCopy = Object.assign({}, info);
   infoCopy[editKey] = newValue;
 
-  // if(index === 'none') {
-  //   infoCopy.baseID = uniqid();
-  // }
   return{ infoCopy };
 }
 

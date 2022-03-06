@@ -74,6 +74,14 @@ function DisplayEducation(props) {
     setEditIndex(btnIndex);
     setNewEduInfo(eduInfo[btnIndex]);
   }
+  const handleEduDelete = (e) => {
+    const deleteIndex = e.target.dataset.arrindex;
+    let newArray = [];
+    newArray = newArray.concat(eduInfo);
+    newArray.splice(deleteIndex, 1);
+    setEduInfo(newArray);
+  }
+
   const renderPage = () => {
     const eduInfoLabels = [['School', 'first'], ['Location', 'second'], 
                           ['Degree', 'fourth'], ['Year', 'third']];
@@ -99,7 +107,7 @@ function DisplayEducation(props) {
           infoType="eduInfo"
           editFunc={handleEduEdit}
           addFunc={handleEduAdd}
-          // deleteFunc={this.handleDelete}
+          deleteFunc={handleEduDelete}
           sectionKey="newEduInfo" 
           isPublished={props.isPublished}
         />
