@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import DisplayExperience from './components/DisplayExperience';
-import DisplayEducation from './components/DisplayEducation';
+import DisplayEducation from './components/DisplayEducationNew';
 import DisplayGenInfo from './components/DisplayGenInfo';
 import Button from './components/ElemButton';
 

@@ -6,7 +6,7 @@ import InputForm from './InputForm';
 import {  handleChange, 
           handleSubmit, 
           handleEdit,
-        } from './HelperFuncs';
+        } from './HelperFuncsNew';
 import uniqid from 'uniqid';
 
 class DisplayGenInfo extends Component {

@@ -31,7 +31,6 @@ class Input extends Component {
             placeholder={defaultText}
             value={inputValue}
 
-
             onChange={changeFunc}
             onClick={clickFunc}
           />

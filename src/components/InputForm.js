@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
 import '../App.css';
-import Input from "./ElemInput";
+//import Input from "./ElemInput";
 import Button from "./ElemButton";
 
 class InputForm extends Component {
@@ -28,20 +28,39 @@ class InputForm extends Component {
           const inputOrder = input[1];
  
           return(
-            <Input
-              infoType={infoType}
-              sectionKey={sectionKey}
-              inputValue={details[inputName]}
+            <div className={inputOrder + "Form inputBox"}>
 
-              defaultText={inputName}
-              elemClass={inputOrder + "Form"}
-              elemType={inputList[i][2]}
-              elemLength={inputList[i][3]}
 
+            <input
+              
               key={keyID}
+              type={inputList[i][2]}
+              maxLength={inputList[i][3]}
+              minLength={inputList[i][3]}
+              data-name={infoType}
+              data-section={sectionKey}
+              data-field={inputName}
 
-              changeFunc={changeFunc}
+              placeholder={inputName}
+              value={details[inputName]}
+
+              onChange={changeFunc}
+              onClick={submitFunc}
             />
+                        </div>
+            // <Input
+            //   infoType={infoType}
+            //   sectionKey={sectionKey}
+            //   inputValue={details[inputName]}
+
+            //   defaultText={inputName}
+            //   elemClass={inputOrder + "Form"}
+            //   elemType={inputList[i][2]}
+            //   elemLength={inputList[i][3]}
+
+            //   key={keyID}
+
+            //   changeFunc={changeFunc}
           )
         })
       )
@@ -53,7 +72,7 @@ class InputForm extends Component {
         data-section={sectionKey}
         className={infoType + 'Form'} 
         onSubmit={submitFunc}
-      >
+        >
         <h2 className="heading">{heading}</h2>
         {renderInputs()}
 
