@@ -3,13 +3,13 @@ import uniqid from 'uniqid';
 export function handleChange(e, info, index) {
   const editKey = e.target.dataset.field;
   const newValue = e.target.value;
+  let infoCopy = Object.assign({}, info);
+  infoCopy[editKey] = newValue;
 
-  info[editKey] = newValue;
-
-  if(index === 'none') {
-    info.baseID = uniqid();
-  }
-  return{ info };
+  // if(index === 'none') {
+  //   infoCopy.baseID = uniqid();
+  // }
+  return{ infoCopy };
 }
 
 export function handleSubmit(e) {

@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import '../App.css';
 import InputForm from './InputForm';
 import EduTemplate from './EduTemplate';
-import { handleChange, 
-        // handleSubmit, 
-        // handleAdd, 
-        // handleEdit, 
-        // handleDelete, 
-        // handleCancel
-       } from './HelperFuncsNew';
+// import { handleChange, 
+//         // handleSubmit, 
+//         // handleAdd, 
+//         // handleEdit, 
+//         // handleDelete, 
+//         // handleCancel
+//        } from './HelperFuncsNew';
 import uniqid from 'uniqid';
 
 function DisplayEducation(props) {
@@ -17,13 +17,11 @@ function DisplayEducation(props) {
   let storedDisplay = 'form';
 
   const newEduInfoBaseState = {
-    newEduInfo: {
       School:   '',
       Location: '',
       Degree:   '',
       Year:     '',
       baseID:   uniqid(),
-    },
   }
 
   if(localStorage.getItem('eduInfo')) {
@@ -33,27 +31,33 @@ function DisplayEducation(props) {
   const [newEduInfo, setNewEduInfo] = useState(newEduInfoBaseState);
   const [eduInfo, setEduInfo] = useState(storedEduInfo);
   const [display, setDisplay] = useState(storedDisplay);
-  const [eduIndex, setEduIndex] = useState('none');
+  const [editIndex, setEditIndex] = useState('none');
   
   const handleEduChange = (e) => {
-    const eduEditObj = handleChange(e, newEduInfo, eduIndex);
-    setNewEduInfo(eduEditObj);
+    const editKey = e.target.dataset.field;
+    const newValue = e.target.value;
+    const newEduInfoCopy = Object.assign({}, newEduInfo);
+
+    newEduInfoCopy[editKey] = newValue;
+
+    setNewEduInfo(newEduInfoCopy);
   }
 
   const handleEduSubmit = () => {
     let newObj = Object.assign({}, newEduInfo);
     let newArray = [];
-    newArray = eduInfo.concat(newArray);
+    newArray = newArray.concat(eduInfo);
 
-    if(eduIndex === 'none') {
-      newObj.keyID = uniqid();
+    if(editIndex === 'none') {
+      newObj.baseID = uniqid();
       newArray = newArray.concat(newObj);
     } else {
-      newArray = newArray.splice(eduIndex, 1, newObj);
+      newArray = newArray.splice(editIndex, 1, newObj);
     }
+    setNewEduInfo(newEduInfoBaseState);
     setEduInfo(newArray);
     setDisplay('text');
-    setEduIndex('none');
+    setEditIndex('none');
     localStorage.setItem('eduInfo', JSON.stringify(newArray));
   }
   const handleEduAdd = () => {
@@ -63,6 +67,12 @@ function DisplayEducation(props) {
   const handleEduCancel = () => {
     setDisplay('text');
     setNewEduInfo(newEduInfoBaseState);
+  }
+  const handleEduEdit = (e) => {
+    const btnIndex = e.target.dataset.arrindex;
+    setDisplay('form');
+    setEditIndex(btnIndex);
+    setNewEduInfo(eduInfo[btnIndex]);
   }
   const renderPage = () => {
     const eduInfoLabels = [['School', 'first'], ['Location', 'second'], 
@@ -87,7 +97,7 @@ function DisplayEducation(props) {
         <EduTemplate
           eduData={eduInfo}
           infoType="eduInfo"
-          // editFunc={this.handleEdit}
+          editFunc={handleEduEdit}
           addFunc={handleEduAdd}
           // deleteFunc={this.handleDelete}
           sectionKey="newEduInfo" 
