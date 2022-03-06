@@ -25,7 +25,7 @@ const InputForm = (props) => {
               value={props.details[inputName]}
 
               onChange={props.changeFunc}
-              onClick={props.submitFunc}
+              // onClick={props.submitFunc}
             />
           </div>
         )
