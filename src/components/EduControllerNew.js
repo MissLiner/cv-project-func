@@ -52,7 +52,7 @@ function DisplayEducation(props) {
       newObj.baseID = uniqid();
       newArray = newArray.concat(newObj);
     } else {
-      newArray = newArray.splice(editIndex, 1, newObj);
+      newArray.splice(editIndex, 1, newObj);
     }
     setNewEduInfo(newEduInfoBaseState);
     setEduInfo(newArray);
