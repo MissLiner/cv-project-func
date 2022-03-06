@@ -60,6 +60,10 @@ function DisplayEducation(props) {
     setNewEduInfo(newEduInfoBaseState);
     setDisplay('form');
   }
+  const handleEduCancel = () => {
+    setDisplay('text');
+    setNewEduInfo(newEduInfoBaseState);
+  }
   const renderPage = () => {
     const eduInfoLabels = [['School', 'first'], ['Location', 'second'], 
                           ['Degree', 'fourth'], ['Year', 'third']];
@@ -69,7 +73,7 @@ function DisplayEducation(props) {
         <InputForm
           changeFunc={handleEduChange} 
           submitFunc={handleEduSubmit}
-          // cancelFunc={this.handleCancel}
+          cancelFunc={handleEduCancel}
           infoType="eduInfo"
           sectionKey="newEduInfo"
           heading="Education"
