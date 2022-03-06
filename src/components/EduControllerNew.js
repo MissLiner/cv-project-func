@@ -39,8 +39,21 @@ function DisplayEducation(props) {
     const eduEditObj = handleChange(e, newEduInfo, eduIndex);
     setNewEduInfo(eduEditObj);
   }
-  const handleEduSubmit = (e) => {
+  const handleEduSubmit = () => {
+    let newObj = Object.assign({}, newEduInfo);
+    let newArray = [];
+    newArray = eduInfo.concat(newArray);
 
+    if(eduIndex === 'none') {
+      newObj.keyID = uniqid();
+      newArray = newArray.concat(newObj);
+    } else {
+      newArray = newArray.splice(eduIndex, 1, newObj);
+    }
+    setEduInfo(newArray);
+    setDisplay('text');
+    setEduIndex('none');
+    localStorage.setItem('eduInfo', JSON.stringify(newArray));
   }
   const renderPage = () => {
     const eduInfoLabels = [['School', 'first'], ['Location', 'second'], 
@@ -50,7 +63,7 @@ function DisplayEducation(props) {
       return (
         <InputForm
           changeFunc={handleEduChange} 
-          // submitFunc={this.handleSubmit}
+          submitFunc={handleEduSubmit}
           // cancelFunc={this.handleCancel}
           infoType="eduInfo"
           sectionKey="newEduInfo"

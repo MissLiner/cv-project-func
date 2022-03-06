@@ -11,28 +11,6 @@ export function handleChange(e, info, index) {
   }
   return{ info };
 }
-export function handleChangeOld(e) {
-  const editObj = e.target.dataset.section;
-  const editKey = e.target.dataset.field;
-  const newValue = e.target.value;
-
-  if(this.state.editIndex === 'none') {
-    this.setState({
-      [editObj]: {
-        ...this.state[editObj],
-        [editKey]:  newValue,
-        baseID:     uniqid(),
-      },
-    })
-  } else {
-    this.setState({ 
-      [editObj]: {
-        ...this.state[editObj],
-        [editKey]:  newValue,
-      }
-    }) 
-  }
-}
 
 export function handleSubmit(e) {
   e.preventDefault();
