@@ -1,7 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
 import '../App.css';
-//import Input from "./ElemInput";
 import Button from "./ElemButton";
 
 class InputForm extends Component {

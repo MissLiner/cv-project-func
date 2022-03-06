@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import HeaderTemplate from './TemplateHeader';
-import InputForm from './InputForm';
+import InputForm from './InputFormNew';
 import {  handleChange, 
           handleSubmit, 
           handleEdit,
