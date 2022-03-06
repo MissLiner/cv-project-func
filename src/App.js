@@ -23,11 +23,9 @@ function App() {
         }
       };
       resumePage.classList.add("pubResumePage");
-      e.target.textContent = "Unpublish";
       toggleIsPublished();
     } else {
       resumePage.classList.remove("pubResumePage");
-      e.target.textContent = "Publish";
       toggleIsPublished();
     }
   }
@@ -37,7 +35,7 @@ function App() {
       <button 
         className='resumeBtn glass' 
         onClick={handlePublish}
-        >Publish
+        >{isPublished ? "Unpublish" : "Publish"}
       </button>
 
       <div id="resumePage">
