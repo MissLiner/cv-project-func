@@ -37,7 +37,7 @@ function App() {
       <Button 
         btnText='Publish' 
         order='resumeBtn glass' 
-        clickFunc={this.handlePublish}
+        clickFunc={handlePublish}
         />
       <div id="resumePage">
         <DisplayGenInfo isPublished={isPublished} />
