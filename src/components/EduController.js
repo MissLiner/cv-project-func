@@ -3,13 +3,6 @@ import React, { useState } from 'react';
 import '../App.css';
 import InputForm from './InputForm';
 import EduTemplate from './EduTemplate';
-// import { handleChange, 
-//         // handleSubmit, 
-//         // handleAdd, 
-//         // handleEdit, 
-//         // handleDelete, 
-//         // handleCancel
-//        } from './HelperFuncsNew';
 import uniqid from 'uniqid';
 
 function DisplayEducation(props) {
