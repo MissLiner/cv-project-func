@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 import GenController from './components/GenController';
 import ExpController from './components/ExpController';
-import EduController from './components/EduControllerNew';
+import EduController from './components/EduController';
 
 const App = () => {
   const [isPublished, setIsPublished] = useState(false);
