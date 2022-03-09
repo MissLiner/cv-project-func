@@ -151,7 +151,7 @@ label {
     "c c d d d d"
     "e e e e e e"
     "f f f g h h"
-    "i i i i i i";
+    "z z z z z z";
   grid-template-columns: repeat(6, 1fr); 
 }
 
@@ -163,14 +163,11 @@ label {
     "d d d e e e"
     "f f f f f f"
     "g g g g g g"
-    "g g g g g g"
-    "g g g g g g"
-    "i i i i i i";
+    "h h h h h h"
+    "i i i i i i"
+    "z z z z z z";
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(8, 1fr) 
-}
-.expInfoForm .sixthForm input {
-  height: 80px;
 }
 
 .eduInfoForm {
@@ -179,7 +176,7 @@ label {
     "b b b b b b"
     "c c c c c c"
     "d e e e e e"
-    "i i i i i i";
+    "z z z z z z";
   grid-template-columns: repeat(5, 1fr); 
 }
 
@@ -204,13 +201,14 @@ label {
 .seventhForm {
   grid-area: h;
 }
-.bottomForm {
+.eighthForm {
   grid-area: i;
 }
-
+.bottomForm {
+  grid-area: z;
+}
 
 /* TEMPLATES */
-
 .addBtn {
   margin-left: 100px;
   margin-top: 0px;

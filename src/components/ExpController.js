@@ -54,7 +54,8 @@ class DisplayExperience extends Component {
       const { isPublished } = this.props;
       const expInfoLabels = [['Company', 'first'], ['Location', 'second'], 
                             ['Title', 'fifth'], ['StartDate', 'third'], 
-                            ['EndDate', 'fourth'], ['Highlights', 'sixth', 'textarea']];
+                            ['EndDate', 'fourth'], ['Highlight 1', 'sixth'],
+                            ['Highlight 2', 'seventh'], ['Highlight 3', 'eighth']];
    
       if(this.state.display === 'form') {
         return (

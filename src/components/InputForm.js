@@ -22,7 +22,7 @@ const InputForm = (props) => {
               placeholder={inputName}
               value={props.details[inputName]}
               tabIndex={i + 1}
-
+              autoFocus={props.inputList[i][4]}
               onChange={props.changeFunc}
             />
           </div>
