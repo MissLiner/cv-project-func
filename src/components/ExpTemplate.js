@@ -27,7 +27,12 @@ const ExpTemplate = (props) => {
                   {job.StartDate} - {job.EndDate}
                 </div>
               </div>
-              <div className='highlights left'>{job.Highlights}</div>
+              <ul>
+                <li className='highlights left'>{job.Highlight1}</li>
+                <li className='highlights left'>{job.Highlight2}</li>
+                <li className='highlights left'>{job.Highlight3}</li>
+              </ul>
+
 
               <button 
                 key={keyID + 'editBtn'} 

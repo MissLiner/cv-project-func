@@ -31,7 +31,9 @@ class DisplayExperience extends Component {
         Title:      '',
         StartDate:  '',
         EndDate:    '',
-        Highlights: '',
+        Highlight1: '',
+        Highlight2: '',
+        Highlight3: '',
         baseID:     uniqid(),
       },
       display:    storedDisplay,
@@ -54,8 +56,8 @@ class DisplayExperience extends Component {
       const { isPublished } = this.props;
       const expInfoLabels = [['Company', 'first'], ['Location', 'second'], 
                             ['Title', 'fifth'], ['StartDate', 'third'], 
-                            ['EndDate', 'fourth'], ['Highlight 1', 'sixth'],
-                            ['Highlight 2', 'seventh'], ['Highlight 3', 'eighth']];
+                            ['EndDate', 'fourth'], ['Highlight1', 'sixth'],
+                            ['Highlight2', 'seventh'], ['Highlight3', 'eighth']];
    
       if(this.state.display === 'form') {
         return (
