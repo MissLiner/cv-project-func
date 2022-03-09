@@ -21,6 +21,7 @@ const InputForm = (props) => {
 
               placeholder={inputName}
               value={props.details[inputName]}
+              tabIndex={i + 1}
 
               onChange={props.changeFunc}
             />
