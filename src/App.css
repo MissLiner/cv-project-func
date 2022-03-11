@@ -39,10 +39,6 @@ input {
   margin-top: 0;
   width: 100%;
 }
-input:valid {
-  outline: solid;
-  outline-color: green;
-}
 input:invalid {
   outline: solid;
   outline-color: red;
