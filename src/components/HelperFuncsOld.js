@@ -65,15 +65,15 @@ export function handleAdd(e) {
 
 export function handleEdit(e) {
   e.preventDefault();
-  const objArrayKey = e.target.dataset.name;//'genInfo'
-  const objHolderKey = this.state.infoNameNew;//'newGenInfo'
-  const objArray = this.state[objArrayKey];//state.genInfo
-  const objIndex = e.target.dataset.arrindex;//index of existing object in info
-  const objToEdit = objArray[objIndex];//info[index]
+  const objArrayKey = e.target.dataset.name;
+  const objHolderKey = e.target.dataset.section;
+  const objArray = this.state[objArrayKey];
+  const objIndex = e.target.dataset.arrindex;
+  const objToEdit = objArray[objIndex];
   
   this.setState({
     display: 'form',
-    newInfo: info[],
+    [objHolderKey]: objToEdit,
     editIndex: objIndex,
   })
 }

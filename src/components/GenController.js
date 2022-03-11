@@ -6,7 +6,7 @@ import InputForm from './InputForm';
 import {  handleChange, 
           handleSubmit, 
           handleEdit,
-        } from './HelperFuncs';
+        } from './HelperFuncsOld';
 import uniqid from 'uniqid';
 
 class GenController extends Component {
@@ -21,8 +21,8 @@ class GenController extends Component {
       storedDisplay = 'text';
     }
     this.state = {
-      genInfo:    storedGenInfo,
-      newGenInfo: {
+      info:    storedGenInfo,
+      newInfo: {
         Name:       '',
         Address:    '',
         City:       '',
@@ -32,16 +32,17 @@ class GenController extends Component {
         Email:      '',
         baseID:     uniqid(),
       },
-      display:    storedDisplay,
-      editIndex:  'none',
+      display:      storedDisplay,
+      editIndex:    'none',
     };
+
     this.handleChange = handleChange.bind(this);
     this.handleSubmit = handleSubmit.bind(this);
     this.handleEdit = handleEdit.bind(this);
   }
   
   render() {
-    const { genInfo, newGenInfo } = this.state;
+    const { info, newInfo } = this.state;
     const { updateFunc, isPublished } = this.props;
     const genInfoLabels = [ ['Name', 'first', 'text', ''], 
                             ['Phone', 'second', 'tel' ], 
@@ -60,7 +61,8 @@ class GenController extends Component {
             infoType="genInfo"
             sectionKey="newGenInfo"
             inputList={genInfoLabels}
-            details={newGenInfo}
+            details={newInfo}
+            objIndex='0'
 
             changeFunc={this.handleChange} 
             submitFunc={this.handleSubmit}
@@ -71,7 +73,7 @@ class GenController extends Component {
       else if(this.state.display === 'text') {
         return(
           <GenTemplate 
-            genData={genInfo}
+            genData={info}
             editFunc={this.handleEdit}
             infoType="genInfo" 
             isPublished={isPublished}

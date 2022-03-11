@@ -8,7 +8,7 @@ import {  handleChange,
           handleAdd, 
           handleEdit, 
           handleDelete, 
-          handleCancel } from './HelperFuncs';
+          handleCancel } from './HelperFuncsOld';
 import uniqid from 'uniqid';
 
 class DisplayExperience extends Component {

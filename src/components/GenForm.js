@@ -3,6 +3,9 @@ import '../App.css';
 
 const InputForm = (props) => {
   const [ info, submitFunc, changeFunc ] = props;
+  const attributes = {
+    className: "genInfoForm",
+  }
   return(
     <div>
       <h2 className="heading">Personal Info</h2>
@@ -18,12 +21,10 @@ const InputForm = (props) => {
         <input 
             id="GenForm-name"
             className="GenForm-name"
-            data-name="genInfo"
-            data-section="newGenInfo"
-            data-field="Name"
+            name="Name"
 
-            value={info[1]}
-            tabIndex='0'
+            value={info[0]}
+            tabIndex='1'
             autoFocus
             onChange={changeFunc}
          />
