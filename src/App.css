@@ -158,9 +158,10 @@ label {
 .inputs-div {
   display: grid;
   grid-area: inputs;
+  grid-column-gap: 10px;
   width: 400px;
 }
-.genInfoForm {
+.infoForm {
   grid-template:
     "b b b b b b" 1fr
     "c c d d d d" 1fr

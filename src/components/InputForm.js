@@ -59,7 +59,6 @@ const InputForm = (props) => {
           type="submit" 
           className="regularBtn" 
           data-section={props.sectionKey} 
-          onClick={props.updateFunc}
           >Save
         </button> 
         <button 

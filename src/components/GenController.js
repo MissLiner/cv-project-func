@@ -46,7 +46,7 @@ class GenController extends Component {
   
   render() {
     const { info, newInfo } = this.state;
-    const { updateFunc, isPublished } = this.props;
+    const { isPublished } = this.props;
     const genInfoLabels = [ ['Name', 'first', 'text', ''], 
                             ['Phone', 'second', 'tel' ], 
                             ['Email', 'third', 'email'], 
@@ -61,15 +61,14 @@ class GenController extends Component {
         return (
           <InputForm 
             heading="Contact Info"
-            infoType="genInfo"
-            sectionKey="newGenInfo"
+            infoType="info"
+            sectionKey="newInfo"
             inputList={genInfoLabels}
             details={newInfo}
-            objIndex='0'
+            // objIndex='0'
 
             changeFunc={this.handleChange} 
             submitFunc={this.handleSubmit}
-            updateFunc={updateFunc}
             toggleFunc={this.handleToggle}
             hiddenClass={this.state.hiddenClass}
           />
