@@ -250,6 +250,11 @@ label {
   height: 750px;
   width:600px;
 }
+.toggle-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
 
 
 

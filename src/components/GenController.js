@@ -6,6 +6,7 @@ import InputForm from './InputForm';
 import {  handleChange, 
           handleSubmit, 
           handleEdit,
+          handleToggle,
         } from './HelperFuncsOld';
 import uniqid from 'uniqid';
 
@@ -33,12 +34,14 @@ class GenController extends Component {
         baseID:     uniqid(),
       },
       display:      storedDisplay,
+      isOpen:       false,
       editIndex:    'none',
     };
 
     this.handleChange = handleChange.bind(this);
     this.handleSubmit = handleSubmit.bind(this);
     this.handleEdit = handleEdit.bind(this);
+    this.handleToggle = handleToggle.bind(this);
   }
   
   render() {
@@ -67,6 +70,7 @@ class GenController extends Component {
             changeFunc={this.handleChange} 
             submitFunc={this.handleSubmit}
             updateFunc={updateFunc}
+            toggleFunc={this.handleToggle}
           />
         )     
       }

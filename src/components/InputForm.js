@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 
 const InputForm = (props) => {
   const renderInputs = () => {
@@ -37,6 +38,9 @@ const InputForm = (props) => {
       className={props.infoType + 'Form'} 
       onSubmit={props.submitFunc}
       >
+      <button className="exit-btn" onClick={props.toggleFunc}>
+        <KeyboardArrowDownRoundedIcon />
+      </button>
       <h2 className="heading">{props.heading}</h2>
       {renderInputs()}
 
