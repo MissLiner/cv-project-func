@@ -155,7 +155,7 @@ label {
   height: 100%;
   width: 100%;  
 }
-.input-form {
+.inputs-div {
   display: grid;
   grid-area: inputs;
   width: 400px;
