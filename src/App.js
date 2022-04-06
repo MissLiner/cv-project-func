@@ -7,6 +7,9 @@ import EduController from './components/EduController';
 const App = () => {
   const [isPublished, setIsPublished] = useState(false);
 
+  const handleClear = () => {
+    localStorage.clear();
+  }
   const toggleIsPublished = () => {
     setIsPublished(!isPublished);
   }
@@ -51,6 +54,12 @@ const App = () => {
           onClick={handlePublish}
           >{isPublished ? "Unpublish" : "Publish"}
         </button>
+        <button 
+          className="clearBtn glass"
+          onClick={handleClear}
+          >Clear data
+        </button>
+
       </div>
 
       <div id="resumePage">
