@@ -13,9 +13,8 @@ div {
   border-radius: 25px;
   display: grid;
   grid-template:
-    "header" auto
-    "inputs" auto
-    "footer" auto
+    "header" min-content
+    "inputs" min-content
     / 1fr;
   padding: 15px 130px 15px 130px;
   position: relative;
@@ -156,40 +155,41 @@ label {
   height: 100%;
   width: 100%;  
 }
-.genInfoForm {
+.input-form {
   display: grid;
   grid-area: inputs;
+  width: 400px;
+}
+.genInfoForm {
   grid-template:
     "b b b b b b" 1fr
     "c c d d d d" 1fr
     "e e e e e e" 1fr
     "f f f g h h" 1fr
-    / repeat(6, 1fr);
+    "footer footer footer footer footer footer" 2fr
+    / 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .expInfoForm {
-  display: grid;
-  grid-area: inputs;
-  grid-template-areas:
-    "b b b b b b"
-    "c c c c c c"
-    "d d d e e e"
-    "f f f f f f"
-    "g g g g g g"
-    "h h h h h h"
-    "i i i i i i";
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(8, 1fr) 
+  grid-template:
+    "b b" 1fr
+    "c c " 1fr
+    "d e" 1fr
+    "f f" 1fr
+    "g g" 1fr
+    "h h" 1fr
+    "i i" 1fr
+    "footer footer" 2fr
+    / 1fr 1fr;
 }
 
 .eduInfoForm {
-  display: grid;
-  grid-area: inputs;
-  grid-template-areas:
-    "b b b b b b"
-    "c c c c c c"
-    "d e e e e e";
-  grid-template-columns: repeat(5, 1fr); 
+  grid-template:
+    "b b b b b b" 1fr
+    "c c c c c c" 1fr
+    "d e e e e e" 1fr
+    "footer footer footer footer footer footer"
+    / 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .firstForm {
