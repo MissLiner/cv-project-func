@@ -38,7 +38,7 @@ const InputForm = (props) => {
       className={props.infoType + 'Form'} 
       onSubmit={props.submitFunc}
       >
-      <button className="exit-btn" onClick={props.toggleFunc}>
+      <button className="toggle-btn" onClick={props.toggleFunc}>
         <KeyboardArrowDownRoundedIcon />
       </button>
       <h2 className="heading">{props.heading}</h2>

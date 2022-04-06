@@ -149,6 +149,7 @@ label {
   width: 100%;  
 }
 .genInfoForm {
+  position: relative;
   grid-template-areas:
     "a a a a a a"
     "b b b b b b"
@@ -160,6 +161,7 @@ label {
 }
 
 .expInfoForm {
+  position: relative;
   grid-template-areas:
     "a a a a a a"
     "b b b b b b"
@@ -175,6 +177,7 @@ label {
 }
 
 .eduInfoForm {
+  position: relative;
   grid-template-areas:
     "a a a a a a"
     "b b b b b b"
