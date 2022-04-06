@@ -1,6 +1,7 @@
 import uniqid from 'uniqid';
 
-export function handleToggle() {
+export function handleToggle(e) {
+  e.preventDefault();
   if(this.state.isOpen){
     this.setState({
       isOpen: false,
