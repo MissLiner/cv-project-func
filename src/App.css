@@ -56,8 +56,7 @@ label {
 /* BUTTONS */
 .regularBtn {
 	box-shadow: 0px 10px 14px -7px #276873;
-	background:linear-gradient(to bottom, #a2c3cf 5%, #5b7275 100%);
-	background-color:#a2c3cf;
+	background-color:#618592;
   border: none;
 	border-radius:8px;
 	display:inline-block;
@@ -66,11 +65,22 @@ label {
 	font-family:Arial;
 	font-size:14px;
 	font-weight:bold;
-  margin-top: 15px;
+  margin: 10px 2.5px 5px 2.5px;
 	padding:5px;
+  position: relative;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #3d768a;
   width: 100px;
+}
+.regularBtn:after {
+  border-radius: 8px 8px 0px 0px;
+	content: '';
+	position: absolute;
+	top: .5px;
+	left: .5px;
+	width: calc(100% - 1px);
+	height: 50%;
+	background: linear-gradient(rgba(206, 206, 206, 0.8), rgba(206,206,206,0.2));
 }
 .regularBtn:hover {
 	background:linear-gradient(to bottom, #5b7275 5%, #a2c3cf 100%);
@@ -80,6 +90,7 @@ label {
 	position:relative;
 	top:1px;
 }
+
 .publishBtn {
   left: 100px;
   padding: 10px;
@@ -119,6 +130,17 @@ label {
 .glass:hover{
 	background: linear-gradient(rgb(0, 166, 184),rgb(102, 180, 228));
 }
+.toggle-btn {
+  border: none;
+  display: inline-block;
+  padding: 0px;
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  top: 15px;
+  right: 15px;
+}
+
 
 /* BASIC FORMATTING */
 .bolded {
@@ -169,7 +191,7 @@ label {
     "c c d d d d" 1fr
     "e e e e e e" 1fr
     "f f f g h h" 1fr
-    "footer footer footer footer footer footer" 2fr
+    "footer footer footer footer footer footer" min-content
     / 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
@@ -261,19 +283,8 @@ label {
   height: 750px;
   width:600px;
 }
-.toggle-btn {
-  border: none;
-  padding: 0px;
-  position: absolute;
-  height: 24px;
-  width: 24px;
-  top: 15px;
-  right: 15px;
-}
-/* .MuiSvgIcon-root {
-  height: 20px;
-  width: 20px;
-} */
+
+
 
 
 
