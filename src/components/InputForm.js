@@ -3,10 +3,11 @@ import '../App.css';
 
 const InputForm = (props) => {
   const renderInputs = () => {
+    return(
       props.inputList.map((input, i) => {
         const keyID = i;
         const inputName = input[0];
-        const inputOrder = input[1]; 
+        const inputOrder = input[1];  
 
         return(
           <div key={inputName + keyID} className={inputOrder + "Form inputBox"}>
