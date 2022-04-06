@@ -38,7 +38,7 @@ class DisplayExperience extends Component {
         baseID:     uniqid(),
       },
       display:    storedDisplay,
-      isOpen:       false,
+      hiddenClass: "hidden",
       editIndex:  'none',
     }
 
@@ -69,6 +69,7 @@ class DisplayExperience extends Component {
             submitFunc={this.handleSubmit}
             cancelFunc={this.handleCancel}
             toggleFunc={this.handleToggle}
+            hiddenClass={this.state.hiddenClass}
             infoType="expInfo"
             sectionKey="newExpInfo"
             heading="Experience"

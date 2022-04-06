@@ -25,7 +25,7 @@ function DisplayEducation(props) {
   const [eduInfo, setEduInfo] = useState(storedEduInfo);
   const [display, setDisplay] = useState(storedDisplay);
   const [editIndex, setEditIndex] = useState('none');
-  const [isOpen, setIsOpen] = useState(false);
+  const [hiddenClass, setHiddenClass] = useState("hidden");
   
   const handleEduChange = (e) => {
     const editKey = e.target.dataset.field;
@@ -75,8 +75,10 @@ function DisplayEducation(props) {
     newArray.splice(deleteIndex, 1);
     setEduInfo(newArray);
   }
-  const handleEduToggle = () => {
-    if(isOpen) { setIsOpen(false) } else { setIsOpen(true)};
+  const handleEduToggle = (e) => {
+    e.preventDefault();
+    if(hiddenClass === "hidden") { setHiddenClass("") 
+    } else { setHiddenClass("hidden")};
   }
 
   const renderPage = () => {
@@ -95,7 +97,7 @@ function DisplayEducation(props) {
           heading="Education"
           inputList={eduInfoLabels}
           details={newEduInfo}
-          isOpen={isOpen}
+          hiddenClass={hiddenClass}
         />
       )     
     }

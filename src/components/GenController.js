@@ -34,7 +34,7 @@ class GenController extends Component {
         baseID:     uniqid(),
       },
       display:      storedDisplay,
-      isOpen:       false,
+      hiddenClass:  "hidden",
       editIndex:    'none',
     };
 
@@ -71,6 +71,7 @@ class GenController extends Component {
             submitFunc={this.handleSubmit}
             updateFunc={updateFunc}
             toggleFunc={this.handleToggle}
+            hiddenClass={this.state.hiddenClass}
           />
         )     
       }

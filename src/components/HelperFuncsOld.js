@@ -2,13 +2,13 @@ import uniqid from 'uniqid';
 
 export function handleToggle(e) {
   e.preventDefault();
-  if(this.state.isOpen){
+  if(this.state.hiddenClass === "hidden"){
     this.setState({
-      isOpen: false,
+      hiddenClass: "",
     })
   } else {
     this.setState({
-      isOpen: true,
+      hiddenClass: "hidden",
     })
   }
 }

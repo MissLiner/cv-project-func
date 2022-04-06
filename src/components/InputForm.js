@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import '../App.css';
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 
 const InputForm = (props) => {
-  const [inputsView, setInputsView] = useState("hidden");
+  // const [inputsView, setInputsView] = useState("hidden");
 
-  useEffect(() => {
-    if(props.isOpen) {
-      setInputsView("");
-    }
-    else if(!props.isOpen) {
-      setInputsView("hidden");
-    }
-  }, [props.isOpen])
+  // useEffect(() => {
+  //   if(props.isOpen === true) {
+  //     setInputsView("");
+  //   }
+  //   else if(props.isOpen === false) {
+  //     setInputsView("hidden");
+  //   }
+  // }, [props.isOpen])
   const renderInputs = () => {
     return(
       props.inputList.map((input, i) => {
@@ -52,7 +52,7 @@ const InputForm = (props) => {
         <KeyboardArrowDownRoundedIcon />
       </button>
       <h2 className="heading">{props.heading}</h2>
-      <div className={"inputs-div " + inputsView + " " + props.infoType + "Form"}>
+      <div className={"inputs-div " + props.hiddenClass + " " + props.infoType + "Form"}>
         {renderInputs()}
         <div className='bottomForm'>
         <button 
