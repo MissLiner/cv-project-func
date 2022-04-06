@@ -124,6 +124,9 @@ label {
 .flex {
   display: flex;
 }
+.hidden {
+  display: none;
+}
 .larger {
   font-size: larger;
 }

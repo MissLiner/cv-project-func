@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../App.css';
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 
 const InputForm = (props) => {
+  const [inputsView, setInputsView] = useState("hidden");
+  useEffect(() => {
+    if(props.isOpen) {
+      setInputsView("");
+    }
+    else if(!props.isOpen) {
+      setInputsView("");
+    }
+  }, [props.isOpen])
   const renderInputs = () => {
     return(
       props.inputList.map((input, i) => {
@@ -42,8 +51,10 @@ const InputForm = (props) => {
         <KeyboardArrowDownRoundedIcon />
       </button>
       <h2 className="heading">{props.heading}</h2>
-      {renderInputs()}
-
+      <div className={"inputs-div " + inputsView}>
+        {renderInputs()}
+      </div>
+ 
       <div className='bottomForm'>
         <button 
           type="submit" 
