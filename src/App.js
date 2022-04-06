@@ -44,12 +44,14 @@ const App = () => {
 
   return (
     <div>
-      <h1 className="App-title">ResumeMaker</h1>
-      <button 
-        className='publishBtn glass' 
-        onClick={handlePublish}
-        >{isPublished ? "Unpublish" : "Publish"}
-      </button>
+      <div className="App-header">
+        <h1 className="App-title">ResumeMaker</h1>
+        <button 
+          className='publishBtn glass' 
+          onClick={handlePublish}
+          >{isPublished ? "Unpublish" : "Publish"}
+        </button>
+      </div>
 
       <div id="resumePage">
         <GenController isPublished={isPublished} />
