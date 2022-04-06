@@ -20,10 +20,7 @@ div {
   position: relative;
   width: 400px;
 }
-h1 {
-  color:white;
-  font-size: 30px;
-}
+
 h2 {
   border-bottom: solid;
   border-color:rgb(87, 87, 87);
@@ -143,6 +140,11 @@ label {
 
 
 /* BASIC FORMATTING */
+.App-title {
+  color:white;
+  font-family: 'Lobster Two', cursive;
+  font-size: 30px;
+}
 .bolded {
   font-weight: bold;
 }

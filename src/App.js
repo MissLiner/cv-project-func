@@ -44,7 +44,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>ResuMaker</h1>
+      <h1 className="App-title">ResumeMaker</h1>
       <button 
         className='publishBtn glass' 
         onClick={handlePublish}
