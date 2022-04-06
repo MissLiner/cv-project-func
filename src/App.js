@@ -16,9 +16,10 @@ const App = () => {
     for(let btn of allBtns) {
       if(btn.textContent === 'Save') {
         alert("Please save all work before publishing");
-        return;
+        return false;
       }
     };
+    return true;
   }
 
   const toggleResumeClass = () => {
@@ -32,9 +33,13 @@ const App = () => {
   }
 
   const handlePublish = () => {
-    checkIfSaved();
-    toggleResumeClass();
-    toggleIsPublished();
+    const isSaved = checkIfSaved();
+    if(!isSaved) {
+      return;
+    } else {
+      toggleResumeClass();
+      toggleIsPublished();
+    }
   }
 
   return (
