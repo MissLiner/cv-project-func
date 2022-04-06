@@ -50,12 +50,12 @@ const App = () => {
       <div className="App-header">
         <h1 className="App-title">ResumeMaker</h1>
         <button 
-          className='publishBtn glass' 
+          className='publish-btn glass' 
           onClick={handlePublish}
           >{isPublished ? "Unpublish" : "Publish"}
         </button>
         <button 
-          className="clearBtn glass"
+          className="clear-btn glass"
           onClick={handleClear}
           >Clear data
         </button>

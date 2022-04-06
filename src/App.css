@@ -92,11 +92,19 @@ label {
 	top:1px;
 }
 
-.publishBtn {
+.publish-btn {
   padding: 5px;
-  grid-area: button;
-  margin-bottom: 15px;
-  margin-left: 70px;
+  grid-area: button1;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  position: relative;
+  width: 140px;
+}
+.clear-btn {
+  padding: 5px;
+  grid-area: button2;
+  margin-bottom: 5px;
+  margin-left: 10px;
   position: relative;
   width: 140px;
 }
@@ -147,8 +155,9 @@ label {
 .App-header {
   display:grid;
   grid-template: 
-    "empty title button"
-    / 1fr min-content 1fr;
+    ". title button1 button2 ."
+    / 3fr min-content 1fr 1fr 1fr;
+  margin-bottom: 20px;
   width: 100%;
 }
 .App-title {
