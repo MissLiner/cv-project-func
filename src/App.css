@@ -262,10 +262,18 @@ label {
   width:600px;
 }
 .toggle-btn {
+  border: none;
+  padding: 0px;
   position: absolute;
+  height: 24px;
+  width: 24px;
   top: 15px;
   right: 15px;
 }
+/* .MuiSvgIcon-root {
+  height: 20px;
+  width: 20px;
+} */
 
 
 

@@ -50,7 +50,7 @@ const InputForm = (props) => {
       className="InputForm"
       onSubmit={props.submitFunc}
       >
-      <button className="toggle-btn" onClick={props.toggleFunc}>
+      <button className="toggle-btn glass" onClick={props.toggleFunc}>
         {renderToggleBtn()}
       </button>
       <h2 className="heading">{props.heading}</h2>
