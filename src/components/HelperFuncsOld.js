@@ -1,5 +1,17 @@
 import uniqid from 'uniqid';
 
+export function handleToggle() {
+  if(this.state.isOpen){
+    this.setState({
+      isOpen: false,
+    })
+  } else {
+    this.setState({
+      isOpen: true,
+    })
+  }
+}
+
 export function handleChange(e) {
   const editObj = e.target.dataset.section;
   const editKey = e.target.dataset.field;
