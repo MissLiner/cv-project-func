@@ -80,7 +80,7 @@ label {
 	position:relative;
 	top:1px;
 }
-.resumeBtn {
+.publishBtn {
   left: 100px;
   padding: 10px;
   position: absolute;
@@ -101,16 +101,18 @@ label {
 	font-family: sans-serif;
 	font-weight: 600;
   border-color:rgb(172, 164, 159);
-  border-radius: 3px;
+  border-radius: 15px;
+  border-width: 1px;
   box-shadow: 0px 1px 4px -2px rgb(50, 50, 50);
   text-shadow: 0px -1px #333;
 }
 .glass:after{
+  border-radius: 15px 15px 0px 0px;
 	content: '';
 	position: absolute;
-	top: 2px;
-	left: 2px;
-	width: calc(100% - 4px);
+	top: .5px;
+	left: .5px;
+	width: calc(100% - 1px);
 	height: 50%;
 	background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
 }

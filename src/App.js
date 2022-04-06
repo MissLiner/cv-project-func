@@ -46,7 +46,7 @@ const App = () => {
     <div>
       <h1>ResuMaker</h1>
       <button 
-        className='resumeBtn glass' 
+        className='publishBtn glass' 
         onClick={handlePublish}
         >{isPublished ? "Unpublish" : "Publish"}
       </button>

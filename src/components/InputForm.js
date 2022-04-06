@@ -1,18 +1,20 @@
 // import React, { useEffect, useState } from 'react';
 import '../App.css';
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
+import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded';
 
 const InputForm = (props) => {
-  // const [inputsView, setInputsView] = useState("hidden");
-
-  // useEffect(() => {
-  //   if(props.isOpen === true) {
-  //     setInputsView("");
-  //   }
-  //   else if(props.isOpen === false) {
-  //     setInputsView("hidden");
-  //   }
-  // }, [props.isOpen])
+  const renderToggleBtn = () => {
+    if(props.hiddenClass === "") {
+      return(
+        <KeyboardArrowUpRoundedIcon />
+      )
+    } else {
+      return(
+        <KeyboardArrowDownRoundedIcon />
+      )
+    }
+  }
   const renderInputs = () => {
     return(
       props.inputList.map((input, i) => {
@@ -49,7 +51,7 @@ const InputForm = (props) => {
       onSubmit={props.submitFunc}
       >
       <button className="toggle-btn" onClick={props.toggleFunc}>
-        <KeyboardArrowDownRoundedIcon />
+        {renderToggleBtn()}
       </button>
       <h2 className="heading">{props.heading}</h2>
       <div className={"inputs-div " + props.hiddenClass + " " + props.infoType + "Form"}>
