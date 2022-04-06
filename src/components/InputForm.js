@@ -4,12 +4,13 @@ import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownR
 
 const InputForm = (props) => {
   const [inputsView, setInputsView] = useState("hidden");
+
   useEffect(() => {
     if(props.isOpen) {
       setInputsView("");
     }
     else if(!props.isOpen) {
-      setInputsView("");
+      setInputsView("hidden");
     }
   }, [props.isOpen])
   const renderInputs = () => {
@@ -44,18 +45,16 @@ const InputForm = (props) => {
     <form key={props.infoType}
       data-name={props.infoType} 
       data-section={props.sectionKey}
-      className={props.infoType + 'Form'} 
+      className="InputForm"
       onSubmit={props.submitFunc}
       >
       <button className="toggle-btn" onClick={props.toggleFunc}>
         <KeyboardArrowDownRoundedIcon />
       </button>
       <h2 className="heading">{props.heading}</h2>
-      <div className={"inputs-div " + inputsView}>
+      <div className={"inputs-div " + inputsView + " " + props.infoType + "Form"}>
         {renderInputs()}
-      </div>
- 
-      <div className='bottomForm'>
+        <div className='bottomForm'>
         <button 
           type="submit" 
           className="regularBtn" 
@@ -71,6 +70,9 @@ const InputForm = (props) => {
           >Cancel
         </button> 
       </div>
+      </div>
+ 
+
     </form>
   )
 }

@@ -95,6 +95,7 @@ function DisplayEducation(props) {
           heading="Education"
           inputList={eduInfoLabels}
           details={newEduInfo}
+          isOpen={isOpen}
         />
       )     
     }
