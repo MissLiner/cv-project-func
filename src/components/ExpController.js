@@ -8,7 +8,8 @@ import {  handleChange,
           handleAdd, 
           handleEdit, 
           handleDelete, 
-          handleCancel } from './HelperFuncsOld';
+          handleCancel,
+          handleToggle, } from './HelperFuncsOld';
 import uniqid from 'uniqid';
 
 class DisplayExperience extends Component {
@@ -37,6 +38,7 @@ class DisplayExperience extends Component {
         baseID:     uniqid(),
       },
       display:    storedDisplay,
+      isOpen:       false,
       editIndex:  'none',
     }
 
@@ -48,6 +50,7 @@ class DisplayExperience extends Component {
     this.handleEdit = handleEdit.bind(this);
     this.handleDelete = handleDelete.bind(this);
     this.handleCancel = handleCancel.bind(this);
+    this.handleToggle = handleToggle.bind(this);
   }
   
   render() {
@@ -65,6 +68,7 @@ class DisplayExperience extends Component {
             changeFunc={this.handleChange} 
             submitFunc={this.handleSubmit}
             cancelFunc={this.handleCancel}
+            toggleFunc={this.handleToggle}
             infoType="expInfo"
             sectionKey="newExpInfo"
             heading="Experience"
