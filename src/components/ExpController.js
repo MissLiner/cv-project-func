@@ -93,7 +93,7 @@ class DisplayExperience extends Component {
       }
     }
     return (
-      <div>
+      <div className="ExpController">
         {renderPage()}
       </div>
     )

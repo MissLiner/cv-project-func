@@ -89,12 +89,12 @@ const ExpTemplate = (props) => {
     if(isPublished === false) {
       return 'resumeExp resume' 
     } else {
-      return 'pubExp pubResume'
+      return 'pubExp pubResume resume-section'
     }
   }
   return (
     <div className={setDivClass()}>
-      <h2>Experience {addAddBtn()}</h2>
+      <h2 className="ExpTemplate-header template-header">Experience {addAddBtn()}</h2>
       {renderAllDivs()}
     </div>
   )

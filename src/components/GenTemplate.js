@@ -13,7 +13,7 @@ const GenTemplate = (props) => {
     if(isPublished === false) {
       return (
         <div className='resumeHeader resume'>
-          <div className='name bolded larger'>{genData[0].Name}</div>
+          <div className='GenTemplate-name'>{genData[0].Name}</div>
           <div className='address1'>
             {genData[0].Address} | {genData[0].City}, 
             {genData[0].State} {genData[0].Zip}
@@ -32,8 +32,8 @@ const GenTemplate = (props) => {
       )
     } else {
       return (
-        <div className='pubHeader pubResume'>
-        <div className='name bolded larger'>{genData[0].Name}</div>
+        <div className='pubHeader pubResume resume-section'>
+        <div className='GenTemplate-name'>{genData[0].Name}</div>
         <div className='address1'>
           {genData[0].Address} | {genData[0].City}, 
           {genData[0].State} {genData[0].Zip}

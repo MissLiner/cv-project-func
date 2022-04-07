@@ -169,7 +169,7 @@ label {
   display: none !important;
 }
 .larger {
-  font-size: larger;
+  font-size: 1.3em;
 }
 .left {
   justify-self:left;
@@ -274,10 +274,9 @@ label {
   position: relative;
   float: right;
 }
-.pubResume .name {
-  font-size:24px;
-  font-family: helvetica, arial, sans-serif;
-  margin-top: 20px;
+.GenTemplate-name {
+  font-size:1.5em;
+  font-weight: bold;
 }
 .address1 {
   margin-top: 5px !important;
@@ -289,20 +288,35 @@ label {
   background-color:rgb(240, 241, 207);
   border-radius: 25px;
   display: block;
-  /* font-family:'Times New Roman', Times, serif; */
   padding: 15px 30px 15px 30px;
   width: 600px;
 }
+.resumeHeader {
+  padding: 10px 30px 10px 30px;
+}
+.template-header {
+  border-bottom: solid;
+  border-width: 1px;
+  font-size: 1.2em;
+  padding: 5px;
+  text-align: left;
+}
+.resumeExpJob {
+  width: 95%;
+}
 .pubResume {
   width: 500px;
+}
+.resume-section {
+  margin-bottom: 15px;
 }
 .pubResumePage {
   background-color: white;
   border: solid;
   border-color: black;
-  /* font-family: 'Times New Roman', Times, serif !important; */
   font-size: 12px;
   height: 750px;
+  padding-top: 20px;
   width:600px;
 }
 

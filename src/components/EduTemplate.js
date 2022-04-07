@@ -76,12 +76,12 @@ const EduTemplate = (props) => {
     if(isPublished === false) {
       return 'resumeEdu resume' 
     } else {
-      return 'pubEdu pubResume'
+      return 'pubEdu pubResume resume-section'
     }
   }
   return (
     <div className={setDivClass()}>
-        <h2>Education {addAddNewBtn()}</h2>
+        <h2 className="EduTemplate-header template-header">Education {addAddNewBtn()}</h2>
       {renderAllDivs()}
     </div>
   )
