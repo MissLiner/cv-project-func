@@ -48,7 +48,8 @@ label {
 }
 /* BUTTONS */
 .regularBtn {
-	background-color:#618592;
+	background-color:#008FBA;
+  background-image: linear-gradient(rgb(0, 0, 0),rgb(31, 117, 163));
   border: none;
 	border-radius:8px;
 	display:inline-block;
@@ -69,13 +70,12 @@ label {
 	position: absolute;
 	top: .5px;
 	left: .5px;
-	width: calc(100% - 1px);
+	width: calc(100% - 0px);
 	height: 50%;
 	background: linear-gradient(rgba(206, 206, 206, 0.8), rgba(206,206,206,0.2));
 }
 .regularBtn:hover {
-	background:linear-gradient(to bottom, #5b7275 5%, #a2c3cf 100%);
-	background-color:#5b7275;
+  background: linear-gradient(rgb(0, 109, 121),rgb(112, 200, 255));
 }
 .regularBtn:active {
 	position:relative;
@@ -151,7 +151,7 @@ label {
   width: 100%;
 }
 .App-title {
-  color:white;
+  color:#FEF9DB;
   font-family: 'Lobster Two', cursive;
   font-size: 64px;
   grid-area: title;
@@ -184,7 +184,7 @@ label {
 
 /* INPUT FORM */
 .heading {
-  color:#332D0C;
+  color: #008FBA;
   font-family: "Fredoka One", sans-serif;
   font-size: 1.3em;
   grid-area: header;
