@@ -13,7 +13,7 @@ div {
   margin-top: 5px;
 }
 .InputForm {
-  background-color:rgb(240, 241, 207);
+  background-color:rgb(231, 149, 42);
   border-radius: 25px;
   display: grid;
   grid-template:
@@ -194,7 +194,11 @@ label {
 
 /* INPUT FORM */
 .heading {
+  color:black;
+  font-family: "Anybody", sans-serif;
+  font-size: 1.3em;
   grid-area: header;
+  letter-spacing: .1em;
 }
 .inputBox {
   margin-left: 0;
