@@ -2,6 +2,7 @@
 import '../App.css';
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded';
+import customDivider from "../assets/divider_custom.svg";
 
 const InputForm = (props) => {
   const renderToggleBtn = () => {
@@ -53,7 +54,10 @@ const InputForm = (props) => {
       <button className="toggle-btn glass" onClick={props.toggleFunc}>
         {renderToggleBtn()}
       </button>
-      <h2 className="heading">{props.heading}</h2>
+      <h2 className="heading">{props.heading} 
+      </h2>
+      <img className="InputForm-divider" src={customDivider} alt="decorative line"></img>
+     
       <div className={"inputs-div " + props.hiddenClass + " " + props.infoType + "Form"}>
         {renderInputs()}
         <div className='bottomForm'>
@@ -72,8 +76,6 @@ const InputForm = (props) => {
         </button> 
       </div>
       </div>
- 
-
     </form>
   )
 }

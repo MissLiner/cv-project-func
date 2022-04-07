@@ -13,11 +13,12 @@ div {
   margin-top: 5px;
 }
 .InputForm {
-  background-color:rgb(231, 149, 42);
+  background-color:#EED236;
   border-radius: 25px;
   display: grid;
   grid-template:
     "header" min-content
+    "divider" min-content
     "inputs" min-content
     / 1fr;
   padding: 15px 130px 15px 130px;
@@ -25,17 +26,6 @@ div {
   width: 400px;
 }
 
-h2 {
-  border-bottom: solid;
-  border-color:rgb(87, 87, 87);
-  border-width: 1px;
-  color:rgb(123, 122, 122);
-  font-family: "lato", sans-serif;
-  font-size: 18px;
-  height: 24px;
-  padding-bottom: 10px;
-  text-align: left;
-}
 input {
   border: none;
   display: block;
@@ -194,11 +184,16 @@ label {
 
 /* INPUT FORM */
 .heading {
-  color:black;
-  font-family: "Anybody", sans-serif;
+  color:#332D0C;
+  font-family: "Fredoka One", sans-serif;
   font-size: 1.3em;
   grid-area: header;
   letter-spacing: .1em;
+}
+.InputForm-divider {
+  grid-area: divider;
+  margin-left: -25%;
+  width: 150%;
 }
 .inputBox {
   margin-left: 0;
