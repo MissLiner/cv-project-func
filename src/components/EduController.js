@@ -55,10 +55,10 @@ function EduController(props) {
     localStorage.setItem('eduInfo', JSON.stringify(newArray));
   }
   const handleEduAdd = () => {
-    console.log("hi");
     setNewEduInfo(newEduInfoBaseState);
     setDisplay('form');
     setEditIndex('none');
+    setHiddenClass("");
   }
   const handleEduCancel = () => {
     setDisplay('text');

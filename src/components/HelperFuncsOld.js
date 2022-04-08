@@ -73,6 +73,7 @@ export function handleAdd(e) {
     [resetObjKey]: this.baseFormState,
     display: 'form',
     editIndex: 'none',
+    hiddenClass: "",
   })
 }
 
@@ -88,7 +89,7 @@ export function handleEdit(e) {
     display: 'form',
     [objHolderKey]: objToEdit,
     editIndex: objIndex,
-    
+
   })
 }
 export function handleDelete(e) {
