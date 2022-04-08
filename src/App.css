@@ -183,14 +183,14 @@ label {
 }
 
 /* INPUT FORM */
-.heading {
+.InputHeader-heading {
   color: #008FBA;
   font-family: "Fredoka One", sans-serif;
   font-size: 1.3em;
   grid-area: header;
   letter-spacing: .1em;
 }
-.InputForm-divider {
+.InputHeader-divider {
   grid-area: divider;
   margin-left: -25%;
   width: 150%;
@@ -285,7 +285,7 @@ label {
   margin-top: 0px !important;
 }
 .resume {
-  background-color:rgb(240, 241, 207);
+  background-color:#EED236;
   border-radius: 25px;
   display: block;
   padding: 15px 30px 15px 30px;
