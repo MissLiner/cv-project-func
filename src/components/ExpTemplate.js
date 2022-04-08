@@ -13,6 +13,18 @@ const ExpTemplate = (props) => {
     isPublished,
   } = props;
   
+  const renderHeader = () => {
+    if(isPublished === false) {
+      <InputHeader 
+      heading="Experience"
+      sectionKey={sectionKey} 
+      addBtn={true} 
+      addFunc={addFunc}
+     />
+    } else {
+      <h2 className="heading">Experience</h2>
+    }
+  }
   const renderAllDivs = () => {
     return (
       expData.map((job, i) => {
@@ -96,12 +108,7 @@ const ExpTemplate = (props) => {
   return (
     <div className={setDivClass()}>
       {renderAddBtn()}
-      <InputHeader 
-        heading="Experience"
-        sectionKey={sectionKey} 
-        addBtn={true} 
-        addFunc={addFunc}
-       />
+      {renderHeader()}
       {renderAllDivs()}
     </div>
   )

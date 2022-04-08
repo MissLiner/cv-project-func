@@ -10,7 +10,7 @@ const GenTemplate = (props) => {
     isPublished,
   } = props;
   
-  const renderHeader = () => {
+  const renderGenInfo = () => {
     if(isPublished === false) {
       return (
         <div className='resumeHeader resume'>
@@ -55,7 +55,7 @@ const GenTemplate = (props) => {
 
   return (
     <div>
-      {renderHeader()}
+      {renderGenInfo()}
     </div>  
   )
 }
