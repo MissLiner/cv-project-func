@@ -1,9 +1,7 @@
-// import React, { useEffect, useState } from 'react';
 import '../App.css';
 import InputHeader from './InputHeader'
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded';
-import customDivider from "../assets/divider_custom.svg";
 
 const InputForm = (props) => {
   const renderToggleBtn = () => {
@@ -33,10 +31,10 @@ const InputForm = (props) => {
               data-name={props.infoType}
               data-section={props.sectionKey}
               data-field={inputName}
+              tabIndex={props.tabIndexStart + i}
 
               placeholder={inputName}
               value={props.details[inputName]}
-              tabIndex={i + 1}
               autoFocus={props.inputList[i][4]}
               onChange={props.changeFunc}
             />

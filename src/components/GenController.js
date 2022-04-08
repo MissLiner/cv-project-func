@@ -47,13 +47,13 @@ class GenController extends Component {
   render() {
     const { info, newInfo } = this.state;
     const { isPublished } = this.props;
-    const genInfoLabels = [ ['Name', 'first', 'text', ''], 
-                            ['Phone', 'second', 'tel' ], 
-                            ['Email', 'third', 'email'], 
-                            ['Address', 'fourth', 'text'], 
-                            ['City', 'fifth', 'text'], 
-                            ['State', 'sixth', 'text', '2'], 
-                            ['Zip', 'seventh', 'text', '5'],  
+    const genInfoLabels = [ ['Name', 'first', 'text', '' ], 
+                            ['Phone', 'second', 'tel', ''  ], 
+                            ['Email', 'third', 'email', '3'], 
+                            ['Address', 'fourth', 'text', '4'], 
+                            ['City', 'fifth', 'text', '5'], 
+                            ['State', 'sixth', 'text', '2' ], 
+                            ['Zip', 'seventh', 'text', '5' ],  
                           ];
 
     const renderPage = () => {
@@ -65,12 +65,14 @@ class GenController extends Component {
             sectionKey="newInfo"
             inputList={genInfoLabels}
             details={newInfo}
-            // objIndex='0'
+            
 
             changeFunc={this.handleChange} 
             submitFunc={this.handleSubmit}
             toggleFunc={this.handleToggle}
             hiddenClass={this.state.hiddenClass}
+            
+            tabIndexStart="1"
           />
         )     
       }

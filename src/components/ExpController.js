@@ -57,10 +57,14 @@ class DisplayExperience extends Component {
     const renderPage = () => {
       const { expInfo, newExpInfo } = this.state;
       const { isPublished } = this.props;
-      const expInfoLabels = [['Company', 'first'], ['Location', 'second'], 
-                            ['Title', 'fifth'], ['StartDate', 'third'], 
-                            ['EndDate', 'fourth'], ['Highlight1', 'sixth'],
-                            ['Highlight2', 'seventh'], ['Highlight3', 'eighth']];
+      const expInfoLabels = [ ['Company', 'first'], 
+                              ['Location', 'second'], 
+                              ['StartDate', 'third'], 
+                              ['EndDate', 'fourth'], 
+                              ['Title', 'fifth'], 
+                              ['Highlight1', 'sixth'],
+                              ['Highlight2', 'seventh'], 
+                              ['Highlight3', 'eighth']];
    
       if(this.state.display === 'form') {
         return (
@@ -75,6 +79,7 @@ class DisplayExperience extends Component {
             heading="Experience"
             inputList={expInfoLabels}
             details={newExpInfo}
+            tabIndexStart="8"
           />
         )     
       }

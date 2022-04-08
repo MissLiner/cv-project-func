@@ -92,8 +92,10 @@ function DisplayEducation(props) {
     )
   } 
   const renderPage = () => {
-    const eduInfoLabels = [['School', 'first'], ['Location', 'second'], 
-                          ['Degree', 'fourth'], ['Year', 'third']];
+    const eduInfoLabels = [ ['School', 'first'], 
+                            ['Location', 'second'], 
+                            ['Year', 'third'],
+                            ['Degree', 'fourth'], ];
 
     if (display === 'form') {
       return (
@@ -108,6 +110,7 @@ function DisplayEducation(props) {
           inputList={eduInfoLabels}
           details={newEduInfo}
           hiddenClass={hiddenClass}
+          tabIndexStart="16"
         />
       )     
     }
