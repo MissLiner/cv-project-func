@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css'; 
+import InputHeader from './InputHeader';
 
 const ExpTemplate = (props) => {
   const {
@@ -74,17 +75,17 @@ const ExpTemplate = (props) => {
       })
     )
   }
-  const addAddBtn = () => {
-    if(isPublished === false) {
-      return(
-        <button 
-          onClick={addFunc} 
-          data-section={sectionKey} 
-          className='regularBtn addBtn'
-         >Add New</button>
-      )
-    }
-  }
+  // const addAddBtn = () => {
+  //   if(isPublished === false) {
+  //     return(
+  //       <button 
+  //         onClick={addFunc} 
+  //         data-section={sectionKey} 
+  //         className='regularBtn addBtn'
+  //        >Add New</button>
+  //     )
+  //   } 
+  // }
   const setDivClass = () => {
     if(isPublished === false) {
       return 'resumeExp resume' 
@@ -94,7 +95,13 @@ const ExpTemplate = (props) => {
   }
   return (
     <div className={setDivClass()}>
-      <h2 className="ExpTemplate-header template-header">Experience {addAddBtn()}</h2>
+      {/* <h2 className="ExpTemplate-header template-header">Experience {addAddBtn()}</h2> */}
+      <InputHeader 
+        heading="Experience"
+        sectionKey={props.sectionKey} 
+        addBtn={true} 
+        addFunc={addFunc}
+       />
       {renderAllDivs()}
     </div>
   )

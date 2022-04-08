@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import InputHeader from './InputHeader';
 
 const EduTemplate = (props) => {
   const {
@@ -81,7 +82,13 @@ const EduTemplate = (props) => {
   }
   return (
     <div className={setDivClass()}>
-        <h2 className="EduTemplate-header template-header">Education {addAddNewBtn()}</h2>
+        {/* <h2 className="EduTemplate-header template-header">Education {addAddNewBtn()}</h2> */}
+        <InputHeader 
+          heading="Education"
+          sectionKey={props.sectionKey} 
+          addBtn={true} 
+          addFunc={addFunc}
+         />
       {renderAllDivs()}
     </div>
   )
