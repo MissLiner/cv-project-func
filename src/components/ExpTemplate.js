@@ -20,7 +20,7 @@ const ExpTemplate = (props) => {
         if(isPublished === false) {
           return (
             <div className='resumeExpJob' key={keyID}>
-              <div className='companyInfo flex'>
+              <div className='companyInfo flex preview-box'>
                 <div className='company left'>
                   <b>{job.Title}</b> | {job.Company}, {job.Location}
                 </div>
@@ -28,7 +28,7 @@ const ExpTemplate = (props) => {
                   {job.StartDate} - {job.EndDate}
                 </div>
               </div>
-              <ul>
+              <ul className="preview-box-list">
                 <li className='highlights left'>{job.Highlight1}</li>
                 <li className='highlights left'>{job.Highlight2}</li>
                 <li className='highlights left'>{job.Highlight3}</li>
@@ -98,7 +98,7 @@ const ExpTemplate = (props) => {
       {/* <h2 className="ExpTemplate-header template-header">Experience {addAddBtn()}</h2> */}
       <InputHeader 
         heading="Experience"
-        sectionKey={props.sectionKey} 
+        sectionKey={sectionKey} 
         addBtn={true} 
         addFunc={addFunc}
        />

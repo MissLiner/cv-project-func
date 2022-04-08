@@ -19,7 +19,7 @@ const EduTemplate = (props) => {
         eduData.map((school, i) => {
           const keyID = school.baseID + i;
           return (
-            <div className='resumeEduSchool flex' key={keyID}>
+            <div className='resumeEduSchool flex white' key={keyID}>
               <div className='degreeInfo left'>
                 <b>{school.Degree}</b>| {school.School}, {school.Location}
               </div>
@@ -34,7 +34,7 @@ const EduTemplate = (props) => {
           const keyID = school.baseID + i;
           return (
             <div key={keyID}>
-              <div className='resumeEduSchool flex'>
+              <div className='resumeEduSchool flex preview-box'>
                 <div className='degreeInfo left'>
                   <b>{school.Degree}</b>| {school.School}, {school.Location}
                 </div>
@@ -62,17 +62,17 @@ const EduTemplate = (props) => {
       )
     }
   }
-  const addAddNewBtn = () => {
-    if(isPublished === false) {
-      return(
-        <button 
-          onClick={addFunc} 
-          data-section={sectionKey} 
-          className='regularBtn addBtn'
-         >Add New</button>
-      )
-    }
-  }
+  // const addAddNewBtn = () => {
+  //   if(isPublished === false) {
+  //     return(
+  //       <button 
+  //         onClick={addFunc} 
+  //         data-section={sectionKey} 
+  //         className='regularBtn addBtn'
+  //        >Add New</button>
+  //     )
+  //   }
+  // }
   const setDivClass = () => {
     if(isPublished === false) {
       return 'resumeEdu resume' 

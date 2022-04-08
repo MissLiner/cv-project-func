@@ -165,6 +165,13 @@ label {
 .flex {
   display: flex;
 }
+.preview-box {
+  background-color: white;
+  padding: 10px 10px 10px 10px;
+}
+.preview-box-list {
+  background-color: white;
+}
 .hidden {
   display: none !important;
 }
@@ -183,6 +190,9 @@ label {
 }
 
 /* INPUT FORM */
+.InputHeader {
+  width: 300px;
+}
 .InputHeader-heading {
   color: #008FBA;
   font-family: "Fredoka One", sans-serif;

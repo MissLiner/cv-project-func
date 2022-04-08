@@ -57,6 +57,7 @@ function DisplayEducation(props) {
   const handleEduAdd = () => {
     setNewEduInfo(newEduInfoBaseState);
     setDisplay('form');
+    setEditIndex('none');
   }
   const handleEduCancel = () => {
     setDisplay('text');
