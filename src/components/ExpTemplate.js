@@ -110,8 +110,8 @@ const ExpTemplate = (props) => {
   }
   return (
     <div className={setDivClass()}>
-      {renderHeading()}
       {renderAddBtn()}
+      {renderHeading()}
       {renderAllDivs()}
     </div>
   )

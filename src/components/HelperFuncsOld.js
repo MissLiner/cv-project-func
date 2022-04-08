@@ -88,6 +88,7 @@ export function handleEdit(e) {
     display: 'form',
     [objHolderKey]: objToEdit,
     editIndex: objIndex,
+    
   })
 }
 export function handleDelete(e) {

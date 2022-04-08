@@ -5,7 +5,7 @@ import InputForm from './InputForm';
 import EduTemplate from './EduTemplate';
 import uniqid from 'uniqid';
 
-function DisplayEducation(props) {
+function EduController(props) {
   let storedEduInfo = [];
   let storedDisplay = 'form';
 
@@ -135,4 +135,4 @@ function DisplayEducation(props) {
   )
 }
 
-export default DisplayEducation;
+export default EduController;
