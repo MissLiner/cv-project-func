@@ -8,7 +8,7 @@ const EduTemplate = (props) => {
     editFunc,
     deleteFunc,
     infoType,
-    addFunc,
+    // addFunc,
     sectionKey,
     isPublished,
   } = props;
@@ -62,17 +62,18 @@ const EduTemplate = (props) => {
       )
     }
   }
-  // const addAddNewBtn = () => {
-  //   if(isPublished === false) {
-  //     return(
-  //       <button 
-  //         onClick={addFunc} 
-  //         data-section={sectionKey} 
-  //         className='regularBtn addBtn'
-  //        >Add New</button>
-  //     )
-  //   }
-  // }
+  const renderAddBtn = () => {
+    if(isPublished === false) {
+      return(
+        <button 
+          onClick={props.addFunc} 
+          data-section={props.sectionKey} 
+          className='regularBtn addBtn'
+         >Add New</button>
+      )
+    } 
+  }
+
   const setDivClass = () => {
     if(isPublished === false) {
       return 'resumeEdu resume' 
@@ -82,12 +83,12 @@ const EduTemplate = (props) => {
   }
   return (
     <div className={setDivClass()}>
-        {/* <h2 className="EduTemplate-header template-header">Education {addAddNewBtn()}</h2> */}
+        {renderAddBtn()}
         <InputHeader 
           heading="Education"
-          sectionKey={props.sectionKey} 
+          sectionKey={sectionKey} 
           addBtn={true} 
-          addFunc={addFunc}
+          addFunc={props.addFunc}
          />
       {renderAllDivs()}
     </div>

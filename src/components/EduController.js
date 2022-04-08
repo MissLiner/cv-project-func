@@ -55,6 +55,7 @@ function DisplayEducation(props) {
     localStorage.setItem('eduInfo', JSON.stringify(newArray));
   }
   const handleEduAdd = () => {
+    console.log("hi");
     setNewEduInfo(newEduInfoBaseState);
     setDisplay('form');
     setEditIndex('none');
@@ -81,7 +82,15 @@ function DisplayEducation(props) {
     if(hiddenClass === "hidden") { setHiddenClass("") 
     } else { setHiddenClass("hidden")};
   }
-
+  if(props.addBtn === true) {
+    return(
+      <button 
+        onClick={props.addFunc} 
+        data-section={props.sectionKey} 
+        className='regularBtn addBtn'
+       >Add New</button>
+    )
+  } 
   const renderPage = () => {
     const eduInfoLabels = [['School', 'first'], ['Location', 'second'], 
                           ['Degree', 'fourth'], ['Year', 'third']];

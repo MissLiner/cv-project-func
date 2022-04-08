@@ -192,6 +192,7 @@ label {
 /* INPUT FORM */
 .InputHeader {
   width: 300px;
+  z-index: 1000;
 }
 .InputHeader-heading {
   color: #008FBA;
@@ -283,6 +284,7 @@ label {
   top: 7px;
   position: absolute;
   float: right;
+  z-index: 1001;
 }
 .GenTemplate-name {
   font-size:1.5em;

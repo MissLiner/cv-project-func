@@ -75,17 +75,17 @@ const ExpTemplate = (props) => {
       })
     )
   }
-  // const addAddBtn = () => {
-  //   if(isPublished === false) {
-  //     return(
-  //       <button 
-  //         onClick={addFunc} 
-  //         data-section={sectionKey} 
-  //         className='regularBtn addBtn'
-  //        >Add New</button>
-  //     )
-  //   } 
-  // }
+  const renderAddBtn = () => {
+    if(isPublished === false) {
+      return(
+        <button 
+          onClick={addFunc} 
+          data-section={sectionKey} 
+          className='regularBtn addBtn'
+         >Add New</button>
+      )
+    } 
+  }
   const setDivClass = () => {
     if(isPublished === false) {
       return 'resumeExp resume' 
@@ -95,7 +95,7 @@ const ExpTemplate = (props) => {
   }
   return (
     <div className={setDivClass()}>
-      {/* <h2 className="ExpTemplate-header template-header">Experience {addAddBtn()}</h2> */}
+      {renderAddBtn()}
       <InputHeader 
         heading="Experience"
         sectionKey={sectionKey} 
