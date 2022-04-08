@@ -8,11 +8,26 @@ const EduTemplate = (props) => {
     editFunc,
     deleteFunc,
     infoType,
-    // addFunc,
+    addFunc,
     sectionKey,
     isPublished,
   } = props;
-
+  const renderHeading = () => {
+    if(isPublished === false) {
+      return(
+        <InputHeader 
+          heading="Education"
+          sectionKey={sectionKey} 
+          addBtn={true} 
+          addFunc={props.addFunc}
+         />
+      )
+    } else {
+      return(
+        <h2 className="published-heading">Education</h2>
+      )
+    }
+  }
   const renderAllDivs = () => {
     if(isPublished === true) {
       return (
@@ -20,7 +35,6 @@ const EduTemplate = (props) => {
           const keyID = school.baseID + i;
           return (
             <div>
-              <h2 className="published-heading">Education</h2>
               <div className='resumeEduSchool flex' key={keyID}>
               <div className='degreeInfo left'>
                 <b>{school.Degree}</b>| {school.School}, {school.Location}
@@ -38,12 +52,6 @@ const EduTemplate = (props) => {
           const keyID = school.baseID + i;
           return (
             <div key={keyID}>
-              <InputHeader 
-                heading="Education"
-                sectionKey={sectionKey} 
-                addBtn={true} 
-                addFunc={props.addFunc}
-              />
               <div className='resumeEduSchool flex preview-box'>
                 <div className='degreeInfo left'>
                   <b>{school.Degree}</b>| {school.School}, {school.Location}
@@ -76,8 +84,8 @@ const EduTemplate = (props) => {
     if(isPublished === false) {
       return(
         <button 
-          onClick={props.addFunc} 
-          data-section={props.sectionKey} 
+          onClick={addFunc} 
+          data-section={sectionKey} 
           className='regularBtn addBtn'
          >Add New</button>
       )
@@ -93,6 +101,7 @@ const EduTemplate = (props) => {
   }
   return (
     <div className={setDivClass()}>
+      {renderHeading()}
       {renderAddBtn()}
       {renderAllDivs()}
     </div>
