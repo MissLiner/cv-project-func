@@ -14,7 +14,6 @@ const GenTemplate = (props) => {
     if(isPublished === false) {
       return (
         <div className='resumeHeader resume'>
-          {/* <h2 className="heading">Contact Info</h2> */}
           <InputHeader 
             heading="Contact Info" 
             sectionKey={props.sectionKey}
