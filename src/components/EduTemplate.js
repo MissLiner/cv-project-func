@@ -19,12 +19,16 @@ const EduTemplate = (props) => {
         eduData.map((school, i) => {
           const keyID = school.baseID + i;
           return (
-            <div className='resumeEduSchool flex white' key={keyID}>
+            <div>
+              <h2 className="published-heading">Education</h2>
+              <div className='resumeEduSchool flex' key={keyID}>
               <div className='degreeInfo left'>
                 <b>{school.Degree}</b>| {school.School}, {school.Location}
               </div>
               <div className='schoolYear right emphasized'>{school.Year}</div>
+              </div>
             </div>
+
           )
         })
       )
@@ -34,6 +38,12 @@ const EduTemplate = (props) => {
           const keyID = school.baseID + i;
           return (
             <div key={keyID}>
+              <InputHeader 
+                heading="Education"
+                sectionKey={sectionKey} 
+                addBtn={true} 
+                addFunc={props.addFunc}
+              />
               <div className='resumeEduSchool flex preview-box'>
                 <div className='degreeInfo left'>
                   <b>{school.Degree}</b>| {school.School}, {school.Location}
@@ -83,13 +93,7 @@ const EduTemplate = (props) => {
   }
   return (
     <div className={setDivClass()}>
-        {renderAddBtn()}
-        <InputHeader 
-          heading="Education"
-          sectionKey={sectionKey} 
-          addBtn={true} 
-          addFunc={props.addFunc}
-         />
+      {renderAddBtn()}
       {renderAllDivs()}
     </div>
   )

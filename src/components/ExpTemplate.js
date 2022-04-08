@@ -61,7 +61,7 @@ const ExpTemplate = (props) => {
         } else {
           return (
             <div className='resumeExpJob' key={keyID}>
-              <h2 className="heading">Experience</h2>
+              <h2 className="published-heading">Experience</h2>
               <div className='companyInfo flex'>
                 <div className='company left'>
                   <b>{job.Title}</b> | {job.Company}, {job.Location}
