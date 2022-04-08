@@ -166,11 +166,7 @@ label {
   display: flex;
 }
 .preview-box {
-  background-color: white;
   padding: 10px 10px 10px 10px;
-}
-.preview-box-list {
-  background-color: white;
 }
 .hidden {
   display: none !important;
