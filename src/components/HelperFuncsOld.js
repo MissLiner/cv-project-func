@@ -1,8 +1,9 @@
 import uniqid from 'uniqid';
 
-export function handleClear() {
-  localStorage.clear();
-}
+// export function handleClear(props) {
+  
+
+// }
 
 export function handleToggle(e) {
   e.preventDefault();

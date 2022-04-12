@@ -12,7 +12,7 @@ import {  handleChange,
           handleToggle, } from './HelperFuncsOld';
 import uniqid from 'uniqid';
 
-class DisplayExperience extends Component {
+class ExpController extends Component {
   constructor(props) {
     super(props);
 
@@ -40,6 +40,7 @@ class DisplayExperience extends Component {
       display:    storedDisplay,
       hiddenClass: "hidden",
       editIndex:  'none',
+      remountCount: 0,
     }
 
     this.baseFormState = this.state.newExpInfo;
@@ -52,11 +53,18 @@ class DisplayExperience extends Component {
     this.handleCancel = handleCancel.bind(this);
     this.handleToggle = handleToggle.bind(this);
   }
-
+  // componentDidMount() {
+  //   if(!localStorage.getItem("expInfo")) {
+  //     this.setState({
+  //       expInfo: [],
+  //     });
+  //   };
+  // };
   render() {
+    const { expInfo, newExpInfo } = this.state;
+    const { isPublished, remount } = this.props;
+    
     const renderPage = () => {
-      const { expInfo, newExpInfo } = this.state;
-      const { isPublished } = this.props;
       const expInfoLabels = [ ['Company', 'first'], 
                               ['Location', 'second'], 
                               ['StartDate', 'third'], 
@@ -98,11 +106,11 @@ class DisplayExperience extends Component {
       }
     }
     return (
-      <div className="ExpController">
+      <div className="ExpController" key={remount}>
         {renderPage()}
       </div>
     )
   }
 }
 
-export default DisplayExperience;
+export default ExpController;

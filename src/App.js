@@ -65,9 +65,9 @@ const App = () => {
       </div>
 
       <div id="resumePage">
-        <GenController isPublished={isPublished} remount={remount} />
-        <ExpController isPublished={isPublished} remount={remount} />
-        <EduController isPublished={isPublished} remount={remount} />
+        <GenController isPublished={isPublished} key={remount + "gen"} />
+        <ExpController isPublished={isPublished} key={remount + "exp"} />
+        <EduController isPublished={isPublished} key={remount + "edu"} />
       </div>
     </div>
   )
