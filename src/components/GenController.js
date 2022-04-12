@@ -43,9 +43,7 @@ class GenController extends Component {
     this.handleEdit = handleEdit.bind(this);
     this.handleToggle = handleToggle.bind(this);
   }
-  componentDidMount() {
-    console.log("componentDidMount");
-  }
+
   render() {
     const { info, newInfo } = this.state;
     const { isPublished } = this.props;

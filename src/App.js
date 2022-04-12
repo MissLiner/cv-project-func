@@ -9,9 +9,15 @@ const App = () => {
   const [remount, setRemount] = useState(0);
 
   const handleClear = () => {
-    localStorage.clear();
-    setRemount(remount + 1);
+    const isConfirmed = window.confirm("Are you sure you want to clear all data?"); 
+    if(isConfirmed) {
+      localStorage.clear();
+      setRemount(remount + 1);
+    } else {
+      return;
+    }
   }
+
   const toggleIsPublished = () => {
     setIsPublished(!isPublished);
   }
