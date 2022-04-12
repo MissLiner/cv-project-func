@@ -34,7 +34,7 @@ class GenController extends Component {
         baseID:     uniqid(),
       },
       display:      storedDisplay,
-      hiddenClass:  "hidden",
+      hiddenClass:  "",
       editIndex:    'none',
     };
 
@@ -49,9 +49,9 @@ class GenController extends Component {
     const { isPublished } = this.props;
     const genInfoLabels = [ ['Name', 'first', 'text', '' ], 
                             ['Phone', 'second', 'tel', ''  ], 
-                            ['Email', 'third', 'email', '3'], 
-                            ['Address', 'fourth', 'text', '4'], 
-                            ['City', 'fifth', 'text', '5'], 
+                            ['Email', 'third', 'email', ''], 
+                            ['Address', 'fourth', 'text', ''], 
+                            ['City', 'fifth', 'text', ''], 
                             ['State', 'sixth', 'text', '2' ], 
                             ['Zip', 'seventh', 'text', '5' ],  
                           ];
