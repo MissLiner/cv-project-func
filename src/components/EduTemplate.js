@@ -54,7 +54,7 @@ const EduTemplate = (props) => {
             <div key={keyID}>
               <div className='resumeEduSchool flex preview-box'>
                 <div className='degreeInfo left'>
-                  <b>{school.Degree}</b>| {school.School}, {school.Location}
+                  <b>{school.Degree}</b> | {school.School}, {school.Location}
                 </div>
                 <div className='schoolYear right emphasized'>{school.Year}</div>
               </div>
