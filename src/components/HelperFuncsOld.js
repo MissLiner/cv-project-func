@@ -1,5 +1,9 @@
 import uniqid from 'uniqid';
 
+export function handleClear() {
+  localStorage.clear();
+}
+
 export function handleToggle(e) {
   e.preventDefault();
   if(this.state.hiddenClass === "hidden"){

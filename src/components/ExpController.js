@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-constructor */
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import '../App.css';
 import InputForm from './InputForm';
 import ExpTemplate from './ExpTemplate';
@@ -52,7 +52,7 @@ class DisplayExperience extends Component {
     this.handleCancel = handleCancel.bind(this);
     this.handleToggle = handleToggle.bind(this);
   }
-  
+
   render() {
     const renderPage = () => {
       const { expInfo, newExpInfo } = this.state;

@@ -6,9 +6,12 @@ import EduController from './components/EduController';
 
 const App = () => {
   const [isPublished, setIsPublished] = useState(false);
+  const [remount, setRemount] = useState(false);
 
   const handleClear = () => {
+    setRemount(true);
     localStorage.clear();
+    setRemount(false);
   }
   const toggleIsPublished = () => {
     setIsPublished(!isPublished);
@@ -63,9 +66,9 @@ const App = () => {
       </div>
 
       <div id="resumePage">
-        <GenController isPublished={isPublished} />
-        <ExpController isPublished={isPublished} />
-        <EduController isPublished={isPublished} />
+        <GenController isPublished={isPublished} remount={remount} />
+        <ExpController isPublished={isPublished} remount={remount} />
+        <EduController isPublished={isPublished} remount={remount} />
       </div>
     </div>
   )

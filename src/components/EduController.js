@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-constructor */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
 import InputForm from './InputForm';
 import EduTemplate from './EduTemplate';
@@ -26,6 +26,12 @@ function EduController(props) {
   const [display, setDisplay] = useState(storedDisplay);
   const [editIndex, setEditIndex] = useState('none');
   const [hiddenClass, setHiddenClass] = useState("hidden");
+
+  useEffect(() => {
+    if(props.remount) {
+      setEduInfo(newEduInfoBaseState);
+    }
+  }, [props.remount]);
   
   const handleEduChange = (e) => {
     const editKey = e.target.dataset.field;
