@@ -28,9 +28,7 @@ function EduController(props) {
   const [hiddenClass, setHiddenClass] = useState("hidden");
 
   useEffect(() => {
-    if(props.remount) {
-      setEduInfo(newEduInfoBaseState);
-    }
+      setEduInfo([]);
   }, [props.remount]);
   
   const handleEduChange = (e) => {

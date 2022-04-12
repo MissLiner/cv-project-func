@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-constructor */
-import React, { Component, useEffect } from 'react';
+import React, { Component } from 'react';
 import '../App.css';
 import InputForm from './InputForm';
 import ExpTemplate from './ExpTemplate';

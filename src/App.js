@@ -6,12 +6,11 @@ import EduController from './components/EduController';
 
 const App = () => {
   const [isPublished, setIsPublished] = useState(false);
-  const [remount, setRemount] = useState(false);
+  const [remount, setRemount] = useState(0);
 
   const handleClear = () => {
-    setRemount(true);
     localStorage.clear();
-    setRemount(false);
+    setRemount(remount + 1);
   }
   const toggleIsPublished = () => {
     setIsPublished(!isPublished);
