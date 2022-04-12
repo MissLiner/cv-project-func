@@ -17,8 +17,8 @@ class GenController extends Component {
     let storedGenInfo = [];
     let storedDisplay = 'form';
 
-    if(localStorage.getItem('genInfo')) {
-      storedGenInfo = JSON.parse(localStorage.getItem('genInfo'));
+    if(localStorage.getItem('info')) {
+      storedGenInfo = JSON.parse(localStorage.getItem('info'));
       storedDisplay = 'text';
     }
     this.state = {
