@@ -88,7 +88,7 @@ function EduController(props) {
         onClick={props.addFunc} 
         data-section={props.sectionKey} 
         className='regularBtn addBtn'
-       >Add New</button>
+       >+</button>
     )
   } 
   const renderPage = () => {

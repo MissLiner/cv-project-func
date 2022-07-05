@@ -87,7 +87,7 @@ const EduTemplate = (props) => {
           onClick={addFunc} 
           data-section={sectionKey} 
           className='regularBtn addBtn'
-         >Add New</button>
+         >Add</button>
       )
     } 
   }
