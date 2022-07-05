@@ -336,10 +336,7 @@ label {
 }
 
 @media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
+  and (max-device-width: 680px) {
     .App-header {
       grid-template: 
         "title title"
@@ -357,6 +354,7 @@ label {
       margin-left: auto;
       margin-right: 5px;
     }
+
     .InputForm {
       grid-template:
         "header" min-content
@@ -381,10 +379,7 @@ label {
     .resumeHeader, .resumeExp, .resumeEdu {
       padding: 10px 0px 10px 0px;
     }
-    .addBtn {
-      padding: 2px 10px 2px 10px;
-      width: auto;
-    }
+
     .pubResume {
       width: 95%;
     }
@@ -393,7 +388,38 @@ label {
       height: auto; 
       min-height: 600px; width: 95%;
     }
+  }
+@media only screen 
+  and (max-device-width: 480px)
+  /* and (-webkit-min-device-pixel-ratio: 2) */
+  and (orientation: portrait) {
+    .addBtn {
+      padding: 2px 10px 2px 10px;
+      width: auto;
+    }
 }
+@media only screen 
+  and (max-device-width: 320px) {
+    .App-header {
+      margin-bottom: 10px;
+    }
+    .App-title {
+      font-size: 3em;
+    }
+    .clear-btn, .publish-btn {
+      font-size: 1em;
+      width: 100px;
+    }
+    .InputHeader {
+      width: 85%;
+    }
+    .InputHeader-heading {
+      font-size: 1em;
+    }
+    .GenTemplate-name {
+      font-size: 1.1em;
+    }
+  }
 
 
 
